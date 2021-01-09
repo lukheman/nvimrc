@@ -3,3 +3,5 @@ runtime! init.d/filetype.vim
 runtime init.d/mapping.vim
 runtime init.d/plugin.vim
 runtime! plugin-config/*vim
+
+"tes

@@ -1,4 +1,4 @@
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 " Tema text editor
 " Plug 'sainnhe/vim-color-forest-night'
@@ -35,9 +35,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" memunculkan garis di setiap tab
 Plug 'Yggdroot/indentLine'
 
-Plug 'captbaritone/better-indent-support-for-php-with-html'
+Plug 'nicklasos/vimphphtml'
 
 " plugin for javascript
 Plug 'pangloss/vim-javascript'
