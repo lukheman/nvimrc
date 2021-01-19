@@ -86,12 +86,13 @@ let s:cdSplitLight = {'gui': '#898989', 'cterm': s:cterm04, 'cterm256': '245'}
 let s:cdSplitDark = {'gui': '#444444', 'cterm': s:cterm03, 'cterm256': '238'}
 let s:cdSplitThumb = {'gui': '#424242', 'cterm': s:cterm04, 'cterm256': '238'}
 
-let s:cdCursorDarkDark = {'gui': '#222222', 'cterm': s:cterm01, 'cterm256': '235'}
+"let s:cdCursorDarkDark = {'gui': '#222222', 'cterm': s:cterm01, 'cterm256': '235'}
+let s:cdCursorDarkDark = {'gui': '#303030', 'cterm': s:cterm01, 'cterm256': '235'}
 let s:cdCursorDark = {'gui': '#51504F', 'cterm': s:cterm03, 'cterm256': '239'}
 let s:cdCursorLight = {'gui': '#AEAFAD', 'cterm': s:cterm04, 'cterm256': '145'}
 let s:cdSelection = {'gui': '#264F78', 'cterm': s:cterm03, 'cterm256': '24'}
 " let s:cdLineNumber = {'gui': '#5A5A5A', 'cterm': s:cterm04, 'cterm256': '240'}
-let s:cdLineNumber = {'gui': '#353535', 'cterm': s:cterm04, 'cterm256': '240'}
+let s:cdLineNumber = {'gui': '#1E1E1E', 'cterm': s:cterm04, 'cterm256': '240'}
 
 let s:cdDiffRedDark = {'gui': '#4B1818', 'cterm': s:cterm08, 'cterm256': '52'}
 let s:cdDiffRedLight = {'gui': '#6F1313', 'cterm': s:cterm08, 'cterm256': '52'}
@@ -109,7 +110,7 @@ if !exists("g:codedark_conservative")
 endif
 
 let s:cdGray = {'gui': '#808080', 'cterm': s:cterm04, 'cterm256': '08'}
-let s:cdViolet = {'gui': '#646695', 'cterm': s:cterm04, 'cterm256': '60'}
+let s:cdViolet = {'gui': 'NONE', 'cterm': s:cterm04, 'cterm256': '60'}
 let s:cdBlue = {'gui': '#569CD6', 'cterm': s:cterm0D, 'cterm256': '75'}
 let s:cdDarkBlue = {'gui': '#223E55', 'cterm': s:cterm0D, 'cterm256': '73'}
 let s:cdLightBlue = {'gui': '#9CDCFE', 'cterm': s:cterm0C, 'cterm256': '117'}
@@ -146,9 +147,9 @@ call <sid>hi('Folded', s:cdLeftLight, s:cdLeftDark, 'underline', {})
 call <sid>hi('FoldColumn', s:cdLineNumber, s:cdBack, 'none', {})
 call <sid>hi('SignColumn', {}, s:cdBack, 'none', {})
 call <sid>hi('IncSearch', s:cdNone, s:cdSearchCurrent, 'none', {})
-call <sid>hi('LineNr', s:cdViolet, s:cdLineNumber, 'none', {})
-call <sid>hi('CursorLineNr', s:cdBlueGreen, s:cdBack, 'none', {})
-call <sid>hi('MatchParen', s:cdNone, s:cdCursorDark, 'none', {})
+call <sid>hi('LineNr', s:cdGray, s:cdLineNumber, 'none', {})
+call <sid>hi('CursorLineNr', s:cdBlueGreen, s:cdCursorDarkDark, 'none', {})
+call <sid>hi('MatchParen', s:cdRed, s:cdNone, 'bold', {})
 call <sid>hi('ModeMsg', s:cdFront, s:cdLeftDark, 'none', {})
 call <sid>hi('MoreMsg', s:cdFront, s:cdLeftDark, 'none', {})
 call <sid>hi('NonText', s:cdLineNumber, s:cdBack, 'none', {})
