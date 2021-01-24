@@ -1,4 +1,5 @@
-let g:NERDTreeDirArrowExpandable = ''
+" icon ▸ ▾
+let g:NERDTreeDirArrowExpandable  = ''
 let g:NERDTreeDirArrowCollapsible = ''
 
 let NERDTreeCaseSensitiveSort = 1
