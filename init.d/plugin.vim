@@ -73,15 +73,7 @@ Plug 'ntpeters/vim-better-whitespace'
 " A Switch between single-line and multiline forms of code
 Plug 'AndrewRadev/splitjoin.vim'
 
-" A tiny translate-shell wrapper for Vim
-"Plug 'VincentCordobes/vim-translate'
-
 " A Vim alignment plugin
 Plug 'junegunn/vim-easy-align'
 
 call plug#end()
-
-let g:translate#default_languages = {
-  \ 'en': 'id',
-  \ 'id': 'en'
-  \ }
