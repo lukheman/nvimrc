@@ -76,4 +76,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 " A Vim alignment plugin
 Plug 'junegunn/vim-easy-align'
 
+
+"Plug 'sheerun/vim-polyglot'
 call plug#end()

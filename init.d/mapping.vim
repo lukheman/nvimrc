@@ -34,3 +34,7 @@ nmap <leader>W :StripWhitespace<cr>
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g.gaip)
 nmap ga <Plug>(EasyAlign)
+
+" run python script from vim
+autocmd FileType python map <buffer> <C-r> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <C-r> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
