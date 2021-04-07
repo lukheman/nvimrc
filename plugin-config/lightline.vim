@@ -7,12 +7,11 @@ let g:lightline = {
 \   'colorscheme': 'codedark',
 \   'active': {
 \    'left' :[[ 'mode', 'paste' ],
-\             [ 'gitbranch'],
+"\             [ 'gitbranch'],
 \             [ 'filename' ]],
 \    'right':[[ 'trailing' ],
 \             [ 'percent' ],
-\             [ 'lineinfo'],
-\             [ 'filetype', 'fileencoding' ]]
+\             [ 'filetype']]
 \   },
 \   'inactive': {
 \       'left' : [[ 'filename' ]],
@@ -38,7 +37,7 @@ let g:lightline = {
 \   },
 \   'component_function': {
 \     'readonly'     : 'LightlineReadonly',
-\     'gitbranch'    : 'LightlineFugitive',
+"\     'gitbranch'    : 'LightlineFugitive',
 \     'filetype'     : 'LightlineFiletype',
 \     'fileencoding' : 'LightlineFileEncoding',
 \     'lineinfo'     : 'LightlineLineInfo',
@@ -83,10 +82,10 @@ function! LightlineReadonly()
   return &readonly ? '' : ''
 endfunction
 
-function! LightlineFugitive()
-  let branch = fugitive#head()
-  return branch !=# '' ? '' : ''
-endfunction
+"function! LightlineFugitive()
+  "let branch = fugitive#head()
+  "return branch !=# '' ? '' : ''
+"endfunction
 
 function! LightlineFiletype()
   return winwidth(0) > 50 ? (strlen(&filetype) ? &filetype.' '.WebDevIconsGetFileTypeSymbol() : 'no ft') : WebDevIconsGetFileTypeSymbol()

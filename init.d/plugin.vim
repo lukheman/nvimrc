@@ -34,7 +34,7 @@ Plug 'mengelbrecht/lightline-bufferline'
 " Plug 'airblade/vim-gitgutter'
 
 " Fugitive is the premier Vim plugin for Git
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 
 if has('nvim') || has('patch-8.0.902')
   Plug 'mhinz/vim-signify'
@@ -55,11 +55,11 @@ Plug 'nicklasos/vimphphtml'
 " plugin untuk javascripit
 "Plug 'pangloss/vim-javascript'
 
-Plug 'liuchengxu/vista.vim'
+"Plug 'liuchengxu/vista.vim'
 "Plug 'tpope/gem-ctags'
 
 " A surround.vim: quoting/parenthesizing made simple
-Plug 'tpope/vim-surround'
+"Plug 'tpope/vim-surround'
 
 " Kalender vimscript
 "Plug 'mattn/calendar-vim'
@@ -76,6 +76,4 @@ Plug 'AndrewRadev/splitjoin.vim'
 " A Vim alignment plugin
 Plug 'junegunn/vim-easy-align'
 
-
-"Plug 'sheerun/vim-polyglot'
 call plug#end()
