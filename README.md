@@ -1,6 +1,6 @@
 ## Apa ini?
 
-Ini adalah konfigurasi NeoVim yang terinspirasi oleh [@bandithijo](https://github.com/bandithijo/nvimrc).
+Ini adalah konfigurasi NeoVim yang terinspirasi oleh [@bandithijo](https://github.com/bandithijo/nvimrc).Perlu diketahui juga kalau konfigurasi ini dibuat khusus untuk digunakan di Android (Termux)
 
 ## Cara menggunakan
 
@@ -23,6 +23,8 @@ $ nvim
 - Beralih ke mode Normal dengan menekan tombol <kbd>ESC</kbd>
 - Masuk ke mode perintah dengan menekan tombol <kbd>:</kbd> (titik dua)
 - Mulai memasang plugin dengan perintah `PlugInstall`
+
+![PlugInstall](https://github.com/pandas-id/nvimrc/image/gif/plug-install.GIF)
 
 Harap tunggu sampai semua proses pemasangan plugin selesai.
 
