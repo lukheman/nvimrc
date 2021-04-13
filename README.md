@@ -1,8 +1,8 @@
-# Apa ini?
+## Apa ini?
 
 Ini adalah konfigurasi NeoVim yang terinspirasi oleh [@bandithijo](https://github.com/bandithijo/nvimrc).
 
-# Cara menggunakan
+## Cara menggunakan
 
 > Pasang [vim-plug](https://github.com/junegunn/vim-plug) (plugin manager)
 
