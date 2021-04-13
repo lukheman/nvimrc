@@ -14,10 +14,15 @@ $ git clone https://github.com/pandas-id/nvimrc $HOME/.config/nvim
 
 > Pasang plugin
 
+- Masuk ke NeoVim
+
 ```
 $ nvim
-:PlugInstall
 ```
+
+- Beralih ke mode Normal dengan menekan tombol <kbd>ESC</kbd>
+- Masuk ke mode perintah dengan menekan tombol <kbd>:</kbd> (titik dua)
+- Mulai memasang plugin dengan perintah `PlugInstall`
 
 Harap tunggu sampai semua proses pemasangan plugin selesai.
 
