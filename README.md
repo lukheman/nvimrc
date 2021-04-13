@@ -8,19 +8,19 @@ Ini adalah konfigurasi NeoVim yang terinspirasi oleh [@bandithijo](https://githu
 
 > Cloning repo ini
 
-'''sh
+```sh
 $ git clone https://github.com/pandas-id/nvimrc $HOME/.config/nvim
-'''
+```
 
 > Pasang plugin
 
-'''sh
+```
 $ nvim
-'''
+```
 
-'''sh
+```
 :PlugInstall
-'''
+```
 
 Harap tunggu sampai semua proses pemasangan plugin selesai.
 Plugin yang dipasang akan tersimpan di **$HOME/.local/share/nvim/plugged**
