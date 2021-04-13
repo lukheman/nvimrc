@@ -24,7 +24,7 @@ $ nvim
 - Masuk ke mode perintah dengan menekan tombol <kbd>:</kbd> (titik dua)
 - Mulai memasang plugin dengan perintah `PlugInstall`
 
-![PlugInstall](https://github.com/pandas-id/nvimrc/image/gif/VID_20210413182419.gif)
+![PlugInstall](https://github.com/pandas-id/nvimrc/blob/master/image/gif/VID_20210413182419.gif)
 
 Harap tunggu sampai semua proses pemasangan plugin selesai.
 
