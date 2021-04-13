@@ -20,4 +20,5 @@ $ nvim
 ```
 
 Harap tunggu sampai semua proses pemasangan plugin selesai.
+
 Plugin yang dipasang akan tersimpan di **$HOME/.local/share/nvim/plugged**
