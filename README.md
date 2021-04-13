@@ -16,9 +16,9 @@ $ git clone https://github.com/pandas-id/nvimrc $HOME/.config/nvim
 
 - Masuk ke NeoVim
 
-```
-$ nvim
-```
+    ```
+    $ nvim
+    ```
 
 - Beralih ke mode Normal dengan menekan tombol <kbd>ESC</kbd>
 - Masuk ke mode perintah dengan menekan tombol <kbd>:</kbd> (titik dua)
