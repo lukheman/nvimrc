@@ -16,9 +16,6 @@ $ git clone https://github.com/pandas-id/nvimrc $HOME/.config/nvim
 
 ```
 $ nvim
-```
-
-```
 :PlugInstall
 ```
 
