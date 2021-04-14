@@ -23,4 +23,8 @@ Pasang plugin
 Harap tunggu sampai semua proses instalasi selesai.
 Plugin di pasang di folder **$HOME/.local/share/nvim/plugged**.
 
-### Keybinds
+### Plugin
+
+| Fungsi         | Plugin                                            |
+| Plugin Manager | [vim-plug](https://github.com/junegunn/vim-plug)  |
+| File Manager   | [nerdtree](https://github.com/preservim/nerdtree) |
