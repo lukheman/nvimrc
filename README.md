@@ -51,3 +51,4 @@ Plugin yang dipasang akan tersimpan di **$HOME/.local/share/nvim/plugged**
 | Strip all trailing whitespace | N    | <kbd>ctrl</kbd> <kbd>w</kbd>               |
 | Easy align                    | N    | <kbd>g</kbd> <kbd>a</kbd>                  |
 | Run python script             | N    | <kbd>r</kbd> <kbd>r</kbd>                  |
+
