@@ -76,4 +76,10 @@ Plug 'AndrewRadev/splitjoin.vim'
 " A Vim alignment plugin
 Plug 'junegunn/vim-easy-align'
 
+" VIM Table Mode for instant table creation
+Plug 'https://github.com/dhruvasagar/vim-table-mode'
+
+"Plug 'kyazdani42/nvim-web-devicons' " for file icons
+"Plug 'kyazdani42/nvim-tree.lua'
+
 call plug#end()

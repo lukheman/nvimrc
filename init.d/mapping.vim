@@ -28,7 +28,7 @@ nmap <leader>b :bp <CR>
 nmap <leader>bd :bp<cr>:bd! #<cr>
 
 " Menghilangkan whitespace
-nmap <leader>W :StripWhitespace<cr>
+nmap <leader>w :StripWhitespace<cr>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
