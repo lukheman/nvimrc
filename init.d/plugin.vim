@@ -30,39 +30,22 @@ Plug 'itchyny/lightline.vim'
 " This plugin provides bufferline functionality for the lightline vim plugin
 Plug 'mengelbrecht/lightline-bufferline'
 
-" A Vim plugin which shows a git diff in the sign column
-" Plug 'airblade/vim-gitgutter'
-
-" Fugitive is the premier Vim plugin for Git
-"Plug 'tpope/vim-fugitive'
-
+" Show a diff using Vim its sign column
 if has('nvim') || has('patch-8.0.902')
   Plug 'mhinz/vim-signify'
 else
   Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 endif
 
-" Plugin yang untuk pencarian file
+" A command-line fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
-" memunculkan garis di setiap tab
-Plug 'Yggdroot/indentLine'
 
 " Correct html indent in php files
 Plug 'nicklasos/vimphphtml'
 
-" plugin untuk javascripit
-"Plug 'pangloss/vim-javascript'
-
-"Plug 'liuchengxu/vista.vim'
-"Plug 'tpope/gem-ctags'
-
 " A surround.vim: quoting/parenthesizing made simple
 "Plug 'tpope/vim-surround'
-
-" Kalender vimscript
-"Plug 'mattn/calendar-vim'
 
 " A trailing whitespace component for the lightline vim plugin
 Plug 'maximbaz/lightline-trailing-whitespace'
@@ -79,7 +62,7 @@ Plug 'junegunn/vim-easy-align'
 " VIM Table Mode for instant table creation
 Plug 'https://github.com/dhruvasagar/vim-table-mode'
 
-"Plug 'kyazdani42/nvim-web-devicons' " for file icons
-"Plug 'kyazdani42/nvim-tree.lua'
+" A Vim plugin for visually displaying indent levels in code
+Plug 'https://github.com/nathanaelkane/vim-indent-guides'
 
 call plug#end()
