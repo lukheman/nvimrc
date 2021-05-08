@@ -14,7 +14,7 @@ map <C-n> :NERDTreeToggle<CR>
 " membuat tab baru
 map <C-t> :tabnew<CR>
 " menyimpan perubahan pada file
-map ss :w! <CR>
+map s :w! <CR>
 " melihat Buffers
 map <C-p> :Buffers <CR>
 " Mencari file
@@ -28,7 +28,7 @@ nmap <leader>b :bp <CR>
 nmap <leader>bd :bp<cr>:bd! #<cr>
 
 " Menghilangkan whitespace
-nmap <leader>w :StripWhitespace<cr>
+nmap <leader>w :StripWhitespace<cr>s
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
