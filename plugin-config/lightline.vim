@@ -126,7 +126,7 @@ function! LightlineReload()
 endfunction
 
 function! String1()
-  return ' NVIM'
+  return ' AKMAL'
 endfunction
 
 set showtabline=2  " Show tabline, 2 show, 1 hide when only 1 buffer, 0 hide

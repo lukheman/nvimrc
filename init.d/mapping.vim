@@ -27,6 +27,8 @@ nmap <leader>b :bp <CR>
 " Menutup buffer
 nmap <leader>bd :bp<cr>:bd! #<cr>
 
+nmap <leader>c <plug>NERDCommenterToggle
+
 " Menghilangkan whitespace
 nmap <leader>w :StripWhitespace<cr>s
 

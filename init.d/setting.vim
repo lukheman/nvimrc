@@ -14,12 +14,12 @@ set ttimeoutlen=0             " Beralih mode secara cepat
 set autoread                  " Memperbarui tipe file secara berkala
 
 " Interface
-colorscheme codedark
+colorscheme codedark-pandas
 set background=dark
 set termguicolors
 set incsearch                 " incremental search aka search as       you type
 set hlsearch                  " highlight search matches
-set smartcase               " but when the query starts with upper character be case sensitive
+set smartcase                 " but when the query starts with upper character be case sensitive
 set ignorecase
 set laststatus=2              " always show the status line
 set linespace=0               " don't move the cursor to first non-blank character after some command
@@ -78,3 +78,7 @@ highlight iCursor guifg=white guibg=steelblue
 "set guicursor+=n-v-c:blinkon0
 "set guicursor+=i:blinkwait10
 set guicursor=
+
+
+set updatetime=300
+set shortmess+=c

@@ -66,3 +66,4 @@ Plug 'https://github.com/dhruvasagar/vim-table-mode'
 Plug 'https://github.com/nathanaelkane/vim-indent-guides'
 
 call plug#end()
+
