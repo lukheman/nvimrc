@@ -19,7 +19,7 @@ Plug 'vwxyutarooo/nerdtree-devicons-syntax'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Auto Pairs
-"Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 
 " Auto close parentheses and repeat by dot dot dot...
 Plug 'cohama/lexima.vim'
@@ -64,6 +64,20 @@ Plug 'https://github.com/dhruvasagar/vim-table-mode'
 
 " A Vim plugin for visually displaying indent levels in code
 Plug 'https://github.com/nathanaelkane/vim-indent-guides'
+
+Plug 'pangloss/vim-javascript'
+
+"Plug 'voldikss/vim-floaterm'
+
+" Change an HTML(ish) opening tag and take the closing one along as well
+Plug 'AndrewRadev/tagalong.vim'
+
+" The interactive scratchpad for hackers
+" Plug 'metakirby5/codi.vim'
+
+" Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+
+Plug 'honza/vim-snippets'
 
 call plug#end()
 

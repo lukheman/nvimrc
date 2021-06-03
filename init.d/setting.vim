@@ -6,7 +6,8 @@ syntax enable
 filetype plugin indent on
 
 " General
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
+set clipboard+=unnamedplus
 set hidden
 set wildmenu
 set wildmode=full
@@ -69,16 +70,17 @@ autocmd BufReadPost *
     \ endif
 
 " pengaturan cursor
-"set guicursor=n-v-c:block " ubah cursor menjadi shape
 
-highlight Cursor guifg=white guibg=darkgreen
-highlight iCursor guifg=white guibg=steelblue
-"set guicursor=n-v-c:block-Cursor
-"set guicursor+=i:ver100-iCursor
-"set guicursor+=n-v-c:blinkon0
-"set guicursor+=i:blinkwait10
-set guicursor=
+" highlight Cursor guifg=white guibg=lightskyblue
+" highlight iCursor guifg=white guibg=lightskyblue
+set guicursor=n-v-c:block " ubah cursor menjadi shape
 
+" set guicursor=n-v-c:block-Cursor
+" set guicursor+=i:ver100-iCursor
+" set guicursor+=n-v-c:blinkon0
+" set guicursor+=i:blinkwait10
 
-set updatetime=300
+" set guicursor=
+
+" set updatetime=100
 set shortmess+=c

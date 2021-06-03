@@ -7,7 +7,7 @@ let maplocalleader = " "
 nmap <leader>so :source $MYVIMRC<cr>
 
 " another way to esc mode
-imap jj <Esc>
+" imap jj <Esc>
 
 " membuka NERDTree
 map <C-n> :NERDTreeToggle<CR>
@@ -27,8 +27,6 @@ nmap <leader>b :bp <CR>
 " Menutup buffer
 nmap <leader>bd :bp<cr>:bd! #<cr>
 
-nmap <leader>c <plug>NERDCommenterToggle
-
 " Menghilangkan whitespace
 nmap <leader>w :StripWhitespace<cr>s
 
@@ -36,6 +34,10 @@ nmap <leader>w :StripWhitespace<cr>s
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g.gaip)
 nmap ga <Plug>(EasyAlign)
+
+" buka konfigurasi
+nmap <leader>nc :tabnew ~/.config/nvim<cr>
+map <leader>p :tabnew ~/.config/nvim/init.d/plugin.vim<cr>
 
 " run python script from vim
 autocmd FileType python map <buffer> rr :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
