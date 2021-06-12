@@ -77,7 +77,7 @@ Plug 'AndrewRadev/tagalong.vim'
 
 " Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 
 call plug#end()
 

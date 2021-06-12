@@ -2,16 +2,17 @@
   "suggest.floatEnable": false,
   "suggest.enablePreselect": true,
   "suggest.noselect": false,
-  "suggest.maxCompleteItemCount": 15,
   "emmet.showExpandedAbbreviation": true,
   "emmet.showAbbreviationSuggestions": false,
   "coc.preferences.maxFileSize": "0.1MB",
+  "suggest.disableMenuShortcut": true,
+  "suggest.maxCompleteItemCount": 10,
   "suggest.completionItemKindLabels": {
     "method": "  ",
-    "function": "  ",
+    "function": " ƒ ",
     "variable": "[]",
     "field": "  ",
-    "typeParameter": "<>",
+    "typeParameter": "  ",
     "constant": "  ",
     "class": " פּ ",
     "interface": " 蘒",
@@ -31,6 +32,7 @@
     "text": "  ",
     "constructor": "  ",
     "value": "  ",
-    "enumMember": "  "
+    "enumMember": "  ",
+    "default": "  "
   }
 }
