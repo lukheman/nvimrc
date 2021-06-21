@@ -80,7 +80,4 @@ set guicursor=n-v-c:block " ubah cursor menjadi shape
 " set guicursor+=n-v-c:blinkon0
 " set guicursor+=i:blinkwait10
 
-" set guicursor=
-
-" set updatetime=100
-set shortmess+=c
+set guicursor=

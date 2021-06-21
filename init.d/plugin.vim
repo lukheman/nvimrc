@@ -77,7 +77,9 @@ Plug 'AndrewRadev/tagalong.vim'
 
 " Plug 'honza/vim-snippets'
 
-" Plug 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim'
+
+" Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
