@@ -54,7 +54,7 @@ Plug 'maximbaz/lightline-trailing-whitespace'
 Plug 'ntpeters/vim-better-whitespace'
 
 " A Switch between single-line and multiline forms of code
-Plug 'AndrewRadev/splitjoin.vim'
+" Plug 'AndrewRadev/splitjoin.vim'
 
 " A Vim alignment plugin
 Plug 'junegunn/vim-easy-align'
@@ -67,7 +67,7 @@ Plug 'https://github.com/nathanaelkane/vim-indent-guides'
 
 Plug 'pangloss/vim-javascript'
 
-"Plug 'voldikss/vim-floaterm'
+Plug 'voldikss/vim-floaterm'
 
 " Change an HTML(ish) opening tag and take the closing one along as well
 Plug 'AndrewRadev/tagalong.vim'
@@ -75,9 +75,9 @@ Plug 'AndrewRadev/tagalong.vim'
 " The interactive scratchpad for hackers
 " Plug 'metakirby5/codi.vim'
 
-" Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
-
 " Plug 'honza/vim-snippets'
+
+" Plug 'joshdick/onedark.vim'
 
 call plug#end()
 

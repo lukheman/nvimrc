@@ -36,7 +36,7 @@ set shortmess=aAtToO          " shortens messages to avoid 'press a key' prompt
 set showcmd                   " show the command being typed
 set showmode                  " show current mode
 set showmatch                 " show matching brackets
-set scrolloff=3               " keep 10 lines (top/bottom) for scope
+" set scrolloff=3               " keep 10 lines (top/bottom) for scope
 set sidescrolloff=8           " keep 5 lines at the size
 set cursorline                " visually mark current line
 set showbreak=↪               " indicate wrapped line
