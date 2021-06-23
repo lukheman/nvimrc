@@ -4,3 +4,5 @@ runtime init.d/mapping.vim
 runtime init.d/plugin.vim
 runtime init.d/formating.vim
 runtime! plugin-config/*vim
+
+lua require('init')

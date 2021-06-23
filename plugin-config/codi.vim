@@ -1,2 +1,0 @@
-highlight CodiVirtualText guifg=gray
-

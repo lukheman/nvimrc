@@ -4,19 +4,17 @@
 " icon =  
 
 let g:lightline = {
-\   'colorscheme': 'codedark',
+\   'colorscheme': 'gruvbox',
 \   'active': {
 \    'left' :[[ 'mode', 'paste' ],
-"\             [ 'gitbranch'],
 \             [ 'filename' ]],
 \    'right':[[ 'trailing' ],
-\             [ 'percent' ],
+\             [ 'lineinfo' ],
 \             [ 'filetype']]
 \   },
 \   'inactive': {
 \       'left' : [[ 'filename' ]],
-\       'right': [[ 'percent' ],
-\                 [ 'lineinfo' ]]
+\       'right': [[ 'lineinfo' ]]
 \   },
 \   'tab': {
 \     'active':   ['tabnum'],
@@ -27,17 +25,16 @@ let g:lightline = {
 \       'right': [['string1']]
 \   },
 \   'separator': {
-\       'left': '', 'right': ''
+\       'left': '', 'right': ''
 \   },
 \   'subseparator': {
-\       'left': '', 'right': ''
+\       'left': '', 'right': ''
 \   },
 \   'component': {
 \     'filename': '%t'
 \   },
 \   'component_function': {
 \     'readonly'     : 'LightlineReadonly',
-"\     'gitbranch'    : 'LightlineFugitive',
 \     'filetype'     : 'LightlineFiletype',
 \     'fileencoding' : 'LightlineFileEncoding',
 \     'lineinfo'     : 'LightlineLineInfo',
@@ -82,23 +79,14 @@ function! LightlineReadonly()
   return &readonly ? '' : ''
 endfunction
 
-"function! LightlineFugitive()
-  "let branch = fugitive#head()
-  "return branch !=# '' ? '' : ''
-"endfunction
-
 function! LightlineFiletype()
   return winwidth(0) > 50 ? (strlen(&filetype) ? &filetype.' '.WebDevIconsGetFileTypeSymbol() : 'no ft') : WebDevIconsGetFileTypeSymbol()
-endfunction
-
-function! LightlineFileEncoding()
-  return winwidth(0) > 50 ? tolower(&fileencoding) : ''
 endfunction
 
 function! LightlineLineInfo()
   let current_line = printf('%3s', line('.'))
   let current_col  = printf('%-2s', col('.'))
-  let lineinfo     = ' ' . current_line . ':' . current_col
+  let lineinfo     = current_line . ':' . current_col
   return &filetype !=? 'term' ? lineinfo : 'TERMINAL'
 endfunction
 
@@ -107,8 +95,7 @@ function! LightlinePercent()
 endfunction
 
 function! LightlineMode()
-  return expand('%:t') ==# '__vista__' ? ' VISTA' :
-       \ lightline#mode()
+  return lightline#mode()
 endfunction
 
 function! LightlineTrailingWhitespace()

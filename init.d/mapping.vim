@@ -36,7 +36,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " buka konfigurasi
-nmap <leader>nc :tabnew ~/.config/nvim<cr>
+nmap <leader>nc :NERDTreeToggle ~/.config/nvim<cr>
 map <leader>p :tabnew ~/.config/nvim/init.d/plugin.vim<cr>
 
 " run python script from vim

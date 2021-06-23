@@ -15,9 +15,9 @@ set ttimeoutlen=0             " Beralih mode secara cepat
 set autoread                  " Memperbarui tipe file secara berkala
 
 " Interface
-colorscheme codedark-pandas
-set background=dark
-set termguicolors
+colorscheme gruvbox
+" set background=dark
+" set termguicolors
 set incsearch                 " incremental search aka search as       you type
 set hlsearch                  " highlight search matches
 set smartcase                 " but when the query starts with upper character be case sensitive
@@ -39,7 +39,7 @@ set showmatch                 " show matching brackets
 " set scrolloff=3               " keep 10 lines (top/bottom) for scope
 set sidescrolloff=8           " keep 5 lines at the size
 set cursorline                " visually mark current line
-set showbreak=↪               " indicate wrapped line
+" set showbreak=↪               " indicate wrapped line
 hi clear ModeMsg              " disable Color StatusLine on Insert Mode and Visual Mode
 highlight clear SignColumn
 
@@ -62,6 +62,7 @@ set tabstop=4                 " real tabs should be 4, and they will   show with
 set autoindent
 set smartindent
 set conceallevel=0
+set linebreak
 
 " mengingat posisi terakhir cursor
 autocmd BufReadPost *
