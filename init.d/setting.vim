@@ -16,7 +16,7 @@ set autoread                  " Memperbarui tipe file secara berkala
 
 " Interface
 colorscheme gruvbox
-" set background=dark
+set background=dark
 " set termguicolors
 set incsearch                 " incremental search aka search as       you type
 set hlsearch                  " highlight search matches
@@ -81,4 +81,4 @@ set guicursor=n-v-c:block " ubah cursor menjadi shape
 " set guicursor+=n-v-c:blinkon0
 " set guicursor+=i:blinkwait10
 
-set guicursor=
+" set guicursor=

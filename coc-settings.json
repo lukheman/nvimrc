@@ -7,7 +7,6 @@
   "coc.preferences.maxFileSize": "0.1MB",
   "suggest.disableMenuShortcut": true,
   "suggest.maxCompleteItemCount": 10,
-  "python.linting.enabled": false,
   "python.analysis.autoImportCompletions": false,
   "pyright.disableDiagnostics": true,
   "suggest.completionItemKindLabels": {
