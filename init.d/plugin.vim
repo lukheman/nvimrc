@@ -69,10 +69,6 @@ Plug 'tweekmonster/startuptime.vim'
 
 " Plug 'honza/vim-snippets'
 
-Plug 'joshdick/onedark.vim'
-Plug 'lifepillar/vim-gruvbox8'
-Plug 'morhetz/gruvbox'
-
 " Plug 'sheerun/vim-polyglot'
 
 call plug#end()
