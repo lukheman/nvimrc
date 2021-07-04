@@ -1,5 +1,5 @@
 " let g:floaterm_shell = ''
-" let g:floaterm_title = 'floaterm: ($1|$2)'
+let g:floaterm_title = '──  ❮ $1|$2 ❯ '
 
 let g:floaterm_width = 1.0
 let g:floaterm_height = 0.3
@@ -14,4 +14,4 @@ let g:floaterm_keymap_kill   = 'fk'
 
 " Set floaterm window's background to black
 " hi Floaterm guibg=black
-hi FloatermBorder guifg=red
+" hi FloatermBorder guifg=red
