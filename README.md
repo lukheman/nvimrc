@@ -18,7 +18,7 @@ Pasang plugin
 - Beralih ke mode perintah dengan tombol <kbd>:</kbd>
 - Masukan perintah `PlugInstall`
 
-![](https://github.com/pandas-id/nvimrc/blob/master/image/gif/VID_20210413182419.gif)
+![](https://github.com/pandas-id/nvimrc/blob/master/preview/gif/VID_20210413182419.gif)
 
 Harap tunggu sampai semua proses instalasi selesai.
 Plugin di pasang di folder **$HOME/.local/share/nvim/plugged**.

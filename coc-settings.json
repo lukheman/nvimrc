@@ -6,7 +6,7 @@
   "emmet.showAbbreviationSuggestions": false,
   "coc.preferences.maxFileSize": "0.1MB",
   "suggest.disableMenuShortcut": true,
-  "suggest.maxCompleteItemCount": 10,
+  "suggest.maxCompleteItemCount": 15,
   "python.analysis.autoImportCompletions": false,
   "pyright.disableDiagnostics": true,
   "suggest.completionItemKindLabels": {

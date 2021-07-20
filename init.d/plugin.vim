@@ -1,32 +1,20 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-" commentary.vim: comment stuff out
+" comment
 Plug 'tpope/vim-commentary'
 
-" emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
+" snippet
 Plug 'mattn/emmet-vim'
 
-" The NERDTree is a file system explorer for the Vim editor
-Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+" icon
+" Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 
-" Adds Icons to Your Plugins: NERDTree, Lightline, vim-airline and more
-Plug 'ryanoasis/vim-devicons'
-
-" This vim plugin adds syntax highlight for nerdtree with vim-deviconsds
-Plug 'vwxyutarooo/nerdtree-devicons-syntax'
-
-" Make your Vim/Neovim as smart as VSCode.
+" autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Auto close parentheses and repeat by dot dot dot...
+" autopairs
 Plug 'cohama/lexima.vim'
-" Plug 'jiangmiao/auto-pairs'
-
-" A light and configurable statusline/tabline plugin for Vim
-Plug 'itchyny/lightline.vim'
-
-" This plugin provides bufferline functionality for the lightline vim plugin
-Plug 'mengelbrecht/lightline-bufferline'
 
 " Show a diff using Vim its sign column
 if has('nvim') || has('patch-8.0.902')
@@ -35,41 +23,69 @@ else
   Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 endif
 
-" A command-line fuzzy finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-" Correct html indent in php files
-Plug 'nicklasos/vimphphtml'
-
-" A trailing whitespace component for the lightline vim plugin
-Plug 'maximbaz/lightline-trailing-whitespace'
-
-" Better whitespace highlighting for Vim
+" whitespace
 Plug 'ntpeters/vim-better-whitespace'
 
-" A Vim alignment plugin
+" auto align
 Plug 'junegunn/vim-easy-align'
 
-" VIM Table Mode for instant table creation
+" table mode
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' }
 
-" A vim plugin to display the indention levels with thin vertical lines
+" indentline
 Plug 'Yggdroot/indentLine'
 
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-
+" terminal popup
 Plug 'voldikss/vim-floaterm'
 
-" Change an HTML(ish) opening tag and take the closing one along as well
+" HTML ( change opening tag and take the closing tag )
 Plug 'AndrewRadev/tagalong.vim', { 'for': 'html' }
 
-" Breakdown Vim's --startuptime output
+" funzzy finder
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+" benchmark
 Plug 'tweekmonster/startuptime.vim'
 
-" Plug 'honza/vim-snippets'
+" file manager
+Plug 'kyazdani42/nvim-tree.lua'
 
-" Plug 'sheerun/vim-polyglot'
+" statusline
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+
+" buffer list
+Plug 'akinsho/nvim-bufferline.lua'
+
+" autosave
+Plug 'Pocco81/AutoSave.nvim'
+
+" -- code formatter --
+" javascript ( syntax & highlighting )
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+
+" php indent
+Plug 'nicklasos/vimphphtml'
+" -- -- -- --
+
+Plug 'honza/vim-snippets'
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'hrsh7th/nvim-compe'
+" Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/vim-vsnip-integ'
+" Plug 'nvim-lua/completion-nvim'
+" Plug 'romgrk/barbar.nvim'
+" Plug 'machakann/vim-sandwich'
+"
+" Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'terrortylor/nvim-comment'
+" Plug 'voldikss/vim-translator'
+" Plug 'karb94/neoscroll.nvim'
+" Plug 'norcalli/nvim-colorizer.lua'
+Plug 'mnabila/gruvboy.nvim'
+Plug 'rktjmp/lush.nvim'
+" Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 call plug#end()
-
