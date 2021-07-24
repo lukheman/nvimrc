@@ -1,4 +1,4 @@
-" Use <C-l> for trigger snippet expand.
+Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
 
 " Use <C-j> for select text for visual placeholder of snippet.

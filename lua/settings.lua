@@ -9,7 +9,7 @@
 -- vim.opt.formatoptions:remove("cro")
 -- vim.opt.gdefault = true
 -- vim.opt.inccommand = "nosplit"
--- vim.opt.lazyredraw = true
+vim.opt.lazyredraw = true
 -- vim.opt.list = true
 -- vim.opt.mouse = "a"
 -- vim.opt.pumblend = 10

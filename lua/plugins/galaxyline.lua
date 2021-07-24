@@ -1,11 +1,11 @@
 local gl = require("galaxyline")
 local gls = gl.section
 local condition = require("galaxyline.condition")
-local vcs = require("galaxyline.provider_vcs")
+-- local vcs = require("galaxyline.provider_vcs")
 local buffer = require("galaxyline.provider_buffer")
 local fileinfo = require("galaxyline.provider_fileinfo")
-local diagnostic = require("galaxyline.provider_diagnostic")
-local lspclient = require("galaxyline.provider_lsp")
+-- local diagnostic = require("galaxyline.provider_diagnostic")
+-- local lspclient = require("galaxyline.provider_lsp")
 local icons = require("galaxyline.provider_fileinfo").define_file_icon()
 local colors = require("colors.gruvbox")
 
@@ -38,7 +38,7 @@ gls.left[3] = {
           return string.format("%s| %s ", fileinfo.get_file_size(), fileinfo.get_current_file_name())
       end,
       separator = '',
-      separator_highlight = {colors.bg2, colors.bg0_s},
+      separator_highlight = {colors.bg2, colors.bg1},
       condition = condition.buffer_not_empty,
       highlight = { colors.fg0, colors.bg2 }
   }
@@ -85,8 +85,8 @@ gls.right[1] = {
     provider = function() return '  ' end,
     condition = condition.check_git_workspace,
     separator = ' ',
-    separator_highlight = {'NONE', colors.bg0_s},
-    highlight = {colors.blue, colors.bg0_s, 'bold'}
+    separator_highlight = {'NONE', colors.bg1},
+    highlight = {colors.blue, colors.bg1, 'bold'}
   }
 }
 
@@ -94,7 +94,7 @@ gls.right[2] = {
   GitBranch = {
     provider = 'GitBranch',
     condition = condition.check_git_workspace,
-    highlight = {colors.gray, colors.bg0_s}
+    highlight = {colors.gray, colors.bg1}
   }
 }
 
@@ -103,7 +103,7 @@ gls.right[3] = {
     provider = 'LineColumn',
     highlight = {colors.fg, colors.blue},
     separator = " ",
-    separator_highlight = {colors.bg0_s, colors.bg0_s},
+    separator_highlight = {colors.bg1, colors.bg1},
   }
 }
 

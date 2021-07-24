@@ -1,3 +1,5 @@
+local c = require('colors.gruvbox')
+
 require('telescope').setup{
   defaults = {
     vimgrep_arguments = {
@@ -44,7 +46,6 @@ require('telescope').setup{
   }
 }
 
--- Find files using Telescope command-line sugar.
-vim.cmd("nnoremap <C-f> <cmd>Telescope find_files   previewer=false<cr>")
-vim.cmd("nnoremap <C-p> <cmd>Telescope buffers      previewer=false<cr>")
-vim.cmd("nnoremap <C-g> <cmd>Telescope git_branches previewer=false<cr>")
+-- Highlight
+vim.cmd("highlight TelescopeSelection guifg=#98971a gui=bold")
+vim.cmd("highlight TelescopeMatching guifg=#d79922 gui=bold")
