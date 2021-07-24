@@ -1,13 +1,19 @@
-local colorizer = require("colorizer")
+local M = {}
 
-colorizer.setup({"*"}, {
-  RGB = true,
-  RRGGBB = true,
-  names = false,
-  RRGGBBAA = true,
-  rgb_fn = true,
-  hsl_fn = true,
-  css = true,
-  css_fn = true,
-  mode = "background",
-})
+function M.config()
+  local colorizer = require("colorizer")
+
+  colorizer.setup({"*"}, {
+    RGB = true,
+    RRGGBB = true,
+    names = false,
+    RRGGBBAA = true,
+    rgb_fn = true,
+    hsl_fn = true,
+    css = true,
+    css_fn = true,
+    mode = "background",
+  })
+end
+
+return M
