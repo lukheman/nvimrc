@@ -111,6 +111,7 @@ return packer.startup(function()
 
   use {
     'lewis6991/gitsigns.nvim',
+    wants = "plenary.nvim",
     requires = {
       'nvim-lua/plenary.nvim'
     },
@@ -131,6 +132,13 @@ return packer.startup(function()
     requires = {'kyazdani42/nvim-web-devicons'},
     config = require("plugins.barbar").config()
   }
+
+  -- translator
+  -- use {
+  --   'voldikss/vim-translator',
+  --   event = 'BufEnter',
+  --   config = require("plugins.translator").config()
+  -- }
 
   -- code formatter --
   -- javascript ( syntax & highlighting )

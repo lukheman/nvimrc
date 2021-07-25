@@ -92,7 +92,8 @@ _G.packer_plugins = {
   },
   ["gitsigns.nvim"] = {
     loaded = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    wants = { "plenary.nvim" }
   },
   ["indent-blankline.nvim"] = {
     loaded = false,
@@ -108,9 +109,8 @@ _G.packer_plugins = {
     path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-comment"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/nvim-comment"
+    loaded = true,
+    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/nvim-comment"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -178,6 +178,11 @@ _G.packer_plugins = {
     needs_bufread = true,
     path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-table-mode"
   },
+  ["vim-translator"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-translator"
+  },
   vimphphtml = {
     loaded = false,
     needs_bufread = false,
@@ -201,13 +206,13 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType html ++once lua require("packer.load")({'emmet-vim', 'tagalong.vim'}, { ft = "html" }, _G.packer_plugins)]]
 vim.cmd [[au FileType php ++once lua require("packer.load")({'vimphphtml'}, { ft = "php" }, _G.packer_plugins)]]
+vim.cmd [[au FileType html ++once lua require("packer.load")({'tagalong.vim', 'emmet-vim'}, { ft = "html" }, _G.packer_plugins)]]
 vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-javascript'}, { ft = "javascript" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'vim-easy-align', 'vim-floaterm', 'vim-better-whitespace', 'vim-sandwich', 'indent-blankline.nvim', 'nvim-comment'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'indent-blankline.nvim', 'vim-translator', 'vim-better-whitespace', 'vim-easy-align', 'vim-floaterm', 'vim-sandwich'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
