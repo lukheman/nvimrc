@@ -12,11 +12,17 @@ return packer.startup(function()
   }
 
   -- snippets
-  use 'mattn/emmet-vim'
+  use {
+    'mattn/emmet-vim',
+    ft = { "html" }
+  }
   use 'honza/vim-snippets'
 
   -- auto align
-  use 'junegunn/vim-easy-align'
+  use {
+    'junegunn/vim-easy-align',
+    event = 'BufEnter'
+  }
 
   -- autosave
   use {
@@ -25,7 +31,10 @@ return packer.startup(function()
   }
 
   -- surround
-  use 'machakann/vim-sandwich'
+  use {
+    'machakann/vim-sandwich',
+    event = 'BufEnter'
+  }
 
   -- color preview
   use {
@@ -36,17 +45,28 @@ return packer.startup(function()
   -- terminal popup
   use {
     'voldikss/vim-floaterm',
+    event = 'BufEnter',
     config = require("plugins.vim-floaterm").config()
   }
 
   -- benchmark
-  use 'tweekmonster/startuptime.vim'
+  use {
+    'tweekmonster/startuptime.vim',
+    cmd = 'StartupTime'
+  }
 
   -- table mode
-  use 'dhruvasagar/vim-table-mode'
+  use {
+    'dhruvasagar/vim-table-mode',
+    cmd = { 'TableModeToggle' },
+    config = require("plugins.vim-table-mode").config()
+  }
 
   -- HTML ( change opening tag and take the closing tag )
-  use 'AndrewRadev/tagalong.vim'
+  use {
+    'AndrewRadev/tagalong.vim',
+    ft = { "html" }
+  }
 
   -- comment
   use {
@@ -57,6 +77,7 @@ return packer.startup(function()
   -- whitespace
   use {
     'ntpeters/vim-better-whitespace',
+    event = 'BufEnter',
     config = require("plugins.vim-better-whitespace").config()
   }
 
@@ -74,12 +95,14 @@ return packer.startup(function()
   -- indentline
   use {
     'lukas-reineke/indent-blankline.nvim',
+    event = 'BufEnter',
     config = require("plugins.indentline").config()
   }
 
   -- file explorer
   use {
     'kyazdani42/nvim-tree.lua',
+    --cmd = 'NvimTreeToggle',
     requires = {
       { 'kyazdani42/nvim-web-devicons' }
     },
@@ -111,10 +134,16 @@ return packer.startup(function()
 
   -- code formatter --
   -- javascript ( syntax & highlighting )
-  use 'pangloss/vim-javascript'
+  use {
+    'pangloss/vim-javascript',
+    ft = { 'javascript' }
+  }
 
   -- php indent
-  use 'nicklasos/vimphphtml'
+  use {
+    'nicklasos/vimphphtml',
+    ft = { 'php' }
+  }
 
 end)
 
