@@ -14,14 +14,13 @@ git clone https://github.com/wbthomason/packer.nvim\
 
 ### Plugin
 
-| Fungsi         | Plugin                                                                |
-|----------------|-----------------------------------------------------------------------|
-| Plugin Manager | [vim-plug](https://github.com/junegunn/vim-plug)                      |
-| File Manager   | [nerdtree](https://github.com/preservim/nerdtree)                     |
-| Status Line    | [lightline](https://github.com/itchyny/lightline.vim)                 |
-| Status Line    | [lightline](https://github.com/itchyny/lightline.vim)                 |
-| Colorscheme    | [vim-code-dark](https://github.com/tomasiser/vim-code-dark)           |
-| Icon           | [vim-devicons](https://github.com/ryanoasis/vim-devicons)             |
-| Git            | [vim-signify](https://github.com/mhinz/vim-signify)                   |
-| Auto Complete  | [coc.nvim](https://github.com/neoclide/coc.nvim)                      |
-| Lainnya        | [init.d/plugin.vim](https://github.com/pandas-id/nvimrc/blob/master/init.d/plugin.vim)
+| Fungsi         | Plugin                                                                       |
+|----------------|------------------------------------------------------------------------------------|
+| Plugin Manager | [packer.nvim](https://github.com/wbthomason/packer.nvim)                     |
+| File Manager   | [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)               |
+| Status Line    | [galaxyline.nvim](https://github.com/glepnir/galaxyline.nvim)              |
+| Colorscheme    | [gruvbox](https://github.com/morhetz/gruvbox)                                |
+| Icon           | [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)      |
+| Git            | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)              |
+| Auto Complete  | [coc.nvim](https://github.com/neoclide/coc.nvim)                             |
+| Lainnya        | [plugins](https://github.com/pandas-id/nvimrc/blob/master/lua/modules/packer/init.lua)
