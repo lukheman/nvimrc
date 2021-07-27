@@ -45,9 +45,9 @@ require('telescope').setup{
 }
 
 -- Highlight
--- vim.cmd("highlight TelescopeSelection guifg=#98971a gui=bold")
--- vim.cmd("highlight TelescopeMatching guifg=#d79922 gui=bold")
--- vim.cmd("highlight TelescopePromptBorder guifg=#d79922 gui=bold")
--- vim.cmd("highlight TelescopeResultsBorder guifg=#d79922 gui=bold")
--- vim.cmd("highlight TelescopePromptPrefix guifg=#d79922 gui=bold")
-require('modules.load_highlight')
+vim.cmd("highlight TelescopeSelection guifg=#98971a gui=bold")
+vim.cmd("highlight TelescopeMatching guifg=#d79922 gui=bold")
+vim.cmd("highlight TelescopePromptBorder guifg=#d79922 gui=bold")
+vim.cmd("highlight TelescopeResultsBorder guifg=#d79922 gui=bold")
+vim.cmd("highlight TelescopePromptPrefix guifg=#d79922 gui=bold")
+-- require('modules.load_highlight')
