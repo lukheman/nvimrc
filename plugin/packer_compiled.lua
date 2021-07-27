@@ -70,8 +70,9 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["AutoSave.nvim"] = {
-    loaded = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/AutoSave.nvim"
+    loaded = false,
+    needs_bufread = false,
+    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/AutoSave.nvim"
   },
   ["barbar.nvim"] = {
     loaded = true,
@@ -103,6 +104,10 @@ _G.packer_plugins = {
   ["lexima.vim"] = {
     loaded = true,
     path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/lexima.vim"
+  },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/lush.nvim"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
@@ -138,6 +143,10 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/tagalong.vim"
+  },
+  ["telescope-fzy-native.nvim"] = {
+    loaded = true,
+    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -178,11 +187,6 @@ _G.packer_plugins = {
     needs_bufread = true,
     path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-table-mode"
   },
-  ["vim-translator"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-translator"
-  },
   vimphphtml = {
     loaded = false,
     needs_bufread = false,
@@ -206,13 +210,13 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType php ++once lua require("packer.load")({'vimphphtml'}, { ft = "php" }, _G.packer_plugins)]]
 vim.cmd [[au FileType html ++once lua require("packer.load")({'tagalong.vim', 'emmet-vim'}, { ft = "html" }, _G.packer_plugins)]]
 vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-javascript'}, { ft = "javascript" }, _G.packer_plugins)]]
+vim.cmd [[au FileType php ++once lua require("packer.load")({'vimphphtml'}, { ft = "php" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'indent-blankline.nvim', 'vim-translator', 'vim-better-whitespace', 'vim-easy-align', 'vim-floaterm', 'vim-sandwich'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'vim-easy-align', 'AutoSave.nvim', 'vim-sandwich', 'indent-blankline.nvim', 'vim-better-whitespace', 'vim-floaterm'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]

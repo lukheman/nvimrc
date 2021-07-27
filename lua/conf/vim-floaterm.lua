@@ -10,6 +10,6 @@ function M.config()
 end
 -- Set floaterm window's background to black
 -- hi Floaterm guibg=black
-vim.cmd("hi FloatermBorder guifg=papayawhip guibg=None")
+vim.cmd("hi FloatermBorder guifg=#d79922 guibg=None")
 
 return M

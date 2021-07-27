@@ -27,7 +27,8 @@ return packer.startup(function()
   -- autosave
   use {
     'Pocco81/AutoSave.nvim',
-    config = require("plugins.autosave").config()
+    event = 'BufEnter',
+    config = require("conf.autosave").config()
   }
 
   -- surround
@@ -39,14 +40,22 @@ return packer.startup(function()
   -- color preview
   use {
     'norcalli/nvim-colorizer.lua',
-    config = require("plugins.colorizer").config()
+    config = require("conf.colorizer")
   }
+
+  -- colorscheme
+  -- use {
+  --   'rktjmp/lush.nvim',
+  --   cmd = 'Lushify'
+  -- }
+  -- use 'arcticicestudio/nord-vim'
+  -- use 'drewtempelmeyer/palenight.vim'
 
   -- terminal popup
   use {
     'voldikss/vim-floaterm',
     event = 'BufEnter',
-    config = require("plugins.vim-floaterm").config()
+    config = require("conf.vim-floaterm").config()
   }
 
   -- benchmark
@@ -59,7 +68,7 @@ return packer.startup(function()
   use {
     'dhruvasagar/vim-table-mode',
     cmd = { 'TableModeToggle' },
-    config = require("plugins.vim-table-mode").config()
+    config = require("conf.vim-table-mode").config()
   }
 
   -- HTML ( change opening tag and take the closing tag )
@@ -78,7 +87,7 @@ return packer.startup(function()
   use {
     'ntpeters/vim-better-whitespace',
     event = 'BufEnter',
-    config = require("plugins.vim-better-whitespace").config()
+    config = require("conf.vim-better-whitespace").config()
   }
 
   -- fuzzy finder
@@ -87,26 +96,27 @@ return packer.startup(function()
     requires = {
       {'nvim-lua/popup.nvim'},
       {'nvim-lua/plenary.nvim'},
-      {'kyazdani42/nvim-web-devicons'}
+      {'kyazdani42/nvim-web-devicons'},
+      {'nvim-telescope/telescope-fzy-native.nvim'}
     },
-    config = require("plugins.telescope").config()
+    config = require("conf.telescope")
   }
 
   -- indentline
   use {
     'lukas-reineke/indent-blankline.nvim',
     event = 'BufEnter',
-    config = require("plugins.indentline").config()
+    config = require("conf.indentline")
   }
 
   -- file explorer
   use {
     'kyazdani42/nvim-tree.lua',
-    --cmd = 'NvimTreeToggle',
+    cmd = 'NvimTreeToggle',
     requires = {
       { 'kyazdani42/nvim-web-devicons' }
     },
-    config = require("plugins.nvim-tree").config()
+    config = require("conf.nvim-tree")
   }
 
   use {
@@ -115,7 +125,7 @@ return packer.startup(function()
     requires = {
       'nvim-lua/plenary.nvim'
     },
-    config = require("plugins.gitsigns").config()
+    config = require("conf.gitsigns")
   }
 
   -- statusline
@@ -123,21 +133,21 @@ return packer.startup(function()
   'glepnir/galaxyline.nvim',
     branch = 'main',
     requires = {'kyazdani42/nvim-web-devicons'},
-    config = require("plugins.galaxyline").config(),
+    config = require("conf.statusline2"),
   }
 
   -- buffer list
   use {
     'romgrk/barbar.nvim',
     requires = {'kyazdani42/nvim-web-devicons'},
-    config = require("plugins.barbar").config()
+    config = require("conf.barbar")
   }
 
   -- translator
   -- use {
   --   'voldikss/vim-translator',
   --   event = 'BufEnter',
-  --   config = require("plugins.translator").config()
+  --   config = require("conf.translator").config()
   -- }
 
   -- code formatter --
