@@ -2,6 +2,9 @@ local packer = require('packer')
 
 
 return packer.startup(function()
+  -- package manager
+  use({ "wbthomason/packer.nvim" })
+
   -- autopairs
   use "cohama/lexima.vim"
 
@@ -27,19 +30,19 @@ return packer.startup(function()
   -- autosave
   use {
     'Pocco81/AutoSave.nvim',
-    event = 'BufEnter',
-    config = require("conf.autosave").config()
+    config = require("conf.autosave")
   }
 
   -- surround
   use {
     'machakann/vim-sandwich',
-    event = 'BufEnter'
+    -- event = 'BufEnter'
   }
 
   -- color preview
   use {
     'norcalli/nvim-colorizer.lua',
+    cmd = { 'ColorizerToggle' },
     config = require("conf.colorizer")
   }
 
@@ -54,14 +57,12 @@ return packer.startup(function()
   -- terminal popup
   use {
     'voldikss/vim-floaterm',
-    event = 'BufEnter',
-    config = require("conf.vim-floaterm").config()
+    config = require("conf.vim-floaterm")
   }
 
   -- benchmark
   use {
     'tweekmonster/startuptime.vim',
-    cmd = 'StartupTime'
   }
 
   -- table mode
@@ -86,7 +87,7 @@ return packer.startup(function()
   -- whitespace
   use {
     'ntpeters/vim-better-whitespace',
-    event = 'BufEnter',
+    -- event = 'BufEnter',
     config = require("conf.vim-better-whitespace").config()
   }
 
@@ -112,16 +113,16 @@ return packer.startup(function()
   -- file explorer
   use {
     'kyazdani42/nvim-tree.lua',
-    cmd = 'NvimTreeToggle',
+    event = 'VimEnter',
     requires = {
       { 'kyazdani42/nvim-web-devicons' }
     },
     config = require("conf.nvim-tree")
   }
 
+  -- git
   use {
     'lewis6991/gitsigns.nvim',
-    wants = "plenary.nvim",
     requires = {
       'nvim-lua/plenary.nvim'
     },
@@ -130,7 +131,7 @@ return packer.startup(function()
 
   -- statusline
   use {
-  'glepnir/galaxyline.nvim',
+    'glepnir/galaxyline.nvim',
     branch = 'main',
     requires = {'kyazdani42/nvim-web-devicons'},
     config = require("conf.statusline2"),

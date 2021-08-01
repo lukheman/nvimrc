@@ -90,11 +90,7 @@ gls.left[1] = {
             local alias = aliases[vim.fn.mode():byte()]
             local mode
             if alias ~= nil then
-                if not condition.hide_in_width() then
-                    mode = alias
-                else
-                    mode = alias:sub(1, 1)
-                end
+                mode = alias
             else
             mode = vim.fn.mode():byte()
             end

@@ -69,15 +69,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["AutoSave.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/AutoSave.nvim"
-  },
-  ["barbar.nvim"] = {
-    loaded = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/barbar.nvim"
-  },
   ["coc.nvim"] = {
     loaded = true,
     path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/coc.nvim"
@@ -87,145 +78,32 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/emmet-vim"
   },
-  ["galaxyline.nvim"] = {
-    loaded = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
-  },
-  ["gitsigns.nvim"] = {
-    loaded = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
-    wants = { "plenary.nvim" }
-  },
-  ["indent-blankline.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/indent-blankline.nvim"
-  },
   ["lexima.vim"] = {
     loaded = true,
     path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/lexima.vim"
-  },
-  ["lush.nvim"] = {
-    loaded = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/lush.nvim"
-  },
-  ["nvim-colorizer.lua"] = {
-    loaded = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
-  },
-  ["nvim-comment"] = {
-    loaded = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/nvim-comment"
-  },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
-  },
-  ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
-  },
-  ["plenary.nvim"] = {
-    loaded = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/plenary.nvim"
-  },
-  ["popup.nvim"] = {
-    loaded = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/popup.nvim"
-  },
-  ["startuptime.vim"] = {
-    commands = { "StartupTime" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/startuptime.vim"
-  },
-  ["tagalong.vim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/tagalong.vim"
-  },
-  ["telescope-fzy-native.nvim"] = {
-    loaded = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
-  },
-  ["telescope.nvim"] = {
-    loaded = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/telescope.nvim"
-  },
-  ["vim-better-whitespace"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-better-whitespace"
   },
   ["vim-easy-align"] = {
     loaded = false,
     needs_bufread = false,
     path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-easy-align"
   },
-  ["vim-floaterm"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-floaterm"
-  },
-  ["vim-javascript"] = {
-    loaded = false,
-    needs_bufread = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-javascript"
-  },
-  ["vim-sandwich"] = {
-    loaded = false,
-    needs_bufread = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-sandwich"
-  },
   ["vim-snippets"] = {
     loaded = true,
     path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/start/vim-snippets"
-  },
-  ["vim-table-mode"] = {
-    commands = { "TableModeToggle" },
-    loaded = false,
-    needs_bufread = true,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-table-mode"
-  },
-  vimphphtml = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vimphphtml"
   }
 }
 
 time([[Defining packer_plugins]], false)
-
--- Command lazy-loads
-time([[Defining lazy-load commands]], true)
-if vim.fn.exists(":StartupTime") ~= 2 then
-vim.cmd [[command! -nargs=* -range -bang -complete=file StartupTime lua require("packer.load")({'startuptime.vim'}, { cmd = "StartupTime", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-end
-if vim.fn.exists(":TableModeToggle") ~= 2 then
-vim.cmd [[command! -nargs=* -range -bang -complete=file TableModeToggle lua require("packer.load")({'vim-table-mode'}, { cmd = "TableModeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-end
-time([[Defining lazy-load commands]], false)
-
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType html ++once lua require("packer.load")({'tagalong.vim', 'emmet-vim'}, { ft = "html" }, _G.packer_plugins)]]
-vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-javascript'}, { ft = "javascript" }, _G.packer_plugins)]]
-vim.cmd [[au FileType php ++once lua require("packer.load")({'vimphphtml'}, { ft = "php" }, _G.packer_plugins)]]
+vim.cmd [[au FileType html ++once lua require("packer.load")({'emmet-vim'}, { ft = "html" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'vim-easy-align', 'AutoSave.nvim', 'vim-sandwich', 'indent-blankline.nvim', 'vim-better-whitespace', 'vim-floaterm'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'vim-easy-align'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
-vim.cmd("augroup END")
-vim.cmd [[augroup filetypedetect]]
-time([[Sourcing ftdetect script at: /data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-javascript/ftdetect/flow.vim]], true)
-vim.cmd [[source /data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-javascript/ftdetect/flow.vim]]
-time([[Sourcing ftdetect script at: /data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-javascript/ftdetect/flow.vim]], false)
-time([[Sourcing ftdetect script at: /data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-javascript/ftdetect/javascript.vim]], true)
-vim.cmd [[source /data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-javascript/ftdetect/javascript.vim]]
-time([[Sourcing ftdetect script at: /data/data/com.termux/files/home/.local/share/nvim/site/pack/packer/opt/vim-javascript/ftdetect/javascript.vim]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
 

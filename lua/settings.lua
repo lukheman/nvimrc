@@ -91,7 +91,7 @@ vim.opt.linebreak = true
 
 -- Cursor
 vim.cmd("highlight Cursor guifg=white guibg=lightskyblue")
-vim.cmd("highlight iCursor guifg=green guibg=lightgreen")
+vim.cmd("highlight iCursor guifg=green guibg=#d79922")
 -- vim.opt.guicursor = "n-v-c:block" -- ubah cursor menjadi shape
 
 -- vim.opt.guicursor = "n-v-c:block-Cursor"
