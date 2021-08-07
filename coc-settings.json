@@ -4,6 +4,7 @@
   "suggest.noselect": false,
   "emmet.showExpandedAbbreviation": true,
   "emmet.showAbbreviationSuggestions": false,
+  "emmet.includeLanguages": {"htmldjango": "html", "markdown": "html"},
   "coc.preferences.maxFileSize": "0.1MB",
   "suggest.disableMenuShortcut": true,
   "suggest.maxCompleteItemCount": 15,

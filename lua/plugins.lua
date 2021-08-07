@@ -106,7 +106,6 @@ return packer.startup(function()
   -- indentline
   use {
     'lukas-reineke/indent-blankline.nvim',
-    event = 'BufEnter',
     config = require("conf.indentline")
   }
 
