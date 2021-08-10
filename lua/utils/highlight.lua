@@ -4,7 +4,3 @@ function highlight(args)
   end
 end
 
-highlight({
-  TelescopePromptBorder = { guifg='#98971a', guibg='#d79922' },
-  TelescopeResultsBorder = { guifg='#98971a', guibg='#d79922' },
-})

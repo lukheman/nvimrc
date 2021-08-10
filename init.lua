@@ -1,8 +1,5 @@
--- vim runtime
-vim.cmd("runtime init.d/filetypes.vim")
-
+vim.cmd("runtime autoload/filetypes.vim")
 -- lua
 require("settings")
 require("mappings")
--- require("bootstrapping")
 require("plugins")
