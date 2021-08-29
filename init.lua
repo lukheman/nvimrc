@@ -1,5 +1,4 @@
-vim.cmd("runtime autoload/filetypes.vim")
--- lua
+require("autocmds")
 require("settings")
 require("mappings")
 require("plugins")
