@@ -12,15 +12,8 @@ function filetypes(args)
   end
 end
 
--- filetypes({
---   python={ shiftwidth=4, tabstop=4, nonumber=true },
---   lua={ shiftwidth=2, tabstop=2},
--- })
-
 function highlight(args)
   for group,opt in pairs(args) do
-    vim.api.nvim_command("highlight "..group.." guifg="..opt.guifg.." guibg="..opt.guibg)
+    vim.api.nvim_command("hi "..group.." guifg="..opt.guifg.." guibg="..opt.guibg)
   end
 end
-
-
