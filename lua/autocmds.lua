@@ -1,7 +1,7 @@
 local utils = require("utils")
 
 filetypes({
-  cpp        = { shiftwidth=4, tabstop=4, concellevel=0 },
+  cpp        = { shiftwidth=4, tabstop=4, conceallevel=0 },
   html       = { shiftwidth=2, tabstop=2 },
   htmldjango = { shiftwidth=2, tabstop=2 },
   javascript = { shiftwidth=4, tabstop=4},
