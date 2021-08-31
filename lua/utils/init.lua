@@ -15,24 +15,12 @@ M.filetypes = function(filetype, opts)
 end
 
 M.highlight = function(group, opts)
-  -- default value
-  local fg  = "NONE"
-  local bg  = "NONE"
-  local gui = "NONE"
+  local parts = { group }
+  if opts.fg then table.insert(parts, "guifg="..opts.fg) end
+  if opts.bg then table.insert(parts, "guibg="..opts.bg) end
+  if opts.gui then table.insert(parts, "gui="..opts.gui) end
 
-  if opts.fg ~= nil then
-    fg = opts.fg
-  end
-
-  if opts.bg ~= nil then
-    bg = opts.bg
-  end
-
-  if opts.gui ~= nil then
-    gui = opts.gui
-  end
-
-  command("hi "..group.." guifg="..fg.." guibg="..bg.." gui="..gui)
+  command("hi "..table.concat(parts, " "))
 end
 
 return M
