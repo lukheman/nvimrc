@@ -14,6 +14,10 @@ return packer.startup(function()
     branch = 'release'
   }
 
+  use {
+    "NvChad/nvim-base16.lua"
+  }
+
   -- snippets
   use {
     'mattn/emmet-vim',
