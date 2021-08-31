@@ -39,3 +39,6 @@ map("n", "<leader>r", "<cmd>NvimTreeRefresh<cr>")
 
 -- comments
 map("n", "m", "<cmd>CommentToggle<cr>")
+
+-- gitsings
+map("n", "b", "<cmd>Gitsigns blame_line<cr>")
