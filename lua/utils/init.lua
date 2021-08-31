@@ -1,19 +1,38 @@
-function filetypes(args)
-  for filetype,opts in pairs(args) do
-    local cmd = "autocmd FileType "..filetype.." setlocal"
-    for opt,value in pairs(opts) do
-      if value == true then
-        cmd = cmd.." "..opt
-      else
-        cmd = cmd.." "..opt.."="..value
-      end
+local command = vim.api.nvim_command
+
+local M = {}
+
+M.filetypes = function(filetype, opts)
+  local cmd = "autocmd FileType "..filetype.." setlocal"
+  for opt,value in pairs(opts) do
+    if value == true then
+      cmd = cmd.." "..opt
+    else
+      cmd = cmd.." "..opt.."="..value
     end
-    vim.api.nvim_command(cmd)
   end
+  command(cmd)
 end
 
-function highlight(args)
-  for group,opt in pairs(args) do
-    vim.api.nvim_command("hi "..group.." guifg="..opt.guifg.." guibg="..opt.guibg)
+M.highlight = function(group, opts)
+  -- default value
+  local fg  = "NONE"
+  local bg  = "NONE"
+  local gui = "NONE"
+
+  if opts.fg ~= nil then
+    fg = opts.fg
   end
+
+  if opts.bg ~= nil then
+    bg = opts.bg
+  end
+
+  if opts.gui ~= nil then
+    gui = opts.gui
+  end
+
+  command("hi "..group.." guifg="..fg.." guibg="..bg.." gui="..gui)
 end
+
+return M
