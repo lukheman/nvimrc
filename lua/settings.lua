@@ -95,7 +95,7 @@ vim.cmd("highlight iCursor guifg=green guibg=#d79922")
 -- vim.opt.guicursor = "n-v-c:block" -- ubah cursor menjadi shape
 
 -- vim.opt.guicursor = "n-v-c:block-Cursor"
-vim.opt.guicursor = "i:ver100-iCursor"
+-- vim.opt.guicursor = "i:ver100-iCursor"
 -- vim.opt.guicursor = "n-v-c:blinkon0"
 -- vim.opt.guicursor = "i:blinkwait10"
 
