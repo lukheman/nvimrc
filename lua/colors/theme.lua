@@ -1,4 +1,4 @@
-local colors = {
+local colors = {--{{{
   none = 'NONE',
 
   -- background
@@ -27,6 +27,29 @@ local colors = {
   gray = '#928374',
   darkblue = '#076678',
   orange = '#d65d0e',
-}
+}--}}}
 
-return colors
+-- higlighting function
+function higlight(group, opts)
+  local fg = colors.fg1
+  local bg = colors.bg0
+  local gui = 'NONE'
+
+  if opts.fg ~= nil then
+    fg = opts.fg
+  end
+
+  if opts.bg ~= nil then
+    bg = opts.bg
+  end
+
+  if opts.gui ~= nil then
+    gui = opts.gui
+  end
+  print(fg)
+  print(bg)
+  print(gui)
+end
+
+higlight('Comment', { fg="#fbf1c7", bg="#7c6f64", gui="italic" } )
+higlight('Comment', {} )

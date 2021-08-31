@@ -1,35 +1,32 @@
 local colors = {
-   white = "#ebdbb2",
-   darker_black = "#232323",
-   black = "#282828", --  nvim bg
-   black2 = "#2e2e2e",
-   one_bg = "#353535",
-   one_bg2 = "#3f3f3f",
-   one_bg3 = "#444444",
-   grey = "#464646",
-   grey_fg = "#4e4e4e",
-   grey_fg2 = "#505050",
-   light_grey = "#565656",
-   red = "#fb4934",
-   baby_pink = "#cc241d",
-   pink = "#ff75a0",
-   line = "#2c2f30", -- for lines like vertsplit
-   green = "#b8bb26",
-   vibrant_green = "#a9b665",
-   nord_blue = "#83a598",
-   blue = "#458588",
-   yellow = "#d79921",
-   sun = "#fabd2f",
-   purple = "#b4bbc8",
-   dark_purple = "#d3869b",
-   teal = "#749689",
-   orange = "#e78a4e",
-   cyan = "#82b3a8",
-   statusline_bg = "#2c2c2c",
-   lightbg = "#353535",
-   lightbg2 = "#303030",
-   pmenu_bg = "#83a598",
-   folder_bg = "#83a598",
+  none = 'NONE',
+
+  -- background
+  bg0 = '#282828',
+  bg0_h = '#1d2021',
+  bg0_s = '#32302f',
+  bg1 = '#3c3836',
+  bg2 = '#504945',
+  bg3 = '#665c54',
+  bg4 = '#7c6f64',
+
+  -- foreground
+  fg0 = '#fbf1c7',
+  fg1 = '#ebdbb2',
+  fg2 = '#d5c4a1',
+  fg3 = '#bdae93',
+  fg4 = '#a89984',
+
+  -- colors
+  red = '#cc241d',
+  green = '#98971a',
+  yellow = '#d79922',
+  blue = '#458588',
+  purple = '#b16286',
+  aqua = '#689d6a',
+  gray = '#928374',
+  darkblue = '#076678',
+  orange = '#d65d0e',
 }
 
 return colors
