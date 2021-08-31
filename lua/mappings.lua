@@ -6,9 +6,6 @@ vim.cmd('let mapleader      = " "')
 vim.cmd('let maplocalleader = " "')
 
 local mappings = {
-  -- reload nvimrc
-  { "n", "<leader>so", "<cmd>source $MYVIMRC<cr>", {} },
-
   -- save changes
   { "n", "ss", "<cmd>w!<cr>", {} },
 
