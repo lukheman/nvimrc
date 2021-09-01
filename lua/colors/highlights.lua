@@ -1,8 +1,9 @@
+local c = require("colors.themes.gruvbox").bright_colors
 local highlight = require("utils").highlight
 
 -- Telescope
-highlight("TelescopeSelection", {fg="#98971a", gui="bold"})
-highlight("TelescopeMatching", {fg="#d79922", gui="bold"})
-highlight("TelescopePromptBorder", {fg="#d79922", gui="bold"})
-highlight("TelescopeResultsBorder", {fg="#d79922", gui="bold"})
-highlight("TelescopePromptPrefix", {fg="#d79922", gui="bold"})
+highlight("TelescopeSelection", {fg=c.green, gui="bold"})
+highlight("TelescopeMatching", {fg=c.gray, gui="bold"})
+highlight("TelescopePromptBorder", {fg=c.gray, gui="bold"})
+highlight("TelescopeResultsBorder", {fg=c.gray, gui="bold"})
+highlight("TelescopePromptPrefix", {fg=c.gray, gui="bold"})
