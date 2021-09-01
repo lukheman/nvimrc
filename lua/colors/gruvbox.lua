@@ -63,7 +63,7 @@ hl("WarningMsg", { fg=c.red, gui="bold" })
 -- Line number for :number and :# commands
 hl('LineNr', { fg=c.bg4 })
 -- Column where signs are displayed
-hl('SignColumn', { bg=c.bg1 })
+hl('SignColumn', { bg=c.bg0 })
 -- Line used for closed folds
 hl('Folded', { fg=c.gray, bg=c.bg1, gui="italic" })
 -- Column where folds are displayed
