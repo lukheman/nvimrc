@@ -1,4 +1,4 @@
-local c = require("colors.themes.gruvbox").bright_colors
+local c = require("colors.themes.gruvbox")
 local hl = require("utils").highlight
 
 -- Normal text
