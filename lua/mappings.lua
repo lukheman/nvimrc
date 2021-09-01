@@ -31,6 +31,7 @@ map("n", "fk", "<cmd>FloatermKill<cr>")
 map("n", "<c-f>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 map("n", "<c-p>", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 map("n", "<c-g>", "<cmd>lua require('telescope.builtin').git_branches()<cr>")
+map("n", "<c-h>", "<cmd>Telescope command_history<cr>")
   -- { "n", ":cs", "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>", { noremap = true } },
 
 -- nvim_tree
