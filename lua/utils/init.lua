@@ -20,7 +20,7 @@ M.highlight = function(group, opts)
   if opts.fg then table.insert(cmd, "guifg="..opts.fg) end
   if opts.bg then table.insert(cmd, "guibg="..opts.bg) end
   if opts.gui then table.insert(cmd, "gui="..opts.gui) end
-
+  if opts.guisp then table.insert(cmd, "guisp="..opts.guisp) end
   command("hi "..table.concat(cmd, " "))
 end
 
