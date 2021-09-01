@@ -156,10 +156,10 @@ hl('PmenuThumb', { bg=c.bg4 })
 --
 
 -- Diff Highlighting
-hl('DiffDelete', { fg=c.red, bg=c.bg0 })
-hl('DiffAdd', { fg=c.green, bg=c.bg0  })
-hl('DiffChange', { fg=c.aqua, bg=c.bg0 })
-hl('DiffText', { fg=c.yellow, bg=c.bg0 })
+hl('DiffDelete', { fg=c.bg0, bg=c.red })
+hl('DiffAdd', { fg=c.bg0, bg=c.green })
+hl('DiffChange', { fg=c.bg0, bg=c.aqua })
+hl('DiffText', { fg=c.bg0, bg=c.yellow })
 
 -- Spelling Highlighting
 hl('SpellCap', { gui="undercurl", guisp=c.red })
