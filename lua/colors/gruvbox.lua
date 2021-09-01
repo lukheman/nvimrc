@@ -23,7 +23,7 @@ hl('Conceal', { fg=c.blue })
 -- Line number of CursorLine
 hl('CursorLineNr', { fg=c.yellow, bg=c.bg1 })
 
-hl("NonText", { fg=c.bg2, bg=c.bg0 })
+hl("NonText", { fg=c.bg0, bg=c.bg0 }) -- hude ~
 hl("SpecialKey", { bg=c.bg2 })
 
 hl('Visual', { bg=c.bg3, gui="inverse" })
