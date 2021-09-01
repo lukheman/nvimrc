@@ -49,7 +49,7 @@ vim.opt.autoread = true
 vim.opt.fileformat = "unix"
 
 -- Interface
-vim.cmd("colorscheme gruvbox")
+-- vim.cmd("colorscheme gruvbox")
 vim.opt.bg = "dark"
 vim.opt.termguicolors = true
 vim.opt.incsearch = true
@@ -90,8 +90,8 @@ vim.opt.conceallevel = 0
 vim.opt.linebreak = true
 
 -- Cursor
-vim.cmd("highlight Cursor guifg=white guibg=lightskyblue")
-vim.cmd("highlight iCursor guifg=green guibg=#d79922")
+-- vim.cmd("highlight Cursor guifg=white guibg=lightskyblue")
+-- vim.cmd("highlight iCursor guifg=green guibg=#d79922")
 -- vim.opt.guicursor = "n-v-c:block" -- ubah cursor menjadi shape
 
 -- vim.opt.guicursor = "n-v-c:block-Cursor"
