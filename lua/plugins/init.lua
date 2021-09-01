@@ -14,9 +14,14 @@ return packer.startup(function()
     branch = 'release'
   }
 
-  use {
-    "NvChad/nvim-base16.lua"
-  }
+  -- use {
+  --   "NvChad/nvim-base16.lua",
+  --   config = require("plugins.configs.nvimbase16")
+  -- }
+
+  -- use {
+  --   "rktjmp/lush.nvim"
+  -- }
 
   -- snippets
   use {
@@ -28,7 +33,6 @@ return packer.startup(function()
   -- auto align
   use {
     'junegunn/vim-easy-align',
-    event = 'BufEnter'
   }
 
   -- autosave
