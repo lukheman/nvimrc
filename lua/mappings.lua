@@ -6,7 +6,7 @@ vim.cmd('let mapleader      = " "')
 vim.cmd('let maplocalleader = " "')
 
 -- Reload config
-map("n", "<leader>so", "<cmd>luafile ~/.config/nvim/init.lua<cr>")
+map("n", "<leader>so", "<cmd>luafile %<cr>")
 
 -- save changes
 map("n", "ss", "<cmd>w!<cr>")
