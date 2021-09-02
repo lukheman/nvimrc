@@ -26,7 +26,6 @@ local colors = {
   aqua = '#8ec07c',
   orange = '#fe8019',
   gray = '#928374',
-  darkblue = '#076678'
 }
 
 return colors
