@@ -105,7 +105,8 @@ hl("Keyword", { fg=c.red })
 -- Variable name
 hl("Identifier", { fg=c.red })
 -- Function name
-hl("Function", { fg=c.green, gui="bold" })
+-- hl("Function", { fg=c.green, gui="bold" })
+hl("Function", { fg=c.red })
 
 -- Generic preprocessor
 hl("PreProc", { fg=c.aqua })
