@@ -21,3 +21,6 @@ vim.cmd("autocmd FileType python map <buffer> rr :w<cr>:exec '!python3' shellesc
 
 -- run lua script
 vim.cmd("autocmd FileType lua map <buffer> rr :w<cr>:exec '!lua' shellescape(@%, 1)<cr>")
+
+-- compile c++ file
+vim.cmd("autocmd FileType cpp map <buffer> rr :w<cr>:exec '!c++' shellescape(@%, 1)<cr>:exec '!./a.out'<cr>")
