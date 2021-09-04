@@ -96,13 +96,13 @@ gls.left[1] = {
                 [83] = 'S-LINE',
             }
             vim.api.nvim_command('hi GalaxyViMode guibg=' .. mode_color())
-            local alias = aliases[vim.fn.mode():byte()]
+            -- local alias = aliases[vim.fn.mode():byte()]
             local mode
-            if alias ~= nil then
-                mode = alias
-            else
+            -- if alias ~= nil then
+            --     mode = alias
+            -- else
             mode = vim.fn.mode():byte()
-            end
+            -- end
             return '   ' .. mode .. ' '
         end,
         highlight = { colors.bg, colors.bg, 'bold' },
