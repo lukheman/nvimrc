@@ -53,6 +53,11 @@ return packer.startup(function()
     config = require "plugins.configs.colorizer"
   }
 
+  -- use {
+  --   '~/projects/nvim-colorscheme.lua',
+  --   config = require "plugins.configs.other"
+  -- }
+
   -- colorscheme
   -- use {
   --   'rktjmp/lush.nvim',
@@ -138,10 +143,15 @@ return packer.startup(function()
   }
 
   -- buffer list
+  -- use {
+  --   'romgrk/barbar.nvim',
+  --   requires = {'kyazdani42/nvim-web-devicons'},
+  --   config = require "plugins.configs.barbar"
+  -- }
+
   use {
-    'romgrk/barbar.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'},
-    config = require "plugins.configs.barbar"
+    'akinsho/bufferline.nvim',
+    config = require "plugins.configs.bufferline"
   }
 
   -- translator
@@ -150,6 +160,11 @@ return packer.startup(function()
   --   event = 'BufEnter',
   --   config = require("conf.translator").config()
   -- }
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    config = require "plugins.configs.treesitter"
+  }
 
   -- code formatter --
   -- javascript ( syntax & highlighting )
