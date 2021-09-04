@@ -19,7 +19,7 @@ hl("MatchParen", { bg=c.bg3, gui="bold" })
 -- Highlighted screen columns
 hl("ColorColumn",  { bg=c.bg1 })
 -- Concealed element: \lambda → λ
-hl('Conceal', { fg=c.blue })
+hl('Conceal', { gui='underline', bg=c.none })
 -- Line number of CursorLine
 hl('CursorLineNr', { fg=c.yellow, bg=c.bg1 })
 
@@ -82,9 +82,9 @@ hl('FoldColumn', { fg=c.gray, bg=c.bg1 })
 
 
 hl('Special', { fg=c.orange })
-hl('Comment', { fg=c.gray, gui="italic" })
-hl('Todo', { gui="bold,italic" })
-hl('Error', { bg=c.red, gui="italic" })
+hl('Comment', { fg=c.gray })
+hl('Todo', { fg=c.blue, bg=c.bg0, gui="bold" })
+hl('Error', { bg=c.red })
 
 
 -- Generic statement
@@ -106,7 +106,7 @@ hl("Keyword", { fg=c.red })
 hl("Identifier", { fg=c.red })
 -- Function name
 -- hl("Function", { fg=c.green, gui="bold" })
-hl("Function", { fg=c.red })
+hl("Function", { fg=c.green })
 
 -- Generic preprocessor
 hl("PreProc", { fg=c.aqua })
@@ -323,3 +323,30 @@ hl("javaParen4",  { fg=c.fg3 })
 hl("javaParen5",  { fg=c.fg3 })
 hl("javaOperator", { fg=c.orange })
 hl("javaVarArg", { fg=c.green })
+
+
+--
+-- Plugin Highlighting
+--
+
+-- coc.nvim
+hl("CocErrorSign", { fg=c.red, bg=c.bg1 })
+hl("CocWarningSign", { fg=c.orange, bg=c.bg1 })
+hl("CocInfoSign", { fg=c.yellow, bg=c.bg1 })
+hl("CocHintSign", { fg=c.blue, bg=c.bg1 })
+hl("CocErrorFloat", { fg=c.red })
+hl("CocWarningFloat", { fg=c.orange })
+hl("CocInfoFloat", { fg=c.yellow })
+hl("CocHintFloat", { fg=c.blue })
+hl("CocDiagnosticsError", { fg=c.red })
+hl("CocDiagnosticsWarning", { fg=c.orange })
+hl("CocDiagnosticsInfo", { fg=c.yellow })
+hl("CocDiagnosticsHint", { fg=c.blue })
+
+hl("CocSelectedText", { fg=c.red })
+hl("CocCodeLens", { fg=c.gray })
+
+hl('CocErrorHighlight', { gui='undercurl', guisp=c.red })
+hl('CocWarningHighlight', { gui='undercurl', guisp=c.orange })
+hl('CocInfoHighlight', { gui='undercurl', guisp=c.yellow })
+hl('CocHintHighlight', { gui='undercurl', guisp=c.blue })
