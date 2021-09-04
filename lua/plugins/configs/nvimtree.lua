@@ -1,5 +1,5 @@
 vim.g.nvim_tree_side = 'left'
-vim.g.nvim_tree_width                 = 30
+vim.g.nvim_tree_width                 = 25
 vim.g.nvim_tree_ignore                = { '.git', 'node_modules', '.cache' }
 vim.g.nvim_tree_gitignore             = 1
 vim.g.nvim_tree_auto_ignore_ft        = { 'startify', 'dashboard' }
