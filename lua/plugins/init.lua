@@ -143,16 +143,16 @@ return packer.startup(function()
   }
 
   -- buffer list
-  -- use {
-  --   'romgrk/barbar.nvim',
-  --   requires = {'kyazdani42/nvim-web-devicons'},
-  --   config = require "plugins.configs.barbar"
-  -- }
-
   use {
-    'akinsho/bufferline.nvim',
-    config = require "plugins.configs.bufferline"
+    'romgrk/barbar.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'},
+    config = require "plugins.configs.barbar"
   }
+
+  -- use {
+  --   'akinsho/bufferline.nvim',
+  --   config = require "plugins.configs.bufferline"
+  -- }
 
   -- translator
   -- use {
