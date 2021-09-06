@@ -29,7 +29,7 @@ vim.opt.lazyredraw = true
 -- vim.opt.wildoptions = "pum"
 -- vim.opt.winblend = 0
 -- vim.opt.writebackup = true
--- vim.g.python3_host_prog = "/usr/bin/python3"
+vim.g.python3_host_prog = "$PREFIX/bin/python3"
 
 -- Basic
 vim.opt.encoding = "utf-8"
