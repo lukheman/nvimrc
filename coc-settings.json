@@ -2,14 +2,17 @@
   "suggest.floatEnable": false,
   "suggest.enablePreselect": true,
   "suggest.noselect": false,
+  "suggest.disableMenuShortcut": false,
+  "suggest.maxCompleteItemCount": 15,
   "emmet.showExpandedAbbreviation": true,
   "emmet.showAbbreviationSuggestions": false,
   "emmet.includeLanguages": {"htmldjango": "html", "markdown": "html"},
+  "emmet.excludeLanguages": ["css"],
   "coc.preferences.maxFileSize": "0.1MB",
-  "suggest.disableMenuShortcut": false,
-  "suggest.maxCompleteItemCount": 15,
   "python.analysis.autoImportCompletions": false,
   "pyright.disableDiagnostics": true,
+  "css.colorDecorators.enable": false,
+  "snippets.ultisnips.enable": false,
   "suggest.completionItemKindLabels": {
     "method": "  ",
     "function": "  ",
@@ -37,6 +40,5 @@
     "value": "  ",
     "enumMember": "  ",
     "default": "  "
-  },
-  "css.colorDecorators.enable": false
+  }
 }
