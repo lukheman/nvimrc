@@ -93,7 +93,7 @@ return packer.startup(function()
   -- comment
   use {
     "terrortylor/nvim-comment",
-    cmd = require('nvim_comment').setup()
+    config = require('plugins.configs.comment')
   }
 
   -- whitespace
@@ -166,18 +166,4 @@ return packer.startup(function()
     config = require "plugins.configs.treesitter"
   }
 
-  -- code formatter --
-  -- javascript ( syntax & highlighting )
-  use {
-    'pangloss/vim-javascript',
-    ft = { 'javascript' }
-  }
-
-  -- php indent
-  use {
-    'nicklasos/vimphphtml',
-    ft = { 'php' }
-  }
-
 end)
-
