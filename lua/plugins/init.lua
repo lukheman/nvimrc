@@ -138,11 +138,6 @@ return packer.startup(function()
     config = require "plugins.configs.barbar"
   }
 
-  -- use {
-  --   'akinsho/bufferline.nvim',
-  --   config = require "plugins.configs.bufferline"
-  -- }
-
   -- translator
   -- use {
   --   'voldikss/vim-translator',
