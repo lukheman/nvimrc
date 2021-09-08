@@ -12,9 +12,9 @@ map("n", "<leader>so", "<cmd>luafile %<cr>")
 map("n", "ss", "<cmd>w!<cr>")
 
 -- buffer navigation
-map("n", "<leader>n", "<cmd>bn<cr>")
-map("n", "<leader>p", "<cmd>bp<cr>")
-map("n", "<leader>q", "<cmd>bd<cr>")
+map("n", "<leader>n", "<cmd>BufferNext<cr>")
+map("n", "<leader>p", "<cmd>BufferPrevious<cr>")
+map("n", "<leader>q", "<cmd>BufferClose<cr>")
 
   -- easy align
 map("v", "ga", "<Plug>(EasyAlign)", {} )
