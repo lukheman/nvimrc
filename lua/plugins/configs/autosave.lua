@@ -1,13 +1,17 @@
-local autosave = require("autosave")
+local present, autosave = pcall(require, "autosave")
+
+if not present then
+  return
+end
 
 autosave.setup {
   enabled = true,
   execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
   events = {"InsertLeave"},
   conditions = {
-      exists = true,
-      filetype_is_not = {},
-      modifiable = true
+    exists = true,
+    filetype_is_not = {},
+    modifiable = true
   },
   write_all_buffers = false,
   on_off_commands = true,
