@@ -1,4 +1,4 @@
-vim.g.nvim_tree_side = 'left'
+vim.g.nvim_tree_side                  = 'left'
 vim.g.nvim_tree_width                 = 25
 vim.g.nvim_tree_ignore                = { '.git', 'node_modules', '.cache' }
 vim.g.nvim_tree_gitignore             = 1
@@ -24,10 +24,10 @@ vim.g.nvim_tree_update_cwd            = 1
 vim.g.nvim_tree_disable_window_picker = 1
 
 vim.g.nvim_tree_show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1,
-    folder_arrows = 1
+  git = 1,
+  folders = 1,
+  files = 1,
+  folder_arrows = 1
 }
 -- If 0, do not show the icons for one of 'git' 'folder' and 'files'
 -- 1 by default, notice that if 'files' is 1, it will only display
