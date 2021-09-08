@@ -70,7 +70,6 @@ return packer.startup(function()
   -- table mode
   use {
     'dhruvasagar/vim-table-mode',
-    cmd = { 'TableModeToggle' },
     config = require "plugins.configs.vim-table-mode"
   }
 
