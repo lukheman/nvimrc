@@ -1,3 +1,5 @@
+hs
+
 colorizer.setup({"*"}, {
   RGB = true,
   RRGGBB = true,
