@@ -45,5 +45,6 @@ map("n", "<leader>r", "<cmd>NvimTreeRefresh<cr>")
 map("n", "b", "<cmd>Gitsigns blame_line<cr>")
 
 -- tpope/vim-fugitive
+map("n", "<leader>gs", "<cmd>Git status<cr>")
 map("n", "<leader>ga", "<cmd>Git add %<cr>")
 map("n", "<leader>gc", "<cmd>Git commit<cr>")
