@@ -123,6 +123,10 @@ return packer.startup(function()
     config = require "plugins.configs.gitsigns"
   }
 
+  use {
+    'tpope/vim-fugitive'
+  }
+
   -- statusline
   use {
     'glepnir/galaxyline.nvim',
@@ -148,10 +152,6 @@ return packer.startup(function()
   use {
     'nvim-treesitter/nvim-treesitter',
     config = require "plugins.configs.treesitter"
-  }
-
-  use {
-    'tpope/vim-fugitive'
   }
 
 end)
