@@ -2,9 +2,6 @@ local packer = require('packer')
 
 
 return packer.startup(function()
-  -- package manager
-  use({ "wbthomason/packer.nvim" })
-
   -- autopairs
   use "cohama/lexima.vim"
 
@@ -14,18 +11,11 @@ return packer.startup(function()
     branch = 'release'
   }
 
-  -- use {
-  --   "NvChad/nvim-base16.lua",
-  --   config = require("plugins.configs.nvimbase16")
-  -- }
-
-  -- use {
-  --   "rktjmp/lush.nvim"
-  -- }
 
   -- snippets
   use {
     'mattn/emmet-vim',
+    opt = true,
     ft = { "html" }
   }
   use 'honza/vim-snippets'
@@ -49,8 +39,13 @@ return packer.startup(function()
   -- color preview
   use {
     'norcalli/nvim-colorizer.lua',
-    -- event = "BufRead",
     config = require "plugins.configs.colorizer"
+  }
+
+
+  -- colorscheme
+  use {
+    "rktjmp/lush.nvim"
   }
 
   -- use {
@@ -58,19 +53,14 @@ return packer.startup(function()
   --   config = require "plugins.configs.other"
   -- }
 
-  -- colorscheme
-  -- use {
-  --   'rktjmp/lush.nvim',
-  --   cmd = 'Lushify'
-  -- }
   -- use 'arcticicestudio/nord-vim'
   -- use 'drewtempelmeyer/palenight.vim'
 
   -- terminal popup
-  use {
-    'voldikss/vim-floaterm',
-    config = require "plugins.configs.vim-floaterm"
-  }
+  -- use {
+  --   'voldikss/vim-floaterm',
+  --   config = require "plugins.configs.vim-floaterm"
+  -- }
 
   -- benchmark
   use {
@@ -98,8 +88,7 @@ return packer.startup(function()
 
   -- whitespace
   use {
-    'ntpeters/vim-better-whitespace',
-    -- config = require "plugins.configs.vim-better-whitespace"
+    'ntpeters/vim-better-whitespace'
   }
 
   -- fuzzy finder
@@ -164,6 +153,10 @@ return packer.startup(function()
   use {
     'nvim-treesitter/nvim-treesitter',
     config = require "plugins.configs.treesitter"
+  }
+
+  use {
+    'tpope/vim-fugitive'
   }
 
 end)
