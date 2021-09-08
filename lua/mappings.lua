@@ -35,7 +35,7 @@ map("n", "<c-f>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 map("n", "<c-p>", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 map("n", "<c-g>", "<cmd>lua require('telescope.builtin').git_branches()<cr>")
 map("n", "<c-h>", "<cmd>Telescope command_history<cr>")
-  -- { "n", ":cs", "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>", { noremap = true } },
+map("n", "<leader>c", "<cmd>Telescope commands<cr>")
 
 -- nvim_tree
 map("n", "<C-n>", "<cmd>NvimTreeToggle<cr>")
@@ -43,3 +43,7 @@ map("n", "<leader>r", "<cmd>NvimTreeRefresh<cr>")
 
 -- gitsings
 map("n", "b", "<cmd>Gitsigns blame_line<cr>")
+
+-- tpope/vim-fugitive
+map("n", "<leader>ga", "<cmd>Git add %<cr>")
+map("n", "<leader>gc", "<cmd>Git commit<cr>")
