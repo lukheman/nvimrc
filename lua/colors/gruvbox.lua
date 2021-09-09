@@ -140,11 +140,6 @@ hl('PmenuSbar', { bg=c.bg2})
 -- Popup menu: scrollbar thumb
 hl('PmenuThumb', { bg=c.bg4 })
 
-
---
--- Specified Filetype
---
-
 -- Diff Highlighting
 hl('DiffDelete', { fg=c.bg0, bg=c.red })
 hl('DiffAdd', { fg=c.bg0, bg=c.green })
@@ -159,6 +154,11 @@ hl('SpellBad', { gui="undercurl", guisp=c.blue })
 hl('SpellLocal', { gui="undercurl", guisp=c.aqua})
 -- Rare word
 hl('SpellRare', { gui="undercurl", guisp=c.purple })
+
+
+--
+-- Specified Filetype
+--
 
 -- Markdown
 hl('markdownItalic', { fg=c.fg3, gui="italic"})
