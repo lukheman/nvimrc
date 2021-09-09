@@ -70,17 +70,6 @@ hl('Folded', { fg=c.gray, bg=c.bg1, gui="italic" })
 hl('FoldColumn', { fg=c.gray, bg=c.bg1 })
 
 
--- Character under cursor
--- local cursor = {}
--- hl('Cursor', cursor)
--- -- Visual mode cursor, selection
--- hl('vCursor', cursor)
--- -- Input moder cursor
--- hl('iCursor', cursor)
--- -- Language mapping cursor
--- hl('lCursor', cursor)
-
-
 hl('Special', { fg=c.orange })
 hl('Comment', { fg=c.gray })
 hl('Todo', { fg=c.blue, bg=c.bg0, gui="bold" })
