@@ -11,7 +11,11 @@ return packer.startup(function()
   }
 
   -- snippets
-  use 'mattn/emmet-vim'
+  use {
+    'mattn/emmet-vim',
+    ft = { 'html' }
+  }
+
   use 'honza/vim-snippets'
 
   -- auto align
