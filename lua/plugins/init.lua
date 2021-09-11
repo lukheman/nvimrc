@@ -15,9 +15,7 @@ return packer.startup(function()
   use 'honza/vim-snippets'
 
   -- auto align
-  use {
-    'junegunn/vim-easy-align',
-  }
+  use 'junegunn/vim-easy-align',
 
   -- autosave
   use {
@@ -26,9 +24,7 @@ return packer.startup(function()
   }
 
   -- surround
-  use {
-    'machakann/vim-sandwich',
-  }
+  use 'machakann/vim-sandwich'
 
   -- color preview
   use {
@@ -37,9 +33,7 @@ return packer.startup(function()
   }
 
   -- colorscheme
-  use {
-    "rktjmp/lush.nvim"
-  }
+  -- use "rktjmp/lush.nvim"
 
   -- use {
   --   '~/projects/nvim-colorscheme.lua',
@@ -56,9 +50,8 @@ return packer.startup(function()
   -- }
 
   -- benchmark
-  use {
-    'tweekmonster/startuptime.vim',
-  }
+  use 'tweekmonster/startuptime.vim'
+
 
   -- table mode
   use {
@@ -67,9 +60,8 @@ return packer.startup(function()
   }
 
   -- HTML ( change opening tag and take the closing tag )
-  use {
-    'AndrewRadev/tagalong.vim',
-  }
+  use 'AndrewRadev/tagalong.vim'
+
 
   -- comment
   use {
@@ -78,18 +70,17 @@ return packer.startup(function()
   }
 
   -- whitespace
-  use {
-    'ntpeters/vim-better-whitespace'
-  }
+  use 'ntpeters/vim-better-whitespace'
+
 
   -- fuzzy finder
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
-      {'nvim-lua/popup.nvim'},
-      {'nvim-lua/plenary.nvim'},
-      {'kyazdani42/nvim-web-devicons'},
-      {'nvim-telescope/telescope-fzy-native.nvim'}
+      'nvim-lua/popup.nvim',
+      'nvim-lua/plenary.nvim',
+      'kyazdani42/nvim-web-devicons',
+      'nvim-telescope/telescope-fzy-native.nvim'
     },
     config = require "plugins.configs.telescope"
   }
