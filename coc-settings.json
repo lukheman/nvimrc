@@ -6,7 +6,7 @@
   "suggest.maxCompleteItemCount": 15,
   "emmet.showExpandedAbbreviation": true,
   "emmet.showAbbreviationSuggestions": false,
-  "emmet.includeLanguages": {"htmldjango": "html", "markdown": "html"},
+  "emmet.includeLanguages": {"htmldjango": "html"},
   "emmet.excludeLanguages": ["css"],
   "coc.preferences.maxFileSize": "0.1MB",
   "python.analysis.autoImportCompletions": false,
