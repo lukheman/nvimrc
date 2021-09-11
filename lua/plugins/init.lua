@@ -15,7 +15,7 @@ return packer.startup(function()
   use 'honza/vim-snippets'
 
   -- auto align
-  use 'junegunn/vim-easy-align',
+  use 'junegunn/vim-easy-align'
 
   -- autosave
   use {
