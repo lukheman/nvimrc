@@ -66,3 +66,5 @@ function M.fugitive()
   map("n", "<leader>gc", "<cmd>Git commit<cr>")
   map("n", "<leader>gr", "<cmd>Git restore --staged %<cr>")
 end
+
+return M
