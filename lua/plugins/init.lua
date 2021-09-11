@@ -1,6 +1,5 @@
 local packer = require('packer')
 
-
 return packer.startup(function()
   -- autopairs
   use "cohama/lexima.vim"
@@ -11,13 +10,8 @@ return packer.startup(function()
     branch = 'release'
   }
 
-
   -- snippets
-  use {
-    'mattn/emmet-vim',
-    opt = true,
-    ft = { "html" }
-  }
+  use 'mattn/emmet-vim'
   use 'honza/vim-snippets'
 
   -- auto align
@@ -41,7 +35,6 @@ return packer.startup(function()
     'norcalli/nvim-colorizer.lua',
     config = require "plugins.configs.colorizer"
   }
-
 
   -- colorscheme
   use {
@@ -76,7 +69,6 @@ return packer.startup(function()
   -- HTML ( change opening tag and take the closing tag )
   use {
     'AndrewRadev/tagalong.vim',
-    ft = { "html" }
   }
 
   -- comment
@@ -122,9 +114,7 @@ return packer.startup(function()
     config = require "plugins.configs.gitsigns"
   }
 
-  use {
-    'tpope/vim-fugitive'
-  }
+  use 'tpope/vim-fugitive'
 
   -- statusline
   use {
@@ -150,7 +140,10 @@ return packer.startup(function()
 
   use {
     'nvim-treesitter/nvim-treesitter',
-    config = require "plugins.configs.treesitter"
+    event = 'BufRead',
+    config = function()
+      require "plugins.configs.treesitter"
+    end
   }
 
 end)
