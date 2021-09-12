@@ -1,2 +1,2 @@
 require("colors.highlights")
--- require("colors.gruvbox")
+require("colors.gruvbox")
