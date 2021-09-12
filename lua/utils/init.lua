@@ -24,6 +24,11 @@ M.highlight = function(group, opts)
   command("hi "..table.concat(cmd, " "))
 end
 
+M.highlightlink = function(from, to)
+  command("hi! link "..from.." "..to)
+end
+
+
 M.map = function(mode, key, cmd, opt)
   local options = { noremap=true, silent=true }
   if opt then options = opt end
