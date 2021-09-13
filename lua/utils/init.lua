@@ -16,16 +16,16 @@ M.filetypes = function(filetype, opts)
 end
 
 M.highlight = function(group, opts)
-  local cmd = { group }
-  if opts.fg then table.insert(cmd, "guifg="..opts.fg) end
-  if opts.bg then table.insert(cmd, "guibg="..opts.bg) end
-  if opts.gui then table.insert(cmd, "gui="..opts.gui) end
-  if opts.guisp then table.insert(cmd, "guisp="..opts.guisp) end
-  command("hi "..table.concat(cmd, " "))
-end
-
-M.highlightlink = function(from, to)
-  command("hi! link "..from.." "..to)
+  if type(opts) == 'table' then
+    local cmd = { group }
+    if opts.fg then table.insert(cmd, "guifg="..opts.fg) end
+    if opts.bg then table.insert(cmd, "guibg="..opts.bg) end
+    if opts.gui then table.insert(cmd, "gui="..opts.gui) end
+    if opts.guisp then table.insert(cmd, "guisp="..opts.guisp) end
+    command("hi "..table.concat(cmd, " "))
+  elseif type(opts) == 'string' then
+    command("hi! link "..group.." "..opts)
+  end
 end
 
 
