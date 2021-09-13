@@ -46,10 +46,10 @@ return packer.startup(function()
 
   -- use 'arcticicestudio/nord-vim'
   -- use 'drewtempelmeyer/palenight.vim'
-  use {
-    'ellisonleao/gruvbox.nvim',
-    requires = 'rktjmp/lush.nvim'
-  }
+  -- use {
+  --   'ellisonleao/gruvbox.nvim',
+  --   requires = 'rktjmp/lush.nvim'
+  -- }
 
   -- terminal popup
   -- use {
