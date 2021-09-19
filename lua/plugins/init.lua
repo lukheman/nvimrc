@@ -2,7 +2,13 @@ local packer = require('packer')
 
 return packer.startup(function()
   -- autopairs
-  use "cohama/lexima.vim"
+  -- use "cohama/lexima.vim"
+  use {
+    'windwp/nvim-autopairs',
+    config = function()
+      require('nvim-autopairs').setup()
+    end
+  }
 
   -- autocomplete
   use {
@@ -41,7 +47,12 @@ return packer.startup(function()
 
   use {
     '~/projects/codedark.nvim',
-    config = require "codedark"
+    -- config = require "codedark"
+  }
+
+  use {
+    '~/projects/gruvbox.nvim',
+    config = require "gruvbox"
   }
 
   -- use 'arcticicestudio/nord-vim'
