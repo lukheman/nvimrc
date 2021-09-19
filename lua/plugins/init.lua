@@ -46,7 +46,7 @@ return packer.startup(function()
 
   use {
     '~/projects/gruvbox.nvim',
-    config = require "gruvbox"
+    -- config = require "gruvbox"
   }
 
   -- use 'arcticicestudio/nord-vim'
