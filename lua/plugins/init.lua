@@ -39,10 +39,10 @@ return packer.startup(function()
   -- colorscheme
   -- use "rktjmp/lush.nvim"
 
-  -- use {
-  --   '~/projects/nvim-colorscheme.lua',
-  --   config = require "plugins.configs.other"
-  -- }
+  use {
+    '~/projects/codedark.nvim',
+    config = require "codedark"
+  }
 
   -- use 'arcticicestudio/nord-vim'
   -- use 'drewtempelmeyer/palenight.vim'
