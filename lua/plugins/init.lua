@@ -41,12 +41,10 @@ return packer.startup(function()
 
   use {
     '~/projects/codedark.nvim',
-    -- config = require "codedark"
   }
 
   use {
     '~/projects/gruvbox.nvim',
-    -- config = require "gruvbox"
   }
 
   -- use 'arcticicestudio/nord-vim'
