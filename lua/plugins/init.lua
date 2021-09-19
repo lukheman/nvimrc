@@ -123,7 +123,7 @@ return packer.startup(function()
     'glepnir/galaxyline.nvim',
     branch = 'main',
     requires = {'kyazdani42/nvim-web-devicons'},
-    config = require "plugins.configs.statusline",
+    config = require "plugins.configs.galaxyline",
   }
 
   -- buffer list
