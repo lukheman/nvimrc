@@ -2,13 +2,7 @@ local packer = require('packer')
 
 return packer.startup(function()
   -- autopairs
-  -- use "cohama/lexima.vim"
-  use {
-    'windwp/nvim-autopairs',
-    config = function()
-      require('nvim-autopairs').setup()
-    end
-  }
+  use 'cohama/lexima.vim'
 
   -- autocomplete
   use {
