@@ -1,3 +1,9 @@
+local present, nvim_comment = pcall(require, "nvim_comment")
+
+if not present then
+  return
+end
+
 local options = {
   marker_padding = true,
   -- should comment out empty or whitespace only lines
@@ -12,4 +18,4 @@ local options = {
   hook = nil
 }
 
-require('nvim_comment').setup(options)
+nvim_comment.setup(options)
