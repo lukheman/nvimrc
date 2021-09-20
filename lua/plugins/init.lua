@@ -39,13 +39,9 @@ return packer.startup(function()
   -- colorscheme
   -- use "rktjmp/lush.nvim"
 
-  use {
-    '~/projects/codedark.nvim',
-  }
-
-  use {
-    '~/projects/gruvbox.nvim',
-  }
+  use '~/projects/codedark.nvim'
+  use '~/projects/gruvbox.nvim'
+  use '~/projects/onedarker.nvim'
 
   -- use 'arcticicestudio/nord-vim'
   -- use 'drewtempelmeyer/palenight.vim'
