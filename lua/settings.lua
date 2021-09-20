@@ -49,7 +49,7 @@ vim.opt.autoread = true
 vim.opt.fileformat = "unix"
 
 -- Interface
-vim.cmd("colorscheme codedark")
+vim.cmd("colorscheme gruvbox")
 vim.opt.bg = "dark"
 vim.opt.termguicolors = true
 vim.opt.incsearch = true
