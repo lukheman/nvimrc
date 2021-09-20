@@ -12,5 +12,5 @@ gitsigns.setup {
     delete       = {hl = 'GitSignsDelete', text = '▍'},
     topdelete    = {hl = 'GitSignsDelete', text = '▍'},
   },
-  update_debounce = 500,
+  update_debounce = 100,
 }
