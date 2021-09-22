@@ -42,6 +42,7 @@ return packer.startup(function()
   use '~/projects/codedark.nvim'
   use '~/projects/gruvbox.nvim'
   use '~/projects/onedarker.nvim'
+  use '~/nvim-plugins/dracula'
 
   -- use 'arcticicestudio/nord-vim'
   -- use 'drewtempelmeyer/palenight.vim'
@@ -115,11 +116,16 @@ return packer.startup(function()
   use 'tpope/vim-fugitive'
 
   -- statusline
+  -- use {
+  --   'glepnir/galaxyline.nvim',
+  --   branch = 'main',
+  --   requires = {'kyazdani42/nvim-web-devicons'},
+  --   config = require "plugins.configs.galaxyline",
+  -- }
+
   use {
-    'glepnir/galaxyline.nvim',
-    branch = 'main',
-    requires = {'kyazdani42/nvim-web-devicons'},
-    config = require "plugins.configs.galaxyline",
+    'hoob3rt/lualine.nvim',
+    config = require "plugins.configs.lualine"
   }
 
   -- buffer list
@@ -128,11 +134,12 @@ return packer.startup(function()
     requires = {'kyazdani42/nvim-web-devicons'},
     config = require "plugins.configs.barbar"
   }
+  -- use 'kdheepak/tabline.nvim'
+
 
   -- translator
   -- use {
   --   'voldikss/vim-translator',
-  --   event = 'BufEnter',
   --   config = require("conf.translator").config()
   -- }
 
