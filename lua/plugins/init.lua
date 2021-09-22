@@ -4,6 +4,9 @@ return packer.startup(function()
   -- autopairs
   use 'cohama/lexima.vim'
 
+  -- icons
+  use 'kyazdani42/nvim-web-devicons'
+
   -- autocomplete
   use {
     'neoclide/coc.nvim',
@@ -87,7 +90,6 @@ return packer.startup(function()
     requires = {
       'nvim-lua/popup.nvim',
       'nvim-lua/plenary.nvim',
-      'kyazdani42/nvim-web-devicons',
       'nvim-telescope/telescope-fzy-native.nvim'
     },
     config = require "plugins.configs.telescope"
@@ -102,7 +104,6 @@ return packer.startup(function()
   -- file explorer
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = { 'kyazdani42/nvim-web-devicons' },
     config = require "plugins.configs.nvimtree"
   }
 
@@ -119,7 +120,6 @@ return packer.startup(function()
   -- use {
   --   'glepnir/galaxyline.nvim',
   --   branch = 'main',
-  --   requires = {'kyazdani42/nvim-web-devicons'},
   --   config = require "plugins.configs.galaxyline",
   -- }
 
@@ -131,7 +131,6 @@ return packer.startup(function()
   -- buffer list
   use {
     'romgrk/barbar.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'},
     config = require "plugins.configs.barbar"
   }
   -- use 'kdheepak/tabline.nvim'
