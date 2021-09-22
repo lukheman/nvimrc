@@ -1,6 +1,9 @@
 local packer = require('packer')
 
 return packer.startup(function()
+  -- utils
+  use 'nvim-lua/plenary.nvim'
+
   -- autopairs
   use 'cohama/lexima.vim'
 
@@ -89,7 +92,6 @@ return packer.startup(function()
     'nvim-telescope/telescope.nvim',
     requires = {
       'nvim-lua/popup.nvim',
-      'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-fzy-native.nvim'
     },
     config = require "plugins.configs.telescope"
@@ -110,7 +112,6 @@ return packer.startup(function()
   -- git
   use {
     'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
     config = require "plugins.configs.gitsigns"
   }
 
