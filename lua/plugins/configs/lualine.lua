@@ -1,7 +1,8 @@
-local present, lualine = pcall(require, 'lualine')
-if not present then
+local ok, lualine = pcall(require, 'lualine')
+if not ok then
   return
 end
+local ok, devicons = pcall(require, 'nvim-web-devicons')
 
 local colors = {
   bg = '#282c34',
@@ -43,9 +44,7 @@ local config = {
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {
-      {'filetype'}
-    },
+    lualine_c = {},
     lualine_x = {},
     lualine_y = {},
     lualine_z = {}
@@ -58,7 +57,6 @@ local config = {
   --   lualine_y = {},
   --   lualine_z = {},
   -- },
-  -- extensions = {'nvim-tree'}
 }
 
 local function ins_left(component)
@@ -78,6 +76,12 @@ local conditions = {
     return gitdir and #gitdir > 0 and #gitdir < #filepath
   end
 }
+
+local function file_icon()
+  local fname, fext = vim.fn.expand('%:t'), vim.fn.expand('%:e')
+  local icon, ext = devicons.get_icon(fname, fext)
+  return icon
+end
 
 local function file_readonly()
   if vim.bo.filetype == 'help' then
@@ -136,6 +140,12 @@ ins_left {
 }
 
 ins_left {
+  file_icon,
+  condition = conditions.buffer_not_empty,
+  color = {fg = colors.fg, bg=colors.section_bg}
+}
+
+ins_left {
   function()
     local file = vim.fn.expand '%:t'
     if vim.fn.empty(file) == 1 then
@@ -149,7 +159,7 @@ ins_left {
         return file..' '
       end
     end
-    return file..' '
+    return file
   end,
   condition = conditions.buffer_not_empty,
   color = {fg = colors.fg, bg=colors.section_bg}
@@ -157,7 +167,7 @@ ins_left {
 
 ins_right {
   'diff',
-  symbols = {added = '+', modified = '~', removed = '-'},
+  symbols = {added = ' ', modified = ' ', removed = ' '},
   color_added = colors.green,
   color_modified = colors.orange,
   color_removed = colors.red
