@@ -30,14 +30,14 @@ vim.g.nvim_tree_show_icons = {
 }
 vim.g.nvim_tree_icons = {
   default = '',
-  symlink = '',
+  symlink = '',
   git = {
-    unstaged = '✗',
+    unstaged = '',
     staged = '✓',
     unmerged = '',
     renamed = '➜',
     untracked = '',
-    deleted = '-',
+    deleted = '',
     ignored = '^'
   },
   folder = {
