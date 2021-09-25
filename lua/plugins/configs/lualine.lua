@@ -117,6 +117,7 @@ local mode_color = function()
 end
 
 ins_left {
+  -- mode
   function ()
     local aliases = {
       [110] = 'NORMAL',
@@ -140,12 +141,14 @@ ins_left {
 }
 
 ins_left {
+  -- file icon
   file_icon,
   condition = conditions.buffer_not_empty,
   color = {fg = colors.fg, bg=colors.section_bg}
 }
 
 ins_left {
+  -- filename
   function()
     local file = vim.fn.expand '%:t'
     if vim.fn.empty(file) == 1 then
@@ -166,6 +169,7 @@ ins_left {
 }
 
 ins_right {
+  -- git diff
   'diff',
   symbols = {added = ' ', modified = ' ', removed = ' '},
   color_added = colors.green,
@@ -174,6 +178,7 @@ ins_right {
 }
 
 ins_right {
+  -- git branch
   'branch',
   icon = '',
   color = {fg=colors.middlegrey},
@@ -187,6 +192,7 @@ ins_right {
 }
 
 ins_right {
+  -- whitespace
   function()
     local trail = vim.fn.search('\\s$', 'nw')
     if trail ~= 0 then
