@@ -45,9 +45,9 @@ return packer.startup(function()
   -- colorscheme
   -- use "rktjmp/lush.nvim"
 
-  use '~/projects/codedark.nvim'
-  use '~/projects/gruvbox.nvim'
-  use '~/projects/onedarker.nvim'
+  use '~/projek/codedark.nvim'
+  use '~/projek/gruvbox.nvim'
+  use '~/projek/onedarker.nvim'
   use '~/nvim-plugins/dracula'
 
   -- use 'arcticicestudio/nord-vim'
