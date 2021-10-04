@@ -134,14 +134,6 @@ return packer.startup(function()
     'romgrk/barbar.nvim',
     config = require "plugins.configs.barbar"
   }
-  -- use 'kdheepak/tabline.nvim'
-
-
-  -- translator
-  -- use {
-  --   'voldikss/vim-translator',
-  --   config = require("conf.translator").config()
-  -- }
 
   use {
     'nvim-treesitter/nvim-treesitter',
