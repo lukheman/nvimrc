@@ -11,6 +11,7 @@ filetypes("vim",        { shiftwidth=2, tabstop=2, conceallevel=0 })
 filetypes("python",     { shiftwidth=4, tabstop=4})
 filetypes("lua",        { shiftwidth=2, tabstop=2, softtabstop=2 })
 filetypes("php",        { shiftwidth=2, tabstop=2, softtabstop=2 })
+filetypes("xml",        { shiftwidth=2, tabstop=2, softtabstop=2 })
 filetypes("text",       { nonumber=true, norelativenumber=true })
 filetypes("help",       { nonumber=true, norelativenumber=true })
 
