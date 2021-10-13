@@ -17,10 +17,7 @@ return packer.startup(function()
   }
 
   -- snippets
-  use {
-    'mattn/emmet-vim',
-    ft = { 'html' }
-  }
+  use 'mattn/emmet-vim'
 
   use 'honza/vim-snippets'
 
