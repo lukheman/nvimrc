@@ -45,7 +45,6 @@ return packer.startup(function()
   use '~/projek/codedark.nvim'
   use '~/projek/gruvbox.nvim'
   use '~/projek/onedarker.nvim'
-  use '~/nvim-plugins/dracula'
 
   -- use 'arcticicestudio/nord-vim'
   -- use 'drewtempelmeyer/palenight.vim'
