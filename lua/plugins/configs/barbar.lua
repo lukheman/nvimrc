@@ -11,5 +11,5 @@ vim.g.bufferline = {
   semantic_letters = true,
   maximum_padding = 2,
   maximum_length = 20,
-  no_name_title = "no name",
+  no_name_title = "empty",
 }
