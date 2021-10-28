@@ -198,7 +198,7 @@ ins_right {
     if trail ~= 0 then
       return ''
     else
-      return nil
+      return ''
     end
   end,
   condition = conditions.buffer_not_empty,
