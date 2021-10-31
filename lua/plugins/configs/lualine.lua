@@ -80,6 +80,9 @@ local conditions = {
 local function file_icon()
   local fname, fext = vim.fn.expand('%:t'), vim.fn.expand('%:e')
   local icon, ext = devicons.get_icon(fname, fext)
+  if icon == nil then
+    icon = ''
+  end
   return icon
 end
 
@@ -152,7 +155,7 @@ ins_left {
   function()
     local file = vim.fn.expand '%:t'
     if vim.fn.empty(file) == 1 then
-      return ''
+      return 'empty'
     end
     if string.len(file_readonly()) ~= 0 then
       return file..file_readonly()
