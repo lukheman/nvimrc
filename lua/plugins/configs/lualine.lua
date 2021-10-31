@@ -77,14 +77,6 @@ local conditions = {
   end
 }
 
-local function file_icon()
-  local fname, fext = vim.fn.expand('%:t'), vim.fn.expand('%:e')
-  local icon, ext = devicons.get_icon(fname, fext)
-  if icon == nil then
-    icon = ''
-  end
-  return icon
-end
 
 local function file_readonly()
   if vim.bo.filetype == 'help' then
@@ -145,7 +137,14 @@ ins_left {
 
 ins_left {
   -- file icon
-  file_icon,
+  function()
+    local fname, fext = vim.fn.expand('%:t'), vim.fn.expand('%:e')
+    local icon, ext = devicons.get_icon(fname, fext)
+    if icon == nil then
+      icon = ''
+    end
+    return icon
+  end,
   condition = conditions.buffer_not_empty,
   color = {fg = colors.fg, bg=colors.section_bg}
 }
