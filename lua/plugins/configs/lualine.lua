@@ -141,7 +141,7 @@ ins_left {
     local fname, fext = vim.fn.expand('%:t'), vim.fn.expand('%:e')
     local icon, ext = devicons.get_icon(fname, fext)
     if icon == nil then
-      icon = ''
+      return ''
     end
     return icon
   end,
