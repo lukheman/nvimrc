@@ -13,6 +13,9 @@
   "pyright.disableDiagnostics": true,
   "css.colorDecorators.enable": false,
   "snippets.ultisnips.enable": false,
+  "snippets.extends": {
+    "html": ["htmldjango"]
+  },
   "suggest.completionItemKindLabels": {
     "method": "  ",
     "function": "  ",
