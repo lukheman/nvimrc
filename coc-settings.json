@@ -14,7 +14,7 @@
   "css.colorDecorators.enable": false,
   "snippets.ultisnips.enable": false,
   "snippets.extends": {
-    "html": ["htmldjango"]
+    "htmldjango": ["html"]
   },
   "suggest.completionItemKindLabels": {
     "method": "  ",
