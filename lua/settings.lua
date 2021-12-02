@@ -3,7 +3,6 @@
 -- vim.opt.backupdir = vim.loop.os_homedir() .. "/.local/share/nvim/backup"
 -- vim.opt.binary = true
 -- vim.opt.bomb = true
--- vim.opt.completeopt = "menu,menuone,noselect"
 -- vim.opt.cursorcolumn = false
 -- vim.opt.errorbells = false
 -- vim.opt.formatoptions:remove("cro")
