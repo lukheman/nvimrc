@@ -3,23 +3,50 @@ local packer = require('packer')
 return packer.startup(function()
   -- utils
   use 'nvim-lua/plenary.nvim'
+  use 'nvim-lua/popup.nvim'
 
-  -- autopairs
-  use 'cohama/lexima.vim'
 
   -- icons
   use 'kyazdani42/nvim-web-devicons'
 
-  -- autocomplete
+  -- autopairs
+  -- use 'cohama/lexima.vim'
   use {
-    'neoclide/coc.nvim',
-    branch = 'release'
+    'windwp/nvim-autopairs',
+    config = require "plugins.configs.completion.autopairs"
+  }
+
+  -- LSP
+  use {
+    'neovim/nvim-lspconfig',
+    config = require "plugins.configs.completion.lsp.lspconfig",
+    requires = {
+      {
+        "ray-x/lsp_signature.nvim",
+        config = require "lsp_signature".setup()
+      }
+    }
+  }
+
+  -- autocomplete
+
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
+      'hrsh7th/cmp-nvim-lua',
+      'hrsh7th/cmp-vsnip',
+      'hrsh7th/vim-vsnip'
+    },
+    config = require "plugins.configs.completion.cmp"
   }
 
   -- snippets
   use 'mattn/emmet-vim'
-
-  use 'honza/vim-snippets'
+  use { 'honza/vim-snippets', opt = true }
 
   -- auto align
   use 'junegunn/vim-easy-align'
@@ -39,29 +66,12 @@ return packer.startup(function()
     config = require "plugins.configs.colorizer"
   }
 
-  -- colorscheme
-  -- use "rktjmp/lush.nvim"
-
-  use '~/projek/codedark.nvim'
-  use '~/projek/gruvbox.nvim'
-  use '~/projek/onedarker.nvim'
-
-  -- use 'arcticicestudio/nord-vim'
-  -- use 'drewtempelmeyer/palenight.vim'
-  -- use {
-  --   'ellisonleao/gruvbox.nvim',
-  --   requires = 'rktjmp/lush.nvim'
-  -- }
-
-  -- terminal popup
-  -- use {
-  --   'voldikss/vim-floaterm',
-  --   config = require "plugins.configs.vim-floaterm"
-  -- }
+  -- use '~/projek/codedark.nvim'
+  -- use '~/projek/gruvbox.nvim'
+  use 'Mofiqul/vscode.nvim'
 
   -- benchmark
   use 'tweekmonster/startuptime.vim'
-
 
   -- table mode
   use {
@@ -71,7 +81,6 @@ return packer.startup(function()
 
   -- HTML ( change opening tag and take the closing tag )
   use 'AndrewRadev/tagalong.vim'
-
 
   -- comment
   use {
@@ -86,10 +95,6 @@ return packer.startup(function()
   -- fuzzy finder
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {
-      'nvim-lua/popup.nvim',
-      'nvim-telescope/telescope-fzy-native.nvim'
-    },
     config = require "plugins.configs.telescope"
   }
 
@@ -114,16 +119,16 @@ return packer.startup(function()
   use 'tpope/vim-fugitive'
 
   -- statusline
-  -- use {
-  --   'glepnir/galaxyline.nvim',
-  --   branch = 'main',
-  --   config = require "plugins.configs.galaxyline",
-  -- }
-
   use {
-    'hoob3rt/lualine.nvim',
-    config = require "plugins.configs.lualine"
+    'glepnir/galaxyline.nvim',
+    branch = 'main',
+    config = require "plugins.configs.galaxyline",
   }
+
+  -- use {
+  --   'hoob3rt/lualine.nvim',
+  --   config = require "plugins.configs.lualine"
+  -- }
 
   -- buffer list
   use {
@@ -131,9 +136,17 @@ return packer.startup(function()
     config = require "plugins.configs.barbar"
   }
 
+  -- treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
     config = require "plugins.configs.treesitter"
   }
+
+  -- terminal
+  use {
+    "akinsho/toggleterm.nvim",
+    config = require "plugins.configs.toggleterm"
+  }
+
 
 end)
