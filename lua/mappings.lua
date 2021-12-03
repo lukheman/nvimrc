@@ -23,13 +23,6 @@ map("n", "ga", "<Plug>(EasyAlign)", {} )
 -- clear whitespace
 map("n", "<leader>w", "<cmd>StripWhitespace<cr>")
 
--- floaterm
-map("n", "<leader>ft", "<cmd>FloatermNew<cr>")
-map("n", "<leader>fn", "<cmd>FloatermNext<cr>")
-map("n", "<leader>fp", "<cmd>FloatermPrev<cr>")
-map("n", "fh", "<cmd>FloatermToggle<cr>")
-map("n", "fk", "<cmd>FloatermKill<cr>")
-
 -- fuzzy finder / telescope
 map("n", "<c-f>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 map("n", "<c-p>", "<cmd>lua require('telescope.builtin').buffers()<cr>")
