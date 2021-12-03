@@ -48,7 +48,8 @@ vim.opt.autoread = true
 vim.opt.fileformat = "unix"
 
 -- Interface
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme vscode")
+vim.g.vscode_style = 'dark'
 vim.opt.bg = "dark"
 vim.opt.termguicolors = true
 vim.opt.incsearch = true
