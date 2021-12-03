@@ -35,4 +35,4 @@ local options = {
   },
 }
 
-nvim-autopairs.setup(options)
+autopairs.setup(options)
