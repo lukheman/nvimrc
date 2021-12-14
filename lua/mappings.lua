@@ -41,4 +41,4 @@ map("n", "<leader>gc", "<cmd>Git commit<cr>")
 map("n", "<leader>gr", "<cmd>Git restore --staged %<cr>")
 
 -- glow
-map("", "gl", ":Glow<cr>")
+map("n", "gl", ":Glow<cr>")
