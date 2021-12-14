@@ -27,9 +27,14 @@ return packer.startup(function()
       }
     }
   }
+  use {
+    "folke/trouble.nvim",
+    config = function()
+      require("trouble").setup {}
+    end
+  }
 
   -- autocomplete
-
   use {
     'hrsh7th/nvim-cmp',
     requires = {
@@ -66,7 +71,6 @@ return packer.startup(function()
     config = require "plugins.configs.colorizer"
   }
 
-  -- use '~/projek/codedark.nvim'
   -- use '~/projek/gruvbox.nvim'
   use 'Mofiqul/vscode.nvim'
 
@@ -81,6 +85,12 @@ return packer.startup(function()
 
   -- HTML ( change opening tag and take the closing tag )
   use 'AndrewRadev/tagalong.vim'
+
+  -- markdown
+  use {
+    "ellisonleao/glow.nvim",
+    config = require "plugins.configs.glow"
+  }
 
   -- comment
   use {
@@ -126,9 +136,10 @@ return packer.startup(function()
   }
 
   -- use {
-  --   'hoob3rt/lualine.nvim',
+  --   'nvim-lualine/lualine.nvim',
   --   config = require "plugins.configs.lualine"
   -- }
+
 
   -- buffer list
   use {
