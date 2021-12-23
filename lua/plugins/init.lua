@@ -1,16 +1,23 @@
 local packer = require('packer')
 
+packer.init({
+  display = {
+    prompt_border = 'rounded'
+  }
+})
+
 return packer.startup(function()
+  -- plugins manager
+  use 'wbthomason/packer.nvim'
+
   -- utils
   use 'nvim-lua/plenary.nvim'
   use 'nvim-lua/popup.nvim'
-
 
   -- icons
   use 'kyazdani42/nvim-web-devicons'
 
   -- autopairs
-  -- use 'cohama/lexima.vim'
   use {
     'windwp/nvim-autopairs',
     config = require "plugins.configs.completion.autopairs"
@@ -51,7 +58,6 @@ return packer.startup(function()
 
   -- snippets
   use 'mattn/emmet-vim'
-  use { 'honza/vim-snippets', opt = true }
 
   -- auto align
   use 'junegunn/vim-easy-align'
@@ -99,7 +105,7 @@ return packer.startup(function()
   }
 
   -- whitespace
-  use 'ntpeters/vim-better-whitespace'
+  -- use 'ntpeters/vim-better-whitespace'
 
 
   -- fuzzy finder
@@ -125,8 +131,10 @@ return packer.startup(function()
     'lewis6991/gitsigns.nvim',
     config = require "plugins.configs.gitsigns"
   }
-
-  use 'tpope/vim-fugitive'
+  use {
+    'TimUntersberger/neogit',
+    config = require "plugins.configs.neogit"
+  }
 
   -- statusline
   use {
