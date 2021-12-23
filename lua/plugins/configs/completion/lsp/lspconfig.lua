@@ -28,28 +28,27 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<c-q>', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
-  vim.cmd [[hi! NormalFloat guibg=#373737]]
-  vim.cmd [[hi! FloatBorder guifg=white guibg=#373737]]
-
-  local border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}
-
-  vim.lsp.handlers["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border})
-
 end
 
--- LSP DIAGNOSTIC SYMBOL
-local signs = {
-  Error = "",
-  Warn = "",
-  Hint = "",
-  Info = ""
+-- LSP DIAGNOSTIC
+-- local signs = {
+--   Error = "",
+--   Warn = "",
+--   Hint = "",
+--   Info = ""
+-- }
+
+-- for type, icon in pairs(signs) do
+--   local hl = "DiagnosticSign" .. type
+--   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+-- end
+vim.diagnostic.config {
+  virtual_text = false,
+  signs = false,
+  underline = false,
 }
 
-for type, icon in pairs(signs) do
-  local hl = "LspDiagnosticsSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
-
+-- LSP SERVER
 nvim_lsp.pyright.setup {
   on_attach = on_attach,
   settings = {
