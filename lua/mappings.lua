@@ -34,11 +34,5 @@ map("n", "<leader>c", "<cmd>Telescope commands<cr>")
 map("n", "<C-n>", "<cmd>NvimTreeToggle<cr>")
 map("n", "<leader>r", "<cmd>NvimTreeRefresh<cr>")
 
--- tpope/vim-fugitive
-map("n", "<leader>gs", "<cmd>Git status<cr>")
-map("n", "<leader>ga", "<cmd>Git add %<cr>")
-map("n", "<leader>gc", "<cmd>Git commit<cr>")
-map("n", "<leader>gr", "<cmd>Git restore --staged %<cr>")
-
 -- glow
 map("n", "gl", ":Glow<cr>")
