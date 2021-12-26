@@ -40,17 +40,19 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 })
 
 -- LSP DIAGNOSTIC
--- local signs = {
---   Error = "",
---   Warn = "",
---   Hint = "",
---   Info = ""
--- }
+local signs = {
+  Error = "",
+  Warn = "",
+  Hint = "",
+  Info = ""
+}
 
--- for type, icon in pairs(signs) do
---   local hl = "DiagnosticSign" .. type
---   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
--- end
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+-- disable diagnostic
 vim.diagnostic.config {
   virtual_text = false,
   signs = false,
@@ -77,5 +79,8 @@ nvim_lsp.emmet_ls.setup {
 }
 
 nvim_lsp.tsserver.setup {
+  root_dir = function(fname)    
+    return vim.loop.cwd()
+  end,
   on_attach = on_attach,
 }
