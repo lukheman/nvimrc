@@ -11,10 +11,6 @@ cmp.setup({
       vim.fn["vsnip#anonymous"](args.body)
     end,
   },
-  documentation = {
-    border = "rounded",
-    winhighlight = "NormalFloat:CmpDocumentation,FloatBorder:CmpDocumentationBorder",
-  },
   formatting = {
     format = function(entry, vim_item)
       vim_item.kind = string.format(
