@@ -1,4 +1,3 @@
-vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_show_icons = {
   git = 1,
   folders = 1,
@@ -65,4 +64,17 @@ nvimtree.setup {
     side = 'left',
     auto_resize = false,
   },
+  renderer = {
+    indent_markers = {
+      enable = true,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        none = "  ",
+      },
+    },
+    icons = {
+      webdev_colors = true,
+    },
+  }
 }
