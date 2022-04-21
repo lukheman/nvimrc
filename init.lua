@@ -1,4 +1,11 @@
+-- options
+require("options")
+
+-- auto commands
 require("autocmds")
-require("settings")
-require("mappings")
+
+-- keymaps
+require("keymaps")
+
+-- load plugins
 require("plugins")
