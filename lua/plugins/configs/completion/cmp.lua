@@ -5,7 +5,7 @@ if not ok then return end
 -- vim.opt.completeopt = "menuone,noselect"
 
 cmp.setup({
-  -- completion = { completeopt = 'menu,menuone,noinsert' },
+  completion = { completeopt = 'menu,menuone,noinsert' },
   snippet = {
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body)
@@ -38,6 +38,20 @@ cmp.setup({
       c = cmp.mapping.close(),
     }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<Down>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
+    end,
+    ['<Up>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      else
+        fallback()
+      end
+    end,
   },
   sources = {
     { name = 'nvim_lsp' },
