@@ -20,7 +20,7 @@ return packer.startup(function()
   -- autopairs
   use {
     'windwp/nvim-autopairs',
-    config = require "plugins.configs.completion.autopairs"
+    config = require 'plugins.configs.completion.autopairs'
   }
 
   -- LSP
@@ -55,9 +55,6 @@ return packer.startup(function()
     },
     config = require "plugins.configs.completion.cmp"
   }
-
-  -- snippets
-  use 'mattn/emmet-vim'
 
   -- auto align
   use 'junegunn/vim-easy-align'
@@ -105,13 +102,14 @@ return packer.startup(function()
   }
 
   -- whitespace
-  -- use 'ntpeters/vim-better-whitespace'
+  use 'ntpeters/vim-better-whitespace'
 
 
   -- fuzzy finder
   use {
     'nvim-telescope/telescope.nvim',
-    config = require "plugins.configs.telescope"
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = require 'plugins.configs.telescope'
   }
 
   -- indentline
@@ -143,16 +141,11 @@ return packer.startup(function()
     config = require "plugins.configs.galaxyline",
   }
 
-  -- use {
-  --   'nvim-lualine/lualine.nvim',
-  --   config = require "plugins.configs.lualine"
-  -- }
-
-
   -- buffer list
   use {
     'romgrk/barbar.nvim',
-    config = require "plugins.configs.barbar"
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = require 'plugins.configs.barbar'
   }
 
   -- treesitter
