@@ -2,8 +2,6 @@ local ok, cmp = pcall(require, "cmp")
 
 if not ok then return end
 
--- vim.opt.completeopt = "menuone,noselect"
-
 cmp.setup({
   completion = { completeopt = 'menu,menuone,noinsert' },
   snippet = {
