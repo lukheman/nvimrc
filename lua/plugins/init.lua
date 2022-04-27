@@ -30,7 +30,7 @@ return packer.startup(function()
     requires = {
       {
         "ray-x/lsp_signature.nvim",
-        config = require "lsp_signature".setup()
+        config = require "plugins.configs.completion.lsp.lsp_signature"
       }
     }
   }
@@ -74,17 +74,14 @@ return packer.startup(function()
     config = require "plugins.configs.colorizer"
   }
 
-  -- use '~/projek/gruvbox.nvim'
-  use 'Mofiqul/vscode.nvim'
+  -- colorschema
+  use 'mofiqul/vscode.nvim'
 
   -- benchmark
   use 'tweekmonster/startuptime.vim'
 
   -- table mode
-  use {
-    'dhruvasagar/vim-table-mode',
-    config = require "plugins.configs.vim-table-mode"
-  }
+  use 'dhruvasagar/vim-table-mode'
 
   -- HTML ( change opening tag and take the closing tag )
   use 'AndrewRadev/tagalong.vim'
@@ -135,10 +132,15 @@ return packer.startup(function()
   }
 
   -- statusline
+  -- use {
+  --   'glepnir/galaxyline.nvim',
+  --   branch = 'main',
+  --   config = require "plugins.configs.galaxyline",
+  -- }
+
   use {
-    'glepnir/galaxyline.nvim',
-    branch = 'main',
-    config = require "plugins.configs.galaxyline",
+    'feline-nvim/feline.nvim',
+    config = require "plugins.configs.feline"
   }
 
   -- buffer list
