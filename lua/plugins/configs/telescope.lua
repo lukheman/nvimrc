@@ -1,4 +1,4 @@
-local present, telescope = pcall(require, "telescope")
+local present, telescope = pcall(require, 'telescope')
 
 if not present then
   return
@@ -15,13 +15,13 @@ telescope.setup{
       '--column',
       '--smart-case'
     },
-    prompt_prefix = "   ", -- ❱❱
-    selection_caret = "❯ ",
-    entry_prefix = "  ",
-    initial_mode = "insert",
-    selection_strategy = "reset",
-    sorting_strategy = "descending",
-    layout_strategy = "horizontal",
+    prompt_prefix = '   ', -- ❱❱
+    selection_caret = '❯ ',
+    entry_prefix = '  ',
+    initial_mode = 'insert',
+    selection_strategy = 'reset',
+    sorting_strategy = 'descending',
+    layout_strategy = 'horizontal',
     layout_config = {
       horizontal = {
         preview_width = 0.55,
@@ -51,3 +51,12 @@ telescope.setup{
     buffer_previewer_maker = require('telescope.previewers').buffer_previewer_maker
   },
 }
+
+-- mappings
+local map = require("utils").map
+
+map("n", "<c-f>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+map("n", "<c-p>", "<cmd>lua require('telescope.builtin').buffers()<cr>")
+map("n", "<c-g>", "<cmd>lua require('telescope.builtin').git_branches()<cr>")
+map("n", "<c-h>", "<cmd>Telescope command_history<cr>")
+map("n", "<leader>c", "<cmd>Telescope commands<cr>")
