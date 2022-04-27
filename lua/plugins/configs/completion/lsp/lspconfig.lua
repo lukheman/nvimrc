@@ -70,7 +70,7 @@ nvim_lsp.emmet_ls.setup {
 }
 
 nvim_lsp.tsserver.setup {
-  root_dir = function(fname)    
+  root_dir = function(fname)
     return vim.loop.cwd()
   end,
   on_attach = on_attach,
