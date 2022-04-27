@@ -4,7 +4,7 @@ if not ok then
   return
 end
 
-local options = {
+autopairs.setup {
   pairs_map = {
     ["'"] = "'",
     ['"'] = '"',
@@ -34,5 +34,3 @@ local options = {
     highlight_grey='Comment'
   },
 }
-
-autopairs.setup(options)
