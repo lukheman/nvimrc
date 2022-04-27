@@ -2,9 +2,8 @@ local map = require("utils").map
 
 -- leader key
 -- nnoremap <SPACE> <Nop>
-vim.cmd('let mapleader      = " "')
-vim.cmd('let maplocalleader = " "')
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Reload config
 map("n", "<leader>so", "<cmd>luafile %<cr>")
