@@ -46,7 +46,7 @@ end
 -- disable diagnostic
 vim.diagnostic.config {
   virtual_text = false,
-  signs = false,
+  signs = true,
   underline = false,
 }
 
