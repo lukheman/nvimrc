@@ -146,7 +146,6 @@ return packer.startup(function()
   -- buffer list
   use {
     'romgrk/barbar.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
     config = require 'plugins.configs.barbar'
   }
 
