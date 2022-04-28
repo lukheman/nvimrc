@@ -126,6 +126,7 @@ return packer.startup(function()
     'lewis6991/gitsigns.nvim',
     config = require "plugins.configs.gitsigns"
   }
+
   use {
     'TimUntersberger/neogit',
     config = require "plugins.configs.neogit"
