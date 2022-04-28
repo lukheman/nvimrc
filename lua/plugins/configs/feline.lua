@@ -139,9 +139,11 @@ components.active[1][4] = {
 		local extension = vim.fn.expand("%:e")
 		local icon = require("nvim-web-devicons").get_icon(filename, extension)
 		if icon == nil then
-			icon = "  emty "
-			return icon
+			icon = ""
 		end
+    if vim.fn.empty(filename) == 1 then
+      return " empty "
+    end
     if vim.bo.modifiable then
       if vim.bo.modified then
         filename = filename .. " "
