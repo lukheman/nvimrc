@@ -161,5 +161,11 @@ return packer.startup(function()
     config = require "plugins.configs.toggleterm"
   }
 
+  -- translator
+  use {
+    "voldikss/vim-translator",
+    config = require "plugins.configs.vim-translator"
+  }
+
 
 end)
