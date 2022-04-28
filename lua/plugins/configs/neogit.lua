@@ -1,11 +1,9 @@
 local present, neogit = pcall(require, "neogit")
 
 
-if not present then
-  return
-end
+if not present then return end
 
-neogit.setup {  
+neogit.setup {
   -- customize displayed signs
   signs = {
     -- { CLOSED, OPENED }
