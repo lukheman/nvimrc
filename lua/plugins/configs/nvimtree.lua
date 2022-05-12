@@ -76,3 +76,7 @@ nvimtree.setup {
     },
   }
 }
+
+local map = require("utils").map
+map("n", "<C-n>", "<cmd>NvimTreeToggle<cr>")
+map("n", "<leader>r", "<cmd>NvimTreeRefresh<cr>")
