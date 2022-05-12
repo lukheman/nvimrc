@@ -15,23 +15,19 @@ telescope.setup{
       '--column',
       '--smart-case'
     },
-    prompt_prefix = '   ', -- ❱❱
-    selection_caret = '❯ ',
+    -- ❱❱  ❯
+    results_title = false,
+    prompt_prefix = ' ❱❱ ',
+    selection_caret = '❱ ',
     entry_prefix = '  ',
     initial_mode = 'insert',
     selection_strategy = 'reset',
     sorting_strategy = 'descending',
     layout_strategy = 'horizontal',
     layout_config = {
-      horizontal = {
-        preview_width = 0.55,
-        results_width = 0.8
-      },
-      vertical = {
-        mirror = false,
-      },
-      width = 0.87,
-      height = 0.80,
+      height = 0.35,
+      width = 0.9,
+      prompt_position = 'top',
       preview_cutoff = 120,
     },
     file_sorter =  require('telescope.sorters').get_fuzzy_file,
