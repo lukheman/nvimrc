@@ -41,23 +41,42 @@ local colors = {
   middlegrey = '#8791A5',
 }
 
+-- local mode_colors = {
+-- 	["n"] = { "NORMAL", colors.green },
+-- 	["no"] = { "N-PENDING", colors.green },
+-- 	["i"] = { "INSERT", colors.blue },
+-- 	["ic"] = { "INSERT", colors.blue },
+-- 	["t"] = { "TERMINAL", colors.blue },
+-- 	["v"] = { "VISUAL", colors.purple },
+-- 	["V"] = { "V-LINE", colors.purple },
+-- 	[""] = { "V-BLOCK", colors.purple },
+-- 	["R"] = { "REPLACE", colors.red },
+-- 	["Rv"] = { "V-REPLACE", colors.red },
+-- 	["s"] = { "SELECT", colors.red },
+-- 	["S"] = { "S-LINE", colors.red },
+-- 	[""] = { "S-BLOCK", colors.red },
+-- 	["c"] = { "COMMAND", colors.green },
+-- 	["cv"] = { "COMMAND", colors.green },
+-- 	["ce"] = { "COMMAND", colors.green },
+-- }
+
 local mode_colors = {
-	["n"] = { "NORMAL", colors.green },
-	["no"] = { "N-PENDING", colors.green },
-	["i"] = { "INSERT", colors.blue },
-	["ic"] = { "INSERT", colors.blue },
-	["t"] = { "TERMINAL", colors.blue },
-	["v"] = { "VISUAL", colors.purple },
-	["V"] = { "V-LINE", colors.purple },
-	[""] = { "V-BLOCK", colors.purple },
-	["R"] = { "REPLACE", colors.red },
-	["Rv"] = { "V-REPLACE", colors.red },
-	["s"] = { "SELECT", colors.red },
-	["S"] = { "S-LINE", colors.red },
-	[""] = { "S-BLOCK", colors.red },
-	["c"] = { "COMMAND", colors.green },
-	["cv"] = { "COMMAND", colors.green },
-	["ce"] = { "COMMAND", colors.green },
+	["n"] = { "N", colors.green },
+	["no"] = { "N", colors.green },
+	["i"] = { "I", colors.blue },
+	["ic"] = { "I", colors.blue },
+	["t"] = { "T", colors.blue },
+	["v"] = { "V", colors.purple },
+	["V"] = { "V-L", colors.purple },
+	[""] = { "V-B", colors.purple },
+	["R"] = { "R", colors.red },
+	["Rv"] = { "V-R", colors.red },
+	["s"] = { "S", colors.red },
+	["S"] = { "S-L", colors.red },
+	[""] = { "S-B", colors.red },
+	["c"] = { "C", colors.green },
+	["cv"] = { "C", colors.green },
+	["ce"] = { "C", colors.green },
 }
 
 local shortline = false
@@ -120,7 +139,8 @@ components.active[1][2] = {
 
 components.active[1][3] = {
   provider = function()
-    return " " .. mode_colors[vim.fn.mode()][1] .. " "
+    -- return " " .. mode_colors[vim.fn.mode()][1] .. " "
+    return " " .. vim.fn.mode():byte() .. " "
   end,
   hl = function()
     return {
@@ -167,14 +187,6 @@ components.active[1][4] = {
       }
     end
   },
-}
-
-components.active[1][5] = {
-  provider = 'file_size',
-	hl = {
-		fg = colors.bg,
-		bg = colors.fg
-	},
   right_sep = {
     str = assets.right_semicircle,
     hl = {
@@ -183,6 +195,21 @@ components.active[1][5] = {
     }
   }
 }
+
+-- components.active[1][5] = {
+--   provider = 'file_size',
+-- 	hl = {
+-- 		fg = colors.bg,
+-- 		bg = colors.fg
+-- 	},
+--   right_sep = {
+--     str = assets.right_semicircle,
+--     hl = {
+--       fg = colors.fg,
+--       bg = colors.bg
+--     }
+--   }
+-- }
 -- end filename
 
 -- ######## right
@@ -243,35 +270,35 @@ components.active[3][5] = {
     }
   },
   right_sep = {
-    str = assets.left_semicircle,
-    hl = {
-      fg = colors.blue,
-      bg = colors.blue
-    }
-  }
-}
-
-components.active[3][6] = {
-  provider = 'line_percentage',
-  hl = {
-    fg = colors.bg,
-    bg = colors.orange
-  },
-  left_sep = {
-    str = assets.left_semicircle,
-    hl = {
-      fg = colors.orange,
-      bg = colors.blue
-    }
-  },
-  right_sep = {
     str = assets.right_semicircle,
     hl = {
-      fg = colors.orange,
+      fg = colors.blue,
       bg = colors.bg
     }
   }
 }
+
+-- components.active[3][6] = {
+--   provider = 'line_percentage',
+--   hl = {
+--     fg = colors.bg,
+--     bg = colors.orange
+--   },
+--   left_sep = {
+--     str = assets.left_semicircle,
+--     hl = {
+--       fg = colors.orange,
+--       bg = colors.blue
+--     }
+--   },
+--   right_sep = {
+--     str = assets.right_semicircle,
+--     hl = {
+--       fg = colors.orange,
+--       bg = colors.bg
+--     }
+--   }
+-- }
 
 -- end cursor position
 
