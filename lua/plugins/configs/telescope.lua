@@ -25,7 +25,7 @@ telescope.setup{
     sorting_strategy = 'descending',
     layout_strategy = 'horizontal',
     layout_config = {
-      height = 0.35,
+      height = 12,
       width = 0.9,
       prompt_position = 'top',
       preview_cutoff = 120,
