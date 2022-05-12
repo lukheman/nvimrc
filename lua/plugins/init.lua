@@ -87,15 +87,20 @@ return packer.startup(function()
   use 'AndrewRadev/tagalong.vim'
 
   -- markdown
-  use {
-    "ellisonleao/glow.nvim",
-    config = require "plugins.configs.glow"
-  }
+  -- use {
+  --   "ellisonleao/glow.nvim",
+  --   config = require "plugins.configs.glow"
+  -- }
 
   -- comment
+  -- use {
+  --   "terrortylor/nvim-comment",
+  --   config = require('plugins.configs.nvim-comment')
+  -- }
+
   use {
-    "terrortylor/nvim-comment",
-    config = require('plugins.configs.comment')
+    'numToStr/Comment.nvim',
+    config = require 'plugins.configs.Comment'
   }
 
   -- whitespace
@@ -105,7 +110,6 @@ return packer.startup(function()
   -- fuzzy finder
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
     config = require 'plugins.configs.telescope'
   }
 
@@ -145,9 +149,14 @@ return packer.startup(function()
   }
 
   -- buffer list
+  -- use {
+  --   'romgrk/barbar.nvim',
+  --   config = require 'plugins.configs.barbar'
+  -- }
+
   use {
-    'romgrk/barbar.nvim',
-    config = require 'plugins.configs.barbar'
+    'noib3/nvim-cokeline',
+    config = require 'plugins.configs.cokeline'
   }
 
   -- treesitter
