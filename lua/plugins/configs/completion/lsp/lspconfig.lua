@@ -64,8 +64,9 @@ nvim_lsp.pyright.setup {
 
 nvim_lsp.emmet_ls.setup {
   on_attach = on_attach,
+  filetypes = { "html", "css", "javascript" },
   settings = {
-    root_dir = "~"
+    root_dir = "~",
   }
 }
 
