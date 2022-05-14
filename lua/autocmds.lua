@@ -3,6 +3,7 @@ local filetypes = require("utils").filetypes
 -- filetypes({
 filetypes("cpp",        { shiftwidth=4, tabstop=4, conceallevel=0 })
 filetypes("html",       { shiftwidth=2, tabstop=2 })
+filetypes("vue",       { shiftwidth=2, tabstop=2 })
 filetypes("css",        { shiftwidth=2, tabstop=2 })
 filetypes("htmldjango", { shiftwidth=2, tabstop=2 })
 filetypes("javascript", { shiftwidth=2, tabstop=2 })
