@@ -50,9 +50,13 @@ return packer.startup(function()
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-nvim-lua',
-      'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip',
-      'rafamadriz/friendly-snippets'
+      {
+        'L3MON4D3/LuaSnip',
+        'saadparwaiz1/cmp_luasnip',
+        'rafamadriz/friendly-snippets',
+        'hrsh7th/vim-vsnip',
+        config = require 'plugins.configs.completion.snippet'
+      }
     },
     config = require "plugins.configs.completion.cmp"
   }
