@@ -27,7 +27,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<c-q>', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-
 end
 
 -- LSP DIAGNOSTIC
@@ -51,28 +50,47 @@ vim.diagnostic.config {
 }
 
 -- LSP SERVER
-nvim_lsp.pyright.setup {
-  on_attach = on_attach,
-  settings = {
-    python = {
-      analysis = {
-        autoImportCompletions = false
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+local servers = {
+  pyright = {
+    enable = true,
+    settings = {
+      python = {
+        analysis = {
+          autoImportCompletions = false
+        }
       }
     }
+  },
+  html = {
+    enable = true,
+    capabilities = capabilities
+  },
+  cssls = {
+    enable = true,
+    capabilities = capabilities
+  },
+  emmet_ls = {
+    enable = false,
+    filetypes = { "html", "css", "javascript" },
+    settings = {
+      root_dir = "~",
+    }
+  },
+  tsserver = {
+    enable = true,
+    root_dir = function(fname)
+      return vim.loop.cwd()
+    end
   }
 }
 
-nvim_lsp.emmet_ls.setup {
-  on_attach = on_attach,
-  filetypes = { "html", "css", "javascript" },
-  settings = {
-    root_dir = "~",
-  }
-}
-
-nvim_lsp.tsserver.setup {
-  root_dir = function(fname)
-    return vim.loop.cwd()
-  end,
-  on_attach = on_attach,
-}
+for server, options in pairs(servers) do
+  if options.enable then
+    options['on_attach'] = on_attach
+    nvim_lsp[server].setup(options)
+  end
+end
