@@ -50,8 +50,9 @@ return packer.startup(function()
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-nvim-lua',
-      'hrsh7th/cmp-vsnip',
-      'hrsh7th/vim-vsnip'
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
+      'rafamadriz/friendly-snippets'
     },
     config = require "plugins.configs.completion.cmp"
   }
@@ -93,11 +94,6 @@ return packer.startup(function()
   -- }
 
   -- comment
-  -- use {
-  --   "terrortylor/nvim-comment",
-  --   config = require('plugins.configs.nvim-comment')
-  -- }
-
   use {
     'numToStr/Comment.nvim',
     config = require 'plugins.configs.Comment'
@@ -137,11 +133,6 @@ return packer.startup(function()
   }
 
   -- statusline
-  -- use {
-  --   'glepnir/galaxyline.nvim',
-  --   branch = 'main',
-  --   config = require "plugins.configs.galaxyline",
-  -- }
 
   use {
     'feline-nvim/feline.nvim',
