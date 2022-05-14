@@ -13,14 +13,14 @@ cmp.setup({
     format = function(entry, vim_item)
       vim_item.kind = string.format(
         " %s",
-        require("plugins.configs.completion.lsp.lspkind_icons").icons[vim_item.kind], vim_item.kind
+        require("plugins.configs.completion.lsp.lspkind").icons[vim_item.kind], vim_item.kind
       )
 
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
         nvim_lua = "[LUA]",
         buffer = "[BUF]",
-        vsnip = "[SNP]"
+        luasnip = "[SNP]"
       })[entry.source.name]
 
       return vim_item
@@ -54,7 +54,7 @@ cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
-    { name = 'vsnip' },
+    { name = 'luasnip' },
     { name = 'buffer' },
     { name = 'path' },
   }
@@ -78,3 +78,4 @@ cmp.setup.cmdline('/', {
 -- insert `(` after select function or method item
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done())
+require("luasnip.loaders.from_vscode").lazy_load()
