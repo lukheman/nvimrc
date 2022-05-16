@@ -88,9 +88,6 @@ return packer.startup(function()
   -- table mode
   use 'dhruvasagar/vim-table-mode'
 
-  -- HTML ( change opening tag and take the closing tag )
-  use 'AndrewRadev/tagalong.vim'
-
   -- markdown
   -- use {
   --   "ellisonleao/glow.nvim",
@@ -159,6 +156,9 @@ return packer.startup(function()
     'nvim-treesitter/nvim-treesitter',
     config = require "plugins.configs.treesitter"
   }
+
+  -- auto close and auto rename html tag
+  use 'windwp/nvim-ts-autotag'
 
   -- terminal
   use {
