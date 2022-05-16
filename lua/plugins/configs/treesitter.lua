@@ -5,6 +5,9 @@ if not ok then
 end
 
 treesitter.setup {
+  autotag = {
+    enable = true
+  },
   ensure_installed = {
     "lua",
     "python"
