@@ -79,8 +79,6 @@ local mode_colors = {
 	["ce"] = { "C", colors.green },
 }
 
-local shortline = false
-
 -- Initialize the components table
 local components = {
 	active = {},
@@ -90,6 +88,22 @@ local components = {
 table.insert(components.active, {}) -- (1) left
 table.insert(components.active, {}) -- (2) center
 table.insert(components.active, {}) -- (3) right
+
+local function active_component_left(component)
+  table.insert(components.active[1], component)
+end
+
+local function active_component_right(component)
+  table.insert(components.active[3], component)
+end
+
+-- Insert two sections (left and right) for the inactive statusline
+table.insert(components.inactive, {}) -- left
+table.insert(components.inactive, {}) -- right
+
+local function inactive_omponent_left(component)
+  table.insert(components.inactive[1], component)
+end
 
 -- global components
 local invi_sep = {
@@ -116,8 +130,7 @@ end
 -- ######## Left
 
 -- vi mode
-
-components.active[1][1] = {
+active_component_left {
 	provider = assets.left_semicircle,
 	hl = function()
 		return {
@@ -127,7 +140,7 @@ components.active[1][1] = {
 	end,
 }
 
-components.active[1][2] = {
+active_component_left {
 	provider = "",
 	hl = function()
 		return {
@@ -137,7 +150,7 @@ components.active[1][2] = {
 	end,
 }
 
-components.active[1][3] = {
+active_component_left {
   provider = function()
     -- return " " .. mode_colors[vim.fn.mode()][1] .. " "
     return " " .. vim.fn.mode():byte() .. " "
@@ -153,40 +166,28 @@ components.active[1][3] = {
 -- end vi mode
 
 -- filename
-components.active[1][4] = {
-	provider = function()
-		local filename = vim.fn.expand("%:t")
-		local extension = vim.fn.expand("%:e")
-		local icon = require("nvim-web-devicons").get_icon(filename, extension)
-		if icon == nil then
-			icon = ""
-		end
+active_component_left {
+  provider = function()
+    local filename = vim.fn.expand("%:t")
+    local extension = vim.fn.expand("%:e")
+    local icon = require("nvim-web-devicons").get_icon(filename, extension)
+    if icon == nil then
+      icon = ""
+    end
     if vim.fn.empty(filename) == 1 then
-      return " empty "
+      return "  empty "
     end
     if vim.bo.modifiable then
       if vim.bo.modified then
         filename = filename .. " "
       end
     end
-		return " " .. icon .. " " .. filename .. " "
-	end,
-	-- enabled = shortline or function(winid)
-	-- 	return vim.api.nvim_win_get_width(winid) > 70
-	-- end,
-	hl = {
-		fg = colors.bg,
-		bg = colors.fg
-	},
-  -- left_sep = {
-  --   str = assets.left_semicircle,
-  --   hl = function()
-  --     return {
-  --       fg = colors.fg,
-  --       bg = mode_colors[vim.fn.mode()][2]
-  --     }
-  --   end
-  -- },
+    return " " .. icon .. " " .. filename .. " "
+  end,
+  hl = {
+    fg = colors.bg,
+    bg = colors.fg
+  },
   right_sep = {
     str = assets.right_semicircle,
     hl = {
@@ -196,7 +197,7 @@ components.active[1][4] = {
   }
 }
 
--- components.active[1][5] = {
+-- active_component_left {
 --   provider = 'file_size',
 -- 	hl = {
 -- 		fg = colors.bg,
@@ -215,7 +216,7 @@ components.active[1][4] = {
 -- ######## right
 
 -- diffs
-components.active[3][1] = {
+active_component_right {
   provider = 'git_diff_added',
   hl = {
     fg = colors.green,
@@ -224,7 +225,7 @@ components.active[3][1] = {
 	icon = "  "
 }
 
-components.active[3][2] = {
+active_component_right {
   provider = 'git_diff_changed',
   hl = {
     fg = colors.yellow,
@@ -233,7 +234,7 @@ components.active[3][2] = {
 	icon = "  ",
 }
 
-components.active[3][3] = {
+active_component_right {
   provider = 'git_diff_removed',
   hl = {
     fg = colors.red,
@@ -242,14 +243,14 @@ components.active[3][3] = {
 	icon = "  "
 }
 
-components.active[3][4] = {
+active_component_right {
   provider = " ",
   hl = {
     bg = colors.bg
   }
 }
 
-components.active[3][5] = {
+active_component_right {
   provider = 'git_branch',
   hl = {
     fg = colors.middlegrey,
@@ -274,7 +275,7 @@ components.active[3][5] = {
 
 
 -- cursor position
-components.active[3][6] = {
+active_component_right {
   provider = 'position',
   hl = {
     fg = colors.bg,
@@ -295,6 +296,48 @@ components.active[3][6] = {
   }
 }
 -- end cursor position
+
+
+-- INACTIVE COMPONENT
+
+-- filename
+inactive_omponent_left {
+  provider = function()
+    local filename = vim.fn.expand("%:t")
+    local extension = vim.fn.expand("%:e")
+    local icon = require("nvim-web-devicons").get_icon(filename, extension)
+    if icon == nil then
+      icon = ""
+    end
+    if vim.fn.empty(filename) == 1 then
+      return "  empty "
+    end
+    if vim.bo.modifiable then
+      if vim.bo.modified then
+        filename = filename .. " "
+      end
+    end
+    return " " .. icon .. " " .. filename .. " "
+  end,
+  hl = {
+    fg = colors.bg,
+    bg = colors.fg
+  },
+  left_sep = {
+    str = assets.left_semicircle,
+    hl = {
+      fg = colors.fg,
+      bg = colors.bg
+    }
+  },
+  right_sep = {
+    str = assets.right_semicircle,
+    hl = {
+      fg = colors.fg,
+      bg = colors.bg
+    }
+  }
+}
 
 feline.setup({
 	colors = {
