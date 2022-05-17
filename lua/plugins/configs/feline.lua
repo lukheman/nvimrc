@@ -178,15 +178,15 @@ components.active[1][4] = {
 		fg = colors.bg,
 		bg = colors.fg
 	},
-  left_sep = {
-    str = assets.left_semicircle,
-    hl = function()
-      return {
-        fg = colors.fg,
-        bg = mode_colors[vim.fn.mode()][2]
-      }
-    end
-  },
+  -- left_sep = {
+  --   str = assets.left_semicircle,
+  --   hl = function()
+  --     return {
+  --       fg = colors.fg,
+  --       bg = mode_colors[vim.fn.mode()][2]
+  --     }
+  --   end
+  -- },
   right_sep = {
     str = assets.right_semicircle,
     hl = {
@@ -230,7 +230,7 @@ components.active[3][2] = {
     fg = colors.yellow,
     bg = colors.bg
   },
-	icon = "  ",
+	icon = "  ",
 }
 
 components.active[3][3] = {
@@ -239,34 +239,51 @@ components.active[3][3] = {
     fg = colors.red,
     bg = colors.bg
   },
-	icon = "  "
+	icon = "  "
 }
 
 components.active[3][4] = {
+  provider = " ",
+  hl = {
+    bg = colors.bg
+  }
+}
+
+components.active[3][5] = {
   provider = 'git_branch',
   hl = {
     fg = colors.middlegrey,
-    bg = colors.bg
+    bg = colors.section_bg
   },
   icon = "  ",
-  left_sep = invi_sep,
-  right_sep = invi_sep
+  left_sep = {
+    str = assets.left_semicircle,
+    hl = {
+      fg = colors.section_bg,
+      bg = colors.bg
+    }
+  },
+  right_sep = {
+    str = " ",
+    hl = {
+      bg = colors.section_bg
+    }
+  }
 }
 -- end diffs
 
 
 -- cursor position
-components.active[3][5] = {
+components.active[3][6] = {
   provider = 'position',
   hl = {
     fg = colors.bg,
     bg = colors.blue
   },
   left_sep = {
-    str = assets.left_semicircle,
+    str = " ",
     hl = {
-      fg = colors.blue,
-      bg = colors.bg
+      bg = colors.blue
     }
   },
   right_sep = {
@@ -277,29 +294,6 @@ components.active[3][5] = {
     }
   }
 }
-
--- components.active[3][6] = {
---   provider = 'line_percentage',
---   hl = {
---     fg = colors.bg,
---     bg = colors.orange
---   },
---   left_sep = {
---     str = assets.left_semicircle,
---     hl = {
---       fg = colors.orange,
---       bg = colors.blue
---     }
---   },
---   right_sep = {
---     str = assets.right_semicircle,
---     hl = {
---       fg = colors.orange,
---       bg = colors.bg
---     }
---   }
--- }
-
 -- end cursor position
 
 feline.setup({
