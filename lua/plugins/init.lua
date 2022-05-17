@@ -80,10 +80,15 @@ return packer.startup(function()
   }
 
   -- colorschema
-  use 'mofiqul/vscode.nvim'
+  -- use 'mofiqul/vscode.nvim'
+  use {
+    'navarasu/onedark.nvim',
+    config = require 'plugins.configs.onedark'
+  }
 
   -- benchmark
-  use 'tweekmonster/startuptime.vim'
+  -- use 'tweekmonster/startuptime.vim'
+  use {'dstein64/vim-startuptime'}
 
   -- table mode
   use 'dhruvasagar/vim-table-mode'
@@ -170,6 +175,13 @@ return packer.startup(function()
   use {
     "voldikss/vim-translator",
     config = require "plugins.configs.vim-translator"
+  }
+
+  -- Is using a standard Neovim install, i.e. built from source or using a
+  -- provided appimage.
+  use {
+    'lewis6991/impatient.nvim',
+    config = require 'plugins.configs.others'
   }
 
 
