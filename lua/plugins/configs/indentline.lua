@@ -31,6 +31,7 @@ indent_blankline.setup {
     "lspinfo",
     "lspsagafinder",
     "Trouble",
+    "alpha"
   },
   buftype_exclude = { "terminal", "man", "trouble" }
 }
