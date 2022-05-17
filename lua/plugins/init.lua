@@ -7,6 +7,13 @@ packer.init({
 })
 
 return packer.startup(function()
+  -- Is using a standard Neovim install, i.e. built from source or using a
+  -- provided appimage.
+  use {
+    'lewis6991/impatient.nvim',
+    config = require 'plugins.configs.others'.impatient()
+  }
+
   -- plugins manager
   use 'wbthomason/packer.nvim'
 
@@ -36,9 +43,7 @@ return packer.startup(function()
   }
   use {
     "folke/trouble.nvim",
-    config = function()
-      require("trouble").setup {}
-    end
+    config = require 'plugins.configs.others'.trouble()
   }
 
   -- autocomplete
@@ -87,8 +92,7 @@ return packer.startup(function()
   }
 
   -- benchmark
-  -- use 'tweekmonster/startuptime.vim'
-  use {'dstein64/vim-startuptime'}
+  use 'tweekmonster/startuptime.vim'
 
   -- table mode
   use 'dhruvasagar/vim-table-mode'
@@ -142,7 +146,7 @@ return packer.startup(function()
 
   use {
     'feline-nvim/feline.nvim',
-    config = require "plugins.configs.feline"
+    config = require "plugins.configs.feline.evil"
   }
 
   -- buffer list
@@ -177,12 +181,9 @@ return packer.startup(function()
     config = require "plugins.configs.vim-translator"
   }
 
-  -- Is using a standard Neovim install, i.e. built from source or using a
-  -- provided appimage.
   use {
-    'lewis6991/impatient.nvim',
-    config = require 'plugins.configs.others'
+    'goolord/alpha-nvim',
+    config = require 'plugins.configs.alpha'
   }
-
 
 end)
