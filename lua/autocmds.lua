@@ -18,12 +18,3 @@ filetypes("help",       { nonumber=true, norelativenumber=true })
 
 -- ingat posisi terakhir cursor
 vim.cmd [[ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif ]]
-
--- run python script
-vim.cmd("autocmd FileType python map <buffer> rr :w<cr>:exec '!python3' shellescape(@%, 1)<cr>")
-
--- run lua script
-vim.cmd("autocmd FileType lua map <buffer> rr :w<cr>:exec '!lua' shellescape(@%, 1)<cr>")
-
--- compile c++ file
-vim.cmd("autocmd FileType cpp map <buffer> rr :w<cr>:exec '!g++' shellescape(@%, 1)<cr>:exec '!./a.out'<cr>")
