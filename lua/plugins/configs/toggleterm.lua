@@ -1,4 +1,5 @@
 local ok, toggleterm = pcall(require, "toggleterm")
+local map = require('utils').map
 
 if not ok then
   return
@@ -7,7 +8,7 @@ end
 toggleterm.setup{
   size = function(term)
     if term.direction == "horizontal" then
-      return 6
+      return 10
     elseif term.direction == "vertical" then
       return vim.o.columns * 0.4
     end
@@ -20,14 +21,14 @@ toggleterm.setup{
   start_in_insert = true,
   insert_mappings = true,
   persist_size = true,
-  direction = 'float',
+  direction = 'horizontal',
   close_on_exit = true,
   shell = vim.o.shell, -- change the default shell
   float_opts = {
     -- border = 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
     border = 'single',
-    width = 55,
-    height = 7,
+    width = 60,
+    height = 10,
     winblend = 3,
     highlights = {
       border = "Normal",
@@ -36,3 +37,4 @@ toggleterm.setup{
   }
 }
 
+vim.cmd [[ autocmd FileType python map <buffer> rr <cmd>TermExec cmd="python %"<cr> ]]
