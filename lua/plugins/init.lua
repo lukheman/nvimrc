@@ -146,7 +146,7 @@ return packer.startup(function()
 
   use {
     'feline-nvim/feline.nvim',
-    config = require "plugins.configs.feline.evil"
+    config = require "plugins.configs.feline.bubble"
   }
 
   -- buffer list
