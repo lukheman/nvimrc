@@ -42,6 +42,10 @@ local function inactive_omponent_left(component)
   table.insert(components.inactive[1], component)
 end
 
+local function inactive_omponent_right(component)
+  table.insert(components.inactive[2], component)
+end
+
 
 -- ### LEFT
 active_component_left {
@@ -144,6 +148,44 @@ active_component_right {
 }
 
 active_component_right {
+  provider = " ▊",
+  hl = {
+    fg = colors.blue
+  }
+}
+
+inactive_omponent_left {
+  provider = "▊",
+  hl = {
+    fg = colors.blue
+  }
+}
+
+inactive_omponent_left {
+  provider = function()
+    local filename = vim.fn.expand("%:t")
+    local extension = vim.fn.expand("%:e")
+    local icon = require("nvim-web-devicons").get_icon(filename, extension)
+    if icon == nil then
+      icon = ""
+    end
+    if vim.fn.empty(filename) == 1 then
+      return "  empty "
+    end
+    if vim.bo.modifiable then
+      if vim.bo.modified then
+        filename = filename .. " "
+      end
+    end
+    return " " .. icon .. " " .. filename .. " "
+  end,
+  hl = {
+    fg = colors.magenta,
+    style = 'bold'
+  }
+}
+
+inactive_omponent_right {
   provider = " ▊",
   hl = {
     fg = colors.blue
