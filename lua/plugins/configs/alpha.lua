@@ -20,6 +20,7 @@ dashboard.section.buttons.val = {
   dashboard.button( "r", "   Recent"   , ":Telescope oldfiles<CR>"),
   dashboard.button( "s", "   Settings" , ":e $MYVIMRC | :cd %:p:h | split . | wincmd k<CR>"),
   dashboard.button( "q", "   Quit NVIM", ":qa<CR>"),
+  dashboard.button( "u", "   Update Plugins", ":ene<cr>:PackerSync<cr>"),
 }
 
 -- set footer
