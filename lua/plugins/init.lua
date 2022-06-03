@@ -66,6 +66,9 @@ return packer.startup(function()
     config = require "plugins.configs.completion.cmp"
   }
 
+  -- emmet
+  use 'mattn/emmet-vim'
+
   -- auto align
   use 'junegunn/vim-easy-align'
 
