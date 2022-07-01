@@ -184,9 +184,9 @@ return packer.startup(function()
     config = require "plugins.configs.vim-translator"
   }
 
-  use {
-    'goolord/alpha-nvim',
-    config = require 'plugins.configs.alpha'
-  }
+  -- use {
+  --   'goolord/alpha-nvim',
+  --   config = require 'plugins.configs.alpha'
+  -- }
 
 end)
