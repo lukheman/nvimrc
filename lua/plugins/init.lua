@@ -133,6 +133,12 @@ return packer.startup(function()
     'kyazdani42/nvim-tree.lua',
     config = require "plugins.configs.nvimtree"
   }
+  -- use {
+  -- "nvim-neo-tree/neo-tree.nvim",
+  --   branch = "v2.x",
+  --   requires = { "MunifTanjim/nui.nvim" },
+  --   config = require "plugins.configs.neo-tree"
+  -- }
 
   -- git
   use {
