@@ -24,7 +24,8 @@ cmp.setup({
       })[entry.source.name]
 
       return vim_item
-    end
+    end,
+    fields = { 'kind', 'abbr', 'menu' }
   },
   mapping = {
     ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
