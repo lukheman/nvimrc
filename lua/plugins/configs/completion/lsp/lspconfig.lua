@@ -74,8 +74,8 @@ local servers = {
     capabilities = capabilities
   },
   emmet_ls = {
-    enable = false,
-    filetypes = { "html", "css", "javascript" },
+    enable = true,
+    filetypes = { "html", "css" },
     settings = {
       root_dir = "~",
     }
