@@ -195,4 +195,20 @@ return packer.startup(function()
   --   config = require 'plugins.configs.alpha'
   -- }
 
+  use {
+    "mhartington/formatter.nvim",
+    config = require "plugins.configs.formatter"
+  }
+
+  use {
+    'kevinhwang91/nvim-ufo',
+    requires = 'kevinhwang91/promise-async',
+    config = require "plugins.configs.nvim-ufo"
+  }
+
+  use {
+    'booperlv/nvim-gomove',
+    config = require "plugins.configs.nvim-gomove"
+  }
+
 end)
