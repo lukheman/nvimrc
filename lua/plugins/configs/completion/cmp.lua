@@ -41,26 +41,32 @@ cmp.setup({
       c = cmp.mapping.close(),
     }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ['<Down>'] = function(fallback)
+    ["<Down>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif has_words_before() then
+        cmp.complete()
       else
         fallback()
       end
-    end,
-    ['<Up>'] = function(fallback)
+    end, { "i", "s" }),
+    ["<Up>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
       else
         fallback()
       end
-    end,
+    end, { "i", "s" })
   },
   sources = {
-    { name = 'nvim_lsp' },
+    { name = 'nvim_lsp', group_index = 1 },
     { name = 'nvim_lua' },
-    { name = 'luasnip' },
-    { name = 'buffer',
+    { name = 'luasnip', group_index = 3 },
+    { name = 'buffer', group_index = 2
       -- option = {
       --   get_bufnrs = function()
       --     return vim.api.nvim_list_bufs()
@@ -74,7 +80,7 @@ cmp.setup({
 cmp.setup.cmdline(':', {
   sources = {
     { name = 'path' },
-    { name = 'cmdline' }
+    { name = 'cmdline', max_item_count = 10}
   }
 })
 
