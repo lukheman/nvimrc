@@ -1,11 +1,11 @@
 -- options
-require("options")
+require("core.options")
 
 -- auto commands
-require("autocmds")
+require("core.autocmds")
 
 -- keymaps
-require("keymaps")
+require("core.keymaps")
 
 -- load plugins
 require("plugins")
