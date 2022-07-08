@@ -177,7 +177,7 @@ return packer.startup(function()
 
 	use({
 		"TimUntersberger/neogit",
-		config = require("plugins.configs.neogit"),
+		config = require("plugins.configs.others").neogit(),
 	})
 
 	-- terminal
@@ -189,7 +189,7 @@ return packer.startup(function()
 	-- translator
 	use({
 		"voldikss/vim-translator",
-		config = require("plugins.configs.vim-translator"),
+		config = require("plugins.configs.others").vim_translator(),
 	})
 
 end)
