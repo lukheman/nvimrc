@@ -1,214 +1,211 @@
-local packer = require('packer')
+local packer = require("packer")
 
 packer.init({
-  display = {
-    prompt_border = 'rounded'
-  }
+	display = {
+		prompt_border = "rounded",
+	},
 })
 
 return packer.startup(function()
-  -- Is using a standard Neovim install, i.e. built from source or using a
-  -- provided appimage.
-  use {
-    'lewis6991/impatient.nvim',
-    config = require 'plugins.configs.others'.impatient()
-  }
+	-- Is using a standard Neovim install, i.e. built from source or using a
+	-- provided appimage.
+	use({
+		"lewis6991/impatient.nvim",
+		config = require("plugins.configs.others").impatient(),
+	})
 
-  -- plugins manager
-  use 'wbthomason/packer.nvim'
+	-- plugins manager
+	use("wbthomason/packer.nvim")
 
-  -- utils
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-lua/popup.nvim'
+	-- utils
+	use("nvim-lua/plenary.nvim")
+	use("nvim-lua/popup.nvim")
 
-  -- icons
-  use 'kyazdani42/nvim-web-devicons'
+	-- icons
+	use("kyazdani42/nvim-web-devicons")
 
-  -- autopairs
-  use {
-    'windwp/nvim-autopairs',
-    config = require 'plugins.configs.completion.autopairs'
-  }
+	-- autopairs
+	use({
+		"windwp/nvim-autopairs",
+		config = require("plugins.configs.completion.autopairs"),
+	})
 
-  -- LSP
-  use {
-    'neovim/nvim-lspconfig',
-    config = require "plugins.configs.completion.lsp.lspconfig",
-    requires = {
-      {
-        "ray-x/lsp_signature.nvim",
-        config = require "plugins.configs.completion.lsp.lsp_signature"
-      }
-    }
-  }
-  use {
-    "folke/trouble.nvim",
-    config = require 'plugins.configs.others'.trouble()
-  }
+	-- LSP
+	use({
+		"neovim/nvim-lspconfig",
+		config = require("plugins.configs.completion.lsp.lspconfig"),
+		requires = {
+			"ray-x/lsp_signature.nvim",
+			config = require("plugins.configs.completion.lsp.lsp_signature"),
+		},
+	})
 
-  -- autocomplete
-  use {
-    'hrsh7th/nvim-cmp',
-    requires = {
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-nvim-lua',
-      {
-        'L3MON4D3/LuaSnip',
-        'saadparwaiz1/cmp_luasnip',
-        'rafamadriz/friendly-snippets',
-        'hrsh7th/vim-vsnip',
-        config = require 'plugins.configs.completion.snippet'
-      }
-    },
-    config = require "plugins.configs.completion.cmp"
-  }
+	use({
+		"folke/trouble.nvim",
+		config = require("plugins.configs.others").trouble(),
+	})
 
-  -- emmet
-  use 'mattn/emmet-vim'
+	-- autocomplete
+	use({
+		"hrsh7th/nvim-cmp",
+		requires = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"hrsh7th/cmp-nvim-lua",
+			{
+				"L3MON4D3/LuaSnip",
+				"saadparwaiz1/cmp_luasnip",
+				"rafamadriz/friendly-snippets",
+				"hrsh7th/vim-vsnip",
+				config = require("plugins.configs.completion.snippet"),
+			},
+		},
+		config = require("plugins.configs.completion.cmp"),
+	})
 
-  -- auto align
-  use 'junegunn/vim-easy-align'
+	-- emmet
+	use("mattn/emmet-vim")
 
-  -- autosave
-  use {
-    'Pocco81/AutoSave.nvim',
-    config = require "plugins.configs.autosave"
-  }
+	-- auto align
+	use("junegunn/vim-easy-align")
 
-  -- surround
-  use 'machakann/vim-sandwich'
+	-- autosave
+	use({
+		"Pocco81/AutoSave.nvim",
+		config = require("plugins.configs.autosave"),
+	})
 
-  -- color preview
-  use {
-    'norcalli/nvim-colorizer.lua',
-    config = require "plugins.configs.colorizer"
-  }
+	-- surround
+	use("machakann/vim-sandwich")
 
-  -- colorschema
-  -- use 'mofiqul/vscode.nvim'
-  use {
-    'navarasu/onedark.nvim',
-    config = require 'plugins.configs.onedark'
-  }
+	-- color preview
+	use({
+		"norcalli/nvim-colorizer.lua",
+		config = require("plugins.configs.colorizer"),
+	})
 
-  -- benchmark
-  use 'tweekmonster/startuptime.vim'
+	-- colorschema
+	-- use 'mofiqul/vscode.nvim'
+	use({
+		"navarasu/onedark.nvim",
+		config = require("plugins.configs.onedark"),
+	})
 
-  -- table mode
-  use 'dhruvasagar/vim-table-mode'
+	-- benchmark
+	use("tweekmonster/startuptime.vim")
 
-  -- markdown
-  -- use {
-  --   "ellisonleao/glow.nvim",
-  --   config = require "plugins.configs.glow"
-  -- }
+	-- table mode
+	use("dhruvasagar/vim-table-mode")
 
-  -- comment
-  use {
-    'numToStr/Comment.nvim',
-    config = require 'plugins.configs.Comment'
-  }
+	-- markdown
+	-- use {
+	--   "ellisonleao/glow.nvim",
+	--   config = require "plugins.configs.glow"
+	-- }
 
-  -- whitespace
-  use 'ntpeters/vim-better-whitespace'
+	-- comment
+	use({
+		"numToStr/Comment.nvim",
+		config = require("plugins.configs.Comment"),
+	})
 
+	-- whitespace
+	use("ntpeters/vim-better-whitespace")
 
-  -- fuzzy finder
-  use {
-    'nvim-telescope/telescope.nvim',
-    config = require 'plugins.configs.telescope'
-  }
+	-- fuzzy finder
+	use({
+		"nvim-telescope/telescope.nvim",
+		config = require("plugins.configs.telescope"),
+	})
 
-  -- indentline
-  use {
-    'lukas-reineke/indent-blankline.nvim',
-    config = require "plugins.configs.indentline"
-  }
+	-- indentline
+	use({
+		"lukas-reineke/indent-blankline.nvim",
+		config = require("plugins.configs.indentline"),
+	})
 
-  -- file explorer
-  use {
-    'kyazdani42/nvim-tree.lua',
-    config = require "plugins.configs.nvimtree"
-  }
-  -- use {
-  -- "nvim-neo-tree/neo-tree.nvim",
-  --   branch = "v2.x",
-  --   requires = { "MunifTanjim/nui.nvim" },
-  --   config = require "plugins.configs.neo-tree"
-  -- }
+	-- file explorer
+	use({
+		"kyazdani42/nvim-tree.lua",
+		config = require("plugins.configs.nvimtree"),
+	})
+	-- use {
+	-- "nvim-neo-tree/neo-tree.nvim",
+	--   branch = "v2.x",
+	--   requires = { "MunifTanjim/nui.nvim" },
+	--   config = require "plugins.configs.neo-tree"
+	-- }
 
-  -- git
-  use {
-    'lewis6991/gitsigns.nvim',
-    config = require "plugins.configs.gitsigns"
-  }
+	-- git
+	use({
+		"lewis6991/gitsigns.nvim",
+		config = require("plugins.configs.gitsigns"),
+	})
 
-  use {
-    'TimUntersberger/neogit',
-    config = require "plugins.configs.neogit"
-  }
+	use({
+		"TimUntersberger/neogit",
+		config = require("plugins.configs.neogit"),
+	})
 
-  -- statusline
+	-- statusline
 
-  use {
-    'feline-nvim/feline.nvim',
-    config = require "plugins.configs.feline.bubble"
-  }
+	use({
+		"feline-nvim/feline.nvim",
+		config = require("plugins.configs.feline.bubble"),
+	})
 
-  -- buffer list
-  -- use {
-  --   'romgrk/barbar.nvim',
-  --   config = require 'plugins.configs.barbar'
-  -- }
+	-- buffer list
+	-- use {
+	--   'romgrk/barbar.nvim',
+	--   config = require 'plugins.configs.barbar'
+	-- }
 
-  use {
-    'noib3/nvim-cokeline',
-    config = require 'plugins.configs.cokeline'
-  }
+	use({
+		"noib3/nvim-cokeline",
+		config = require("plugins.configs.cokeline"),
+	})
 
-  -- treesitter
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    config = require "plugins.configs.treesitter"
-  }
+	-- treesitter
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		config = require("plugins.configs.treesitter"),
+	})
 
-  -- auto close and auto rename html tag
-  use 'windwp/nvim-ts-autotag'
+	-- auto close and auto rename html tag
+	use("windwp/nvim-ts-autotag")
 
-  -- terminal
-  use {
-    "akinsho/toggleterm.nvim",
-    config = require "plugins.configs.toggleterm"
-  }
+	-- terminal
+	use({
+		"akinsho/toggleterm.nvim",
+		config = require("plugins.configs.toggleterm"),
+	})
 
-  -- translator
-  use {
-    "voldikss/vim-translator",
-    config = require "plugins.configs.vim-translator"
-  }
+	-- translator
+	use({
+		"voldikss/vim-translator",
+		config = require("plugins.configs.vim-translator"),
+	})
 
-  -- use {
-  --   'goolord/alpha-nvim',
-  --   config = require 'plugins.configs.alpha'
-  -- }
+	-- use {
+	--   'goolord/alpha-nvim',
+	--   config = require 'plugins.configs.alpha'
+	-- }
 
-  use{
-    "jose-elias-alvarez/null-ls.nvim",
-    config = require "plugins.configs.null-ls"
-  }
+	use({
+		"jose-elias-alvarez/null-ls.nvim",
+		config = require("plugins.configs.null-ls"),
+	})
 
-  use {
-    'kevinhwang91/nvim-ufo',
-    requires = 'kevinhwang91/promise-async',
-    config = require "plugins.configs.nvim-ufo"
-  }
+	use({
+		"kevinhwang91/nvim-ufo",
+		requires = "kevinhwang91/promise-async",
+		config = require("plugins.configs.nvim-ufo"),
+	})
 
-  use {
-    'booperlv/nvim-gomove',
-    config = require "plugins.configs.nvim-gomove"
-  }
-
+	use({
+		"booperlv/nvim-gomove",
+		config = require("plugins.configs.nvim-gomove"),
+	})
 end)
