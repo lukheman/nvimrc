@@ -44,7 +44,7 @@ require("formatter").setup({
 			function(parser)
 				if not parser then
 					return {
-            -- npx prettier --write
+						-- npx prettier --write
 						exe = "npx prettier",
 						args = {
 							"--stdin-filepath",

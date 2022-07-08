@@ -9,8 +9,8 @@ vim.g.maplocalleader = " "
 map("n", "ss", "<cmd>w!<cr>")
 
 -- easy align
-map("v", "ga", "<Plug>(EasyAlign)", {} )
-map("n", "ga", "<Plug>(EasyAlign)", {} )
+map("v", "ga", "<Plug>(EasyAlign)", {})
+map("n", "ga", "<Plug>(EasyAlign)", {})
 
 -- clear whitespace
 map("n", "<leader>w", "<cmd>StripWhitespace<cr>")

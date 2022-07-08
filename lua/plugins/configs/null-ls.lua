@@ -1,17 +1,19 @@
 local ok, nulls = pcall(require, "null-ls")
 
-if not ok then return end
+if not ok then
+	return
+end
 
 nulls.setup({
-  sources = {
-    -- formatting
-    -- lua
-    nulls.builtins.formatting.stylua,
-  },
+	sources = {
+		-- formatting
+		-- lua
+		nulls.builtins.formatting.stylua,
+	},
 })
 
 local function format()
-  vim.lsp.buf.formatting({ async = true })
+	vim.lsp.buf.formatting({ async = true })
 end
 
 -- keymap

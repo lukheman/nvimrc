@@ -191,5 +191,4 @@ return packer.startup(function()
 		"voldikss/vim-translator",
 		config = require("plugins.configs.others").vim_translator(),
 	})
-
 end)
