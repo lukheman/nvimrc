@@ -27,16 +27,16 @@ return packer.startup(function()
 	-- autopairs
 	use({
 		"windwp/nvim-autopairs",
-		config = require("plugins.configs.completion.autopairs"),
+		config = require("plugins.configs.autopairs"),
 	})
 
 	-- LSP
 	use({
 		"neovim/nvim-lspconfig",
-		config = require("plugins.configs.completion.lsp.lspconfig"),
+		config = require("plugins.configs.lsp"),
 		requires = {
 			"ray-x/lsp_signature.nvim",
-			config = require("plugins.configs.completion.lsp.lsp_signature"),
+			config = require("plugins.configs.lsp.lsp_signature"),
 		},
 	})
 
@@ -59,10 +59,10 @@ return packer.startup(function()
 				"saadparwaiz1/cmp_luasnip",
 				"rafamadriz/friendly-snippets",
 				"hrsh7th/vim-vsnip",
-				config = require("plugins.configs.completion.snippet"),
+				config = require("plugins.configs.snippet"),
 			},
 		},
-		config = require("plugins.configs.completion.cmp"),
+		config = require("plugins.configs.cmp"),
 	})
 
 	-- emmet
