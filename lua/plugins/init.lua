@@ -195,9 +195,9 @@ return packer.startup(function()
   --   config = require 'plugins.configs.alpha'
   -- }
 
-  use {
-    "mhartington/formatter.nvim",
-    config = require "plugins.configs.formatter"
+  use{
+    "jose-elias-alvarez/null-ls.nvim",
+    config = require "plugins.configs.null-ls"
   }
 
   use {
