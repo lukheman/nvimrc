@@ -1,12 +1,18 @@
 local ok, cmp = pcall(require, "cmp")
+local ok, luasnip = pcall(require, "luasnip")
 
 if not ok then return end
 
 cmp.setup({
   completion = { completeopt = 'menu,menuone,noinsert' },
+  -- snippet = {
+  --   expand = function(args)
+  --     vim.fn["vsnip#anonymous"](args.body)
+  --   end,
+  -- },
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
+      luasnip.lsp_expand(args.body)
     end,
   },
   formatting = {
@@ -40,19 +46,21 @@ cmp.setup({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ["<Down>"] = cmp.mapping(function(fallback)
+    -- ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Down>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
-      elseif has_words_before() then
-        cmp.complete()
       else
         fallback()
       end
-    end, { "i", "s" }),
-    ["<Up>"] = cmp.mapping(function(fallback)
+    end, { 'i', 's' }),
+    ['<Up>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
@@ -60,7 +68,7 @@ cmp.setup({
       else
         fallback()
       end
-    end, { "i", "s" })
+    end, { 'i', 's' }),
   },
   sources = {
     { name = 'nvim_lsp', group_index = 1 },
