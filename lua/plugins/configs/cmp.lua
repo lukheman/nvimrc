@@ -62,7 +62,7 @@ cmp.setup({
 	},
 	window = {
 		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.disable,
+		documentation = cmp.config.window.bordered(),
 	},
 	mapping = {
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
@@ -98,12 +98,11 @@ cmp.setup({
 		end, { "i", "s" }),
 	},
 	sources = {
-		{ name = "nvim_lsp", group_index = 1 },
+		{ name = "nvim_lsp"},
 		{ name = "nvim_lua" },
-		{ name = "luasnip", group_index = 3 },
+		{ name = "luasnip" },
 		{
 			name = "buffer",
-			group_index = 2,
 			-- option = {
 			--   get_bufnrs = function()
 			--     return vim.api.nvim_list_bufs()
