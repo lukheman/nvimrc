@@ -6,7 +6,7 @@ end
 
 onedark.setup({
 	-- Main options --
-	style = "warmer", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+	style = "darker", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
 	transparent = false, -- Show/hide background
 	term_colors = true, -- Change terminal color as per the selected theme style
 	ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -19,7 +19,7 @@ onedark.setup({
 	-- Options are italic, bold, underline, none
 	-- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
 	code_style = {
-		comments = "none",
+		comments = "italic",
 		keywords = "none",
 		functions = "none",
 		strings = "none",
