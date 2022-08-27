@@ -9,6 +9,8 @@ nulls.setup({
 		-- formatting
 		-- lua
 		nulls.builtins.formatting.stylua,
+    -- js, html, css, vue and others
+    nulls.builtins.formatting.prettier
 	},
 })
 
