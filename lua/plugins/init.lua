@@ -53,7 +53,7 @@ return packer.startup(function()
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-nvim-lua",
 			{
-				"L3MON4D3/LuaSnip",
+				"L3MON4D3/LuaSnip", -- snippet engine,
 				"saadparwaiz1/cmp_luasnip",
 				"rafamadriz/friendly-snippets",
 				"hrsh7th/vim-vsnip",
@@ -73,7 +73,7 @@ return packer.startup(function()
 	use("mattn/emmet-vim")
 
 	-- auto align
-	use("junegunn/vim-easy-align")
+	-- use("junegunn/vim-easy-align")
 
 	-- autosave
 	use({
@@ -124,6 +124,11 @@ return packer.startup(function()
 		"jose-elias-alvarez/null-ls.nvim",
 		config = require("plugins.configs.null-ls"),
 	})
+
+	-- use({
+	-- 	"mhartington/formatter.nvim",
+	-- 	config = require("plugins.configs.formatter"),
+	-- })
 
 	-- UI
 	-- colorschema
