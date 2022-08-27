@@ -1,6 +1,33 @@
 -- Utilities for creating configurations
 local util = require("formatter.util")
 
+local function prettier(parser)
+  if not parser then
+    return {
+      -- npx prettier --write
+      exe = "npx prettier",
+      args = {
+        "--stdin-filepath",
+        util.escape_path(util.get_current_buffer_file_path()),
+      },
+      stdin = true,
+      try_node_modules = true,
+    }
+  end
+
+  return {
+    exe = "prettier",
+    args = {
+      "--stdin-filepath",
+      util.escape_path(util.get_current_buffer_file_path()),
+      "--parser",
+      parser,
+    },
+    stdin = true,
+    try_node_modules = true,
+  }
+end
+
 -- Provides the Format and FormatWrite commands
 require("formatter").setup({
 	-- Enable or disable logging
@@ -40,34 +67,11 @@ require("formatter").setup({
 		},
 
 		html = {
-
-			function(parser)
-				if not parser then
-					return {
-						-- npx prettier --write
-						exe = "npx prettier",
-						args = {
-							"--stdin-filepath",
-							util.escape_path(util.get_current_buffer_file_path()),
-						},
-						stdin = true,
-						try_node_modules = true,
-					}
-				end
-
-				return {
-					exe = "prettier",
-					args = {
-						"--stdin-filepath",
-						util.escape_path(util.get_current_buffer_file_path()),
-						"--parser",
-						parser,
-					},
-					stdin = true,
-					try_node_modules = true,
-				}
-			end,
+      prettier
 		},
+    vue = {
+      prettier
+    },
 
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype
@@ -78,3 +82,7 @@ require("formatter").setup({
 		},
 	},
 })
+
+-- keymap
+vim.keymap.set("n", "<leader>f", "<cmd>Format<cr>")
+vim.keymap.set("v", "<leader>f", "<cmd>Format<cr>")
