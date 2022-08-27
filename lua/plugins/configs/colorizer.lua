@@ -1,6 +1,6 @@
-local present, colorizer = pcall(require, "colorizer")
+local ok, colorizer = pcall(require, "colorizer")
 
-if not present then
+if not ok then
 	return
 end
 
