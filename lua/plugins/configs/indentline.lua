@@ -3,11 +3,14 @@ if not present then
 	return
 end
 
+vim.cmd("highlight IndentBlanklineContextChar guifg=#848b98 gui=nocombine")
+
 indent_blankline.setup({
-	char = "▏", -- │
-	show_first_indent_level = true,
-	max_indent_increase = 2,
-	show_trailing_blankline_indent = false,
+	show_end_of_line = false,
+	space_char_blankline = " ",
+	show_current_context = true,
+	show_current_context_start = false,
+	char = "│", -- │▏
 	filetype_exclude = {
 		"NvimTree",
 		"Preview",
