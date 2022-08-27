@@ -24,9 +24,11 @@ opt.splitright = true
 opt.termguicolors = true
 opt.timeoutlen = 400
 
+opt.lazyredraw = true
+
 -- opt.fillchars = "vert:┃"
 opt.fillchars = { eob = " " }
-opt.ignorecase = true
+opt.ignorecase = false
 opt.smartcase = true
 opt.mouse = "a"
 opt.swapfile = false
