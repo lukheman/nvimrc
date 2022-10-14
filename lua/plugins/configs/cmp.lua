@@ -62,7 +62,8 @@ cmp.setup({
 	},
 	window = {
 		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
+		-- documentation = cmp.config.window.bordered(),
+		documentation = cmp.config.disable,
 	},
 	mapping = {
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),

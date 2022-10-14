@@ -20,8 +20,6 @@ nvimtree.setup({ -- BEGIN_DEFAULT_OPTS
 	reload_on_bufenter = false,
 	respect_buf_cwd = false,
 	view = {
-		width = 25,
-		height = 30,
 		hide_root_folder = true,
 		side = "left",
 		preserve_window_proportions = false,
@@ -34,6 +32,16 @@ nvimtree.setup({ -- BEGIN_DEFAULT_OPTS
 				-- user mappings go here
 			},
 		},
+    float = {
+      open_win_config = {
+        relative = "editor",
+        border = "rounded",
+        width = 15,
+        height = 30,
+        row = 1,
+        col = 1,
+      }
+    }
 	},
 	renderer = {
 		add_trailing = false,
@@ -57,7 +65,7 @@ nvimtree.setup({ -- BEGIN_DEFAULT_OPTS
 			show = {
 				file = true,
 				folder = true,
-				folder_arrow = true,
+				folder_arrow = false,
 				git = true,
 			},
 			glyphs = {

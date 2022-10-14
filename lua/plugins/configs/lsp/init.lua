@@ -66,6 +66,7 @@ local servers = {
 	},
 	cssls = {
 		capabilities = capabilities,
+    filetypes = { "html", "css", "vue" }
 	},
 	emmet_ls = {
 		filetypes = { "html", "css" },
