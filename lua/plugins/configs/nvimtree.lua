@@ -20,7 +20,7 @@ nvimtree.setup({ -- BEGIN_DEFAULT_OPTS
 	reload_on_bufenter = false,
 	respect_buf_cwd = false,
 	view = {
-		hide_root_folder = true,
+		hide_root_folder = false,
 		side = "left",
 		preserve_window_proportions = false,
 		number = false,
