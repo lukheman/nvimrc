@@ -58,5 +58,5 @@ local map = require("utils").map
 map("n", "<c-f>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 map("n", "<c-p>", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 map("n", "<c-g>", "<cmd>lua require('telescope.builtin').git_branches()<cr>")
-map("n", "<c-h>", "<cmd>Telescope command_history<cr>")
+-- map("n", "<c-h>", "<cmd>Telescope command_history<cr>")
 map("n", "<leader>c", "<cmd>Telescope commands<cr>")
