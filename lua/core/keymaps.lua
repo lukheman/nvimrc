@@ -12,11 +12,5 @@ map("n", "ss", "<cmd>w!<cr>")
 map("v", "ga", "<Plug>(EasyAlign)", {})
 map("n", "ga", "<Plug>(EasyAlign)", {})
 
--- clear whitespace
-map("n", "<leader>w", "<cmd>StripWhitespace<cr>")
-
 -- exit
 map("n", "q", "<cmd>qa<cr>")
-
--- glow
--- map("n", "gl", ":Glow<cr>")
