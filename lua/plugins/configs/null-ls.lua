@@ -15,9 +15,9 @@ nulls.setup({
 })
 
 local function format()
-	vim.lsp.buf.formatting({ async = true })
+	vim.lsp.buf.format({ async = true })
 end
 
 -- keymap
 vim.keymap.set("n", "<leader>f", format, { desc = "LSP: Formats the current buffer" })
-vim.keymap.set("v", "<leader>f", vim.lsp.buf.range_formatting, { desc = "LSP: Formats a given range" })
+vim.keymap.set("v", "<leader>f", vim.lsp.buf.format, { desc = "LSP: Formats a given range" })
