@@ -11,6 +11,7 @@ treesitter.setup({
 	ensure_installed = {
 		"lua",
 		"python",
+    "javascript"
 	},
 	highlight = {
 		enable = true,
