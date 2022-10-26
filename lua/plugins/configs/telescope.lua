@@ -35,7 +35,6 @@ telescope.setup({
 		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
 		winblend = 0,
 		border = true,
-		-- { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
 		borderchars = {
 			prompt = { "─", "│", "─", "│", "┌", "┐", "┤", "├" },
 			results = { " ", "│", "─", "│", "│", "│", "┘", "└" },
@@ -59,4 +58,4 @@ map("n", "<c-f>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 map("n", "<c-p>", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 map("n", "<c-g>", "<cmd>lua require('telescope.builtin').git_branches()<cr>")
 -- map("n", "<c-h>", "<cmd>Telescope command_history<cr>")
-map("n", "<leader>c", "<cmd>Telescope commands<cr>")
+-- map("n", "<leader>c", "<cmd>Telescope commands<cr>")
