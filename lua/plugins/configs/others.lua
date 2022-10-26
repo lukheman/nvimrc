@@ -6,12 +6,6 @@ M.impatient = function()
 	require("impatient")
 end
 
-M.trouble = function()
-	require("trouble").setup({
-		height = 8,
-	})
-end
-
 M.vim_translator = function()
 	vim.g.translator_target_lang = "id"
 	vim.g.translator_source_lang = "auto"
