@@ -16,6 +16,6 @@ signature.setup({
 	max_height = 5,
 	max_width = 70,
 	handler_opts = {
-		border = "rounded",
+		border = "single",
 	},
 })
