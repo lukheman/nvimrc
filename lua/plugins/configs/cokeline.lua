@@ -9,13 +9,19 @@ local map = require("utils").map
 cokeline.setup({
 	default_hl = {
 		fg = function(buffer)
-			return buffer.is_focused and get_hex("ColorColumn", "bg") or get_hex("Normal", "fg")
+			return
+buffer.is_focused and get_hex("Normal", "fg") or get_hex("Comment", "fg")
 		end,
-		bg = function(buffer)
-			return buffer.is_focused and get_hex("Normal", "fg") or get_hex("ColorColumn", "bg")
-		end,
+		bg = "NONE",
 	},
+
 	components = {
+		{
+			text = function(buffer)
+				return (buffer.index ~= 1) and "" or ""
+			end,
+			fg = get_hex("Normal", "fg"),
+		},
 		{
 			text = function(buffer)
 				return " " .. buffer.devicon.icon
@@ -26,14 +32,10 @@ cokeline.setup({
 		},
 		{
 			text = function(buffer)
-				return buffer.unique_prefix
-			end,
-			fg = get_hex("Comment", "fg"),
-			style = "italic",
-		},
-		{
-			text = function(buffer)
 				return buffer.filename .. " "
+			end,
+			style = function(buffer)
+				return buffer.is_focused and "bold" or nil
 			end,
 		},
 		{
