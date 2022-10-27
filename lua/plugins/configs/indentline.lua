@@ -35,6 +35,8 @@ indent_blankline.setup({
 		"lspsagafinder",
 		"Trouble",
 		"alpha",
+    "Outline",
+    "mason"
 	},
 	buftype_exclude = { "terminal", "man", "trouble" },
 })
