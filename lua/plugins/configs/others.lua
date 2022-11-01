@@ -30,4 +30,12 @@ M.neogit = function()
 	})
 end
 
+M.symbolsoutline = function()
+	local ok, symbolsoutline = pcall(require, "symbols-outline")
+	if not ok then
+		return
+	end
+	symbolsoutline.setup()
+end
+
 return M
