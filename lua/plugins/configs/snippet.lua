@@ -6,7 +6,9 @@ local function prequire(...)
 	return nil
 end
 
-local luasnip = prequire("luasnip")
+local ok, luasnip = pcall(require, "luasnip")
+if not ok then return end
+
 local cmp = prequire("cmp")
 
 local t = function(str)
