@@ -74,7 +74,6 @@ cmp.setup({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
 		}),
-		-- ['<CR>'] = cmp.mapping.confirm({ select = true }),
 		["<CR>"] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
@@ -102,15 +101,17 @@ cmp.setup({
 		{ name = "nvim_lsp"},
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
+		{ name = "path" },
 		{
 			name = "buffer",
-			-- option = {
-			--   get_bufnrs = function()
-			--     return vim.api.nvim_list_bufs()
-			--   end
-			-- }
+      max_item_count = 3,
+      keyword_length = 2,
+			option = {
+			  get_bufnrs = function()
+			    return vim.api.nvim_list_bufs()
+			  end
+			}
 		},
-		{ name = "path" },
 	},
 })
 
