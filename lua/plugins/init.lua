@@ -1,25 +1,25 @@
 local packer = require("packer")
 
 packer.init({
-  -- disable_commands = true,
-  display = {
-    open_fn = function()
-      local result, win, buf = require('packer.util').float({
-        border = {
-          { '┌', 'FloatBorder' },
-          { '─', 'FloatBorder' },
-          { '┐', 'FloatBorder' },
-          { '│', 'FloatBorder' },
-          { '┘', 'FloatBorder' },
-          { '─', 'FloatBorder' },
-          { '└', 'FloatBorder' },
-          { '│', 'FloatBorder' },
-        },
-      })
-      vim.api.nvim_win_set_option(win, 'winhighlight', 'NormalFloat:Normal')
-      return result, win, buf
-    end,
-  },
+	-- disable_commands = true,
+	display = {
+		open_fn = function()
+			local result, win, buf = require("packer.util").float({
+				border = {
+					{ "┌", "FloatBorder" },
+					{ "─", "FloatBorder" },
+					{ "┐", "FloatBorder" },
+					{ "│", "FloatBorder" },
+					{ "┘", "FloatBorder" },
+					{ "─", "FloatBorder" },
+					{ "└", "FloatBorder" },
+					{ "│", "FloatBorder" },
+				},
+			})
+			vim.api.nvim_win_set_option(win, "winhighlight", "NormalFloat:Normal")
+			return result, win, buf
+		end,
+	},
 })
 
 return packer.startup(function()
@@ -27,7 +27,7 @@ return packer.startup(function()
 	-- provided appimage.
 	use({
 		"lewis6991/impatient.nvim",
-		config = require("plugins.configs.others").impatient(),
+		-- config = require("plugins.configs.others").impatient(),
 	})
 
 	-- plugins manager
@@ -53,10 +53,16 @@ return packer.startup(function()
 		},
 	})
 
+	-- navigator
 	use({
-		"folke/trouble.nvim",
-		config = require("plugins.configs.others").trouble(),
+		"simrat39/symbols-outline.nvim",
+		config = require("plugins.configs.others").symbolsoutline(),
 	})
+
+	-- use({
+	-- 	"folke/trouble.nvim",
+	-- 	config = require("plugins.configs.others").trouble(),
+	-- })
 
 	-- Editors
 	-- autocomplete
@@ -88,12 +94,9 @@ return packer.startup(function()
 	-- emmet
 	use("mattn/emmet-vim")
 
-	-- auto align
-	-- use("junegunn/vim-easy-align")
-
 	-- autosave
 	use({
-		"Pocco81/AutoSave.nvim",
+		"pocco81/auto-save.nvim",
 		config = require("plugins.configs.autosave"),
 	})
 
@@ -109,30 +112,20 @@ return packer.startup(function()
 	-- comment
 	use({
 		"numToStr/Comment.nvim",
-		config = require("plugins.configs.Comment"),
+		config = require("plugins.configs.comment"),
 	})
 
-	-- table mode
-	use("dhruvasagar/vim-table-mode")
-
 	-- whitespace
-	use("ntpeters/vim-better-whitespace")
-
-	-- auto close and auto rename html tag
-	use("windwp/nvim-ts-autotag")
+	-- use({
+	-- 	"johnfrankmorgan/whitespace.nvim",
+	-- 	config = require("plugins.configs.whitespace"),
+	-- })
 
 	-- auto folding
 	use({
 		"kevinhwang91/nvim-ufo",
 		requires = "kevinhwang91/promise-async",
 		config = require("plugins.configs.nvim-ufo"),
-	})
-
-	-- Moving and duplicating blocks and lines, with complete
-	-- fold handling, reindenting, and undoing in one go.
-	use({
-		"booperlv/nvim-gomove",
-		config = require("plugins.configs.nvim-gomove"),
 	})
 
 	-- formatter
@@ -149,6 +142,7 @@ return packer.startup(function()
 	-- UI
 	-- colorschema
 	-- use 'mofiqul/vscode.nvim'
+	-- use 'folke/tokyonight.nvim'
 	use({
 		"navarasu/onedark.nvim",
 		config = require("plugins.configs.onedark"),
@@ -158,12 +152,6 @@ return packer.startup(function()
 	use({
 		"lukas-reineke/indent-blankline.nvim",
 		config = require("plugins.configs.indentline"),
-	})
-
-	-- buffer list
-	use({
-		"noib3/nvim-cokeline",
-		config = require("plugins.configs.cokeline"),
 	})
 
 	-- fuzzy finder
@@ -181,7 +169,13 @@ return packer.startup(function()
 	-- statusline
 	use({
 		"feline-nvim/feline.nvim",
-		config = require("plugins.configs.feline.bubble"),
+		config = require("plugins.configs.feline.tilt"),
+	})
+
+	-- buffer list
+	use({
+		"noib3/nvim-cokeline",
+		config = require("plugins.configs.cokeline"),
 	})
 
 	-- treesitter
@@ -189,6 +183,9 @@ return packer.startup(function()
 		"nvim-treesitter/nvim-treesitter",
 		config = require("plugins.configs.treesitter"),
 	})
+
+	-- auto close and auto rename html tag
+	use("windwp/nvim-ts-autotag")
 
 	-- git
 	use({
