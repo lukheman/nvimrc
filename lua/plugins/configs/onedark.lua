@@ -28,7 +28,9 @@ onedark.setup({
 
 	-- Custom Highlights --
 	colors = {}, -- Override default colors
-	highlights = {}, -- Override highlight groups
+	highlights = {
+    TabLineFill = {fg = '$grey', bg = '$bg0'},
+  }, -- Override highlight groups
 
 	-- Plugins Config --
 	diagnostics = {
