@@ -28,8 +28,8 @@ opt.lazyredraw = true
 
 -- opt.fillchars = "vert:┃"
 opt.fillchars = { eob = " " }
-opt.ignorecase = false
-opt.smartcase = true
+opt.ignorecase = true
+opt.smartcase = false
 opt.mouse = "a"
 opt.swapfile = false
 
