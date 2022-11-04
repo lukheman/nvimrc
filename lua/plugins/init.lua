@@ -59,10 +59,6 @@ return packer.startup(function()
 		config = require("plugins.configs.others").symbolsoutline(),
 	})
 
-	-- use({
-	-- 	"folke/trouble.nvim",
-	-- 	config = require("plugins.configs.others").trouble(),
-	-- })
 
 	-- Editors
 	-- autocomplete
