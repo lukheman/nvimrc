@@ -45,4 +45,13 @@ M.map = function(mode, key, cmd, opt)
 	keymap(mode, key, cmd, options)
 end
 
+
+M.prequire = function(...)
+	local status, lib = pcall(require, ...)
+	if status then
+		return lib
+	end
+	return nil
+end
+
 return M
