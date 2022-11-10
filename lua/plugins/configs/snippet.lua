@@ -6,9 +6,7 @@ local function prequire(...)
 	return nil
 end
 
-local ok, luasnip = pcall(require, "luasnip")
-if not ok then return end
-
+local luasnip = prequire("luasnip")
 local cmp = prequire("cmp")
 
 local t = function(str)
@@ -25,9 +23,7 @@ local check_back_space = function()
 end
 
 _G.tab_complete = function()
-	if cmp and cmp.visible() then
-		cmp.select_next_item()
-	elseif luasnip and luasnip.expand_or_jumpable() then
+	if luasnip and luasnip.expand_or_jumpable() then
 		return t("<Plug>luasnip-expand-or-jump")
 	elseif check_back_space() then
 		return t("<C-j>")
@@ -36,22 +32,9 @@ _G.tab_complete = function()
 	end
 	return ""
 end
-_G.s_tab_complete = function()
-	if cmp and cmp.visible() then
-		cmp.select_prev_item()
-	elseif luasnip and luasnip.jumpable(-1) then
-		return t("<Plug>luasnip-jump-prev")
-	else
-		return t("<S-Tab>")
-	end
-	return ""
-end
 
 vim.api.nvim_set_keymap("i", "<C-j>", "v:lua.tab_complete()", { expr = true })
 vim.api.nvim_set_keymap("s", "<C-j>", "v:lua.tab_complete()", { expr = true })
--- vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
--- vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
--- vim.api.nvim_set_keymap("i", "<C-E>", "<Plug>luasnip-next-choice", {})
--- vim.api.nvim_set_keymap("s", "<C-E>", "<Plug>luasnip-next-choice", {})
 
 luasnip.filetype_extend("vue", { "html", "css" })
+luasnip.filetype_extend("html", { "html", "css", "ejs" })
