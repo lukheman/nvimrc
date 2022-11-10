@@ -1,11 +1,4 @@
-local function prequire(...)
-	local status, lib = pcall(require, ...)
-	if status then
-		return lib
-	end
-	return nil
-end
-
+local prequire = require("utils").prequire
 local luasnip = prequire("luasnip")
 local cmp = prequire("cmp")
 
