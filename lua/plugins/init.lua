@@ -6,13 +6,13 @@ packer.init({
 		open_fn = function()
 			local result, win, buf = require("packer.util").float({
 				border = {
-					{ "┌", "FloatBorder" },
+					{ "╭", "FloatBorder" },
 					{ "─", "FloatBorder" },
-					{ "┐", "FloatBorder" },
+					{ "╮", "FloatBorder" },
 					{ "│", "FloatBorder" },
-					{ "┘", "FloatBorder" },
+					{ "╯", "FloatBorder" },
 					{ "─", "FloatBorder" },
-					{ "└", "FloatBorder" },
+					{ "╰", "FloatBorder" },
 					{ "│", "FloatBorder" },
 				},
 			})
