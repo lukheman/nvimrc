@@ -40,55 +40,6 @@ local modes = {
 }
 
 local colors = require("onedark.palette").darker
--- print(colors.green)
-
--- local colors = require("onedark.palette").darker
--- for k, v in pairs(colors) do
--- 	print(k, v)
--- end
--- print(colors)
--- local colors = {
--- 	bg = "#282c34",
--- 	fg = "#abb2bf",
--- 	section_bg = "#38393f",
--- 	blue = "#61afef",
--- 	green = "#98c379",
--- 	purple = "#c678dd",
--- 	orange = "#e5c07b",
--- 	red = "#e06c75",
--- 	yellow = "#e5c07b",
--- 	darkgrey = "#2c323d",
--- 	middlegrey = "#8791A5",
--- }
-
--- local colors = {
--- 	black = "#0e1013",
--- 	bg0 = "#1f2329",
--- 	bg1 = "#282c34",
--- 	bg2 = "#30363f",
--- 	bg3 = "#323641",
--- 	bg_d = "#181b20",
--- 	bg_blue = "#61afef",
--- 	bg_yellow = "#e8c88c",
--- 	fg = "#a0a8b7",
--- 	purple = "#bf68d9",
--- 	green = "#8ebd6b",
--- 	orange = "#cc9057",
--- 	blue = "#4fa6ed",
--- 	yellow = "#e2b86b",
--- 	cyan = "#48b0bd",
--- 	red = "#e55561",
--- 	grey = "#535965",
--- 	light_grey = "#7a818e",
--- 	dark_cyan = "#266269",
--- 	dark_red = "#8b3434",
--- 	dark_yellow = "#835d1a",
--- 	dark_purple = "#7e3992",
--- 	diff_add = "#272e23",
--- 	diff_delete = "#2d2223",
--- 	diff_change = "#172a3a",
--- 	diff_text = "#274964",
--- }
 
 local mode_colors = {
 	["n"] = { "N", colors.green },
@@ -140,12 +91,14 @@ local left_sep = {
 	str = "",
 	hl = {
 		fg = colors.bg3,
+		bg = colors.bg0,
 	},
 }
 local right_sep = {
 	str = "",
 	hl = {
 		fg = colors.bg3,
+		bg = colors.bg0,
 	},
 }
 
@@ -187,7 +140,7 @@ end
 
 -- Vim mode
 active_left({
-	provider = " ",
+	provider = " ﮧ",
 	hl = function()
 		return {
 			fg = colors.bg1,
@@ -208,7 +161,6 @@ active_left({
 		hl = function()
 			return {
 				fg = mode_colors[vim.fn.mode()][2],
-				-- bg = colors.bg,
 			}
 		end,
 	},
@@ -232,6 +184,18 @@ active_left({
 -- Right section --
 -------------------
 
+-- Snippet indicator
+local luasnip = require('luasnip')
+active_right({
+  provider = ' ',
+  -- hl = { fg = colors.gray },
+  enabled = luasnip.in_snippet,
+  icon = {
+    str ='',
+    hl = { fg = colors.fg }
+  },
+})
+
 -- Filetype
 active_right({
 	provider = function()
@@ -246,30 +210,13 @@ active_right({
 			always_visible = true,
 		}
 	end,
-	left_sep = left_sep,
+	left_sep = {
+		str = "",
+		hl = { fg = colors.bg3 },
+	},
 	right_sep = right_sep,
 	truncate_hide = true,
 	priority = 1,
-})
-
--- Clock
-active_right({
-	provider = function()
-		return fn.strftime("%H:%M")
-	end,
-	hl = { bg = colors.bg3 },
-	icon = function()
-		return {
-			str = " ",
-			hl = {
-				fg = mode_colors[vim.fn.mode()][2],
-				bg = colors.bg3,
-			},
-		}
-	end,
-	left_sep = left_sep,
-	right_sep = right_sep,
-	truncate_hide = true,
 })
 
 -- Cursor line and column
@@ -281,7 +228,13 @@ active_right({
 		return string.format("%d:%-d", fn.line("."), fn.col("."))
 	end,
 	left_sep = function()
-		return { str = "", hl = { fg = mode_colors[vim.fn.mode()][2] } }
+		return {
+			str = "",
+			hl = {
+				fg = mode_colors[vim.fn.mode()][2],
+				bg = colors.bg0,
+			},
+		}
 	end,
 	right_sep = function()
 		return { str = " ", hl = { bg = mode_colors[vim.fn.mode()][2] } }
@@ -324,10 +277,4 @@ inactive_left({
 	},
 })
 
-feline.setup({
-	colors = {
-		bg = colors.bg,
-		fg = colors.fg,
-	},
-	components = components,
-})
+feline.setup({ components = components })
