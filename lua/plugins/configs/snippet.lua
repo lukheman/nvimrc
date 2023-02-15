@@ -1,6 +1,6 @@
-local prequire = require("utils").prequire
-local luasnip = prequire("luasnip")
-local cmp = prequire("cmp")
+local present1, luasnip = pcall(require, "luasnip")
+local present2, cmp = pcall(require, "cmp")
+
 
 local t = function(str)
 	return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -16,7 +16,7 @@ local check_back_space = function()
 end
 
 _G.tab_complete = function()
-	if luasnip and luasnip.expand_or_jumpable() then
+	if luasnip then
 		return t("<Plug>luasnip-expand-or-jump")
 	elseif check_back_space() then
 		return t("<C-j>")
@@ -29,5 +29,10 @@ end
 vim.api.nvim_set_keymap("i", "<C-j>", "v:lua.tab_complete()", { expr = true })
 vim.api.nvim_set_keymap("s", "<C-j>", "v:lua.tab_complete()", { expr = true })
 
-luasnip.filetype_extend("vue", { "html", "css" })
-luasnip.filetype_extend("html", { "html", "css", "ejs" })
+
+luasnip = {
+  filetype_extend = {
+    vue = { "html", "css" },
+    html = { "html", "css" }
+  }
+}
