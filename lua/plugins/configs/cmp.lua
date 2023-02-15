@@ -1,11 +1,11 @@
-local ok, cmp = pcall(require, "cmp")
-local ok, luasnip = pcall(require, "luasnip")
+local present1, cmp = pcall(require, "cmp")
+local present2, luasnip = pcall(require, "luasnip")
 
-if not ok then
-	return
+if not (present1 and present2) then
+  return
 end
 
-local kind_icons = {
+local icons = {
 	Text = "",
 	Method = "",
 	Function = "",
@@ -33,43 +33,53 @@ local kind_icons = {
 	TypeParameter = "",
 }
 
+-- local cmp_window = require "cmp.utils.window"
+-- cmp_window.info_ = cmp_window.info
+-- cmp_window.info = function(self)
+--   local info = self:info_()
+--   info.scrollable = false
+--   return info
+-- end
+
+local function border(hl_name)
+  return {
+    { "╭", hl_name },
+    { "─", hl_name },
+    { "╮", hl_name },
+    { "│", hl_name },
+    { "╯", hl_name },
+    { "─", hl_name },
+    { "╰", hl_name },
+    { "│", hl_name },
+  }
+end
+
 cmp.setup({
 	completion = { completeopt = "menu,menuone,noinsert" },
-	-- snippet = {
-	--   expand = function(args)
-	--     vim.fn["vsnip#anonymous"](args.body)
-	--   end,
-	-- },
 	snippet = {
 		expand = function(args)
-			luasnip.lsp_expand(args.body)
+      luasnip.lsp_expand(args.body)
 		end,
 	},
 	formatting = {
 		format = function(entry, vim_item)
-			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+			vim_item.kind = string.format("%s", icons[vim_item.kind])
 
-			vim_item.menu = ({
-				nvim_lsp = "[LSP]",
-				nvim_lua = "[LUA]",
-				buffer = "[BUF]",
-				luasnip = "[SNP]",
-			})[entry.source.name]
-
+      vim_item.abbr = string.sub(vim_item.abbr, 1, 20)
 			return vim_item
 		end,
-		fields = { "kind", "abbr", "menu" },
+		fields = { "kind", "abbr" },
 	},
 	window = {
-		completion = cmp.config.window.bordered(),
-		-- documentation = cmp.config.window.bordered(),
-		documentation = cmp.config.disable,
+		completion = {
+      border = border "CmpBorder",
+      scrollbar = false
+    },
+    documentation = cmp.config.window.bordered(),
+		-- documentation = cmp.config.disable,
 	},
 	mapping = {
-		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-		["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
 		["<C-e>"] = cmp.mapping({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
@@ -98,19 +108,19 @@ cmp.setup({
 		end, { "i", "s" }),
 	},
 	sources = {
-		{ name = "nvim_lsp"},
 		{ name = "nvim_lua" },
-		{ name = "luasnip" },
 		{ name = "path" },
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
 		{
 			name = "buffer",
-      max_item_count = 3,
-      keyword_length = 2,
+			keyword_length = 2,
+      max_item_count = 5,
 			option = {
-			  get_bufnrs = function()
-			    return vim.api.nvim_list_bufs()
-			  end
-			}
+				get_bufnrs = function()
+					return vim.api.nvim_list_bufs()
+				end,
+			},
 		},
 	},
 })
@@ -128,8 +138,4 @@ cmp.setup.cmdline("/", {
 	},
 })
 
--- autopairs
--- insert `(` after select function or method item
-local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 require("luasnip.loaders.from_vscode").lazy_load()
