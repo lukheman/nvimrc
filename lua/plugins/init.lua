@@ -22,7 +22,7 @@ packer.init({
 	},
 })
 
-return packer.startup(function()
+packer.startup(function()
 	-- Is using a standard Neovim install, i.e. built from source or using a
 	-- provided appimage.
 	use({
@@ -59,9 +59,7 @@ return packer.startup(function()
 		config = require("plugins.configs.others").symbolsoutline(),
 	})
 
-
-	-- Editors
-	-- autocomplete
+	-- completion
 	use({
 		"hrsh7th/nvim-cmp",
 		requires = {
@@ -70,15 +68,16 @@ return packer.startup(function()
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-nvim-lua",
-			{
-				"L3MON4D3/LuaSnip", -- snippet engine,
-				"saadparwaiz1/cmp_luasnip",
-				"rafamadriz/friendly-snippets",
-				"hrsh7th/vim-vsnip",
-				config = require("plugins.configs.snippet"),
-			},
+			"saadparwaiz1/cmp_luasnip",
 		},
 		config = require("plugins.configs.cmp"),
+	})
+
+	-- snippet
+	use({
+		"L3MON4D3/LuaSnip", -- snippet engine
+		requires = "rafamadriz/friendly-snippets", -- snippet collection
+		config = require("plugins.configs.snippet"),
 	})
 
 	-- autopairs
@@ -198,6 +197,11 @@ return packer.startup(function()
 	use({
 		"akinsho/toggleterm.nvim",
 		config = require("plugins.configs.toggleterm"),
+	})
+
+	use({
+		"nathom/filetype.nvim",
+		config = require("plugins.configs.filetype"),
 	})
 
 	-- translator
