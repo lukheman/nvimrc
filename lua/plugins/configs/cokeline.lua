@@ -5,20 +5,20 @@ end
 
 local get_hex = require("cokeline/utils").get_hex
 local map = require("utils").map
+local colors = require("onedark.palette").darker
 
 cokeline.setup({
 	default_hl = {
 		fg = function(buffer)
-			return
-buffer.is_focused and get_hex("Normal", "fg") or get_hex("Comment", "fg")
+			return buffer.is_focused and get_hex("Normal", "fg") or get_hex("Comment", "fg")
 		end,
 		bg = "NONE",
 	},
-
+	-- 
 	components = {
 		{
 			text = function(buffer)
-				return (buffer.index ~= 1) and "" or ""
+				return (buffer.index ~= 1) and "" or ""
 			end,
 			fg = get_hex("Normal", "fg"),
 		},
@@ -39,7 +39,12 @@ buffer.is_focused and get_hex("Normal", "fg") or get_hex("Comment", "fg")
 			end,
 		},
 		{
-			text = "",
+			text = function(buffer)
+				return buffer.is_modified and "●" or " "
+			end,
+      fg = function(buffer)
+        return buffer.is_modified and colors.green or nil
+      end,
 			delete_buffer_on_left_click = false,
 		},
 		{
