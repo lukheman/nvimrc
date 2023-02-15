@@ -18,13 +18,13 @@ nvimtree.setup {
     update_cwd = false,
   },
   view = {
-    adaptive_size = false,
+    adaptive_size = true,
     side = "left",
-    width = 20,
+    width = 25,
     hide_root_folder = true,
   },
   git = {
-    enable = false,
+    enable = true,
     ignore = true,
   },
   filesystem_watchers = {
@@ -53,7 +53,7 @@ nvimtree.setup {
         file = true,
         folder = true,
         folder_arrow = false,
-        git = false,
+        git = true,
       },
 
       glyphs = {
