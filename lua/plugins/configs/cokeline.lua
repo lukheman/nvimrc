@@ -14,7 +14,15 @@ cokeline.setup({
 		end,
 		bg = "NONE",
 	},
-	-- 
+  sidebar = {
+    filetype = "NvimTree",
+    components = {
+      {
+        text = "  File Manager",
+        style = "bold",
+      },
+    }
+  },
 	components = {
 		{
 			text = function(buffer)
