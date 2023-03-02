@@ -7,6 +7,7 @@ end
 nvimtree.setup {
   filters = {
     dotfiles = false,
+    custom = { 'node_modules' }
   },
   disable_netrw = true,
   hijack_netrw = true,
