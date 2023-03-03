@@ -30,9 +30,4 @@ vim.api.nvim_set_keymap("i", "<C-j>", "v:lua.tab_complete()", { expr = true })
 vim.api.nvim_set_keymap("s", "<C-j>", "v:lua.tab_complete()", { expr = true })
 
 
-luasnip = {
-  filetype_extend = {
-    vue = { "html", "css" },
-    html = { "html", "css" }
-  }
-}
+luasnip.filetype_extend("html", { "html", "css", "ejs" })
