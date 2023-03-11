@@ -1,26 +1,17 @@
-vim.defer_fn(function()
-  pcall(require, "impatient")
-end, 0)
-
--- options
-require("core.options")
-
--- auto commands
-require("core.autocmds")
-
--- keymaps
-require("core.keymaps")
-
--- setup packer
-local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  print("Installing Packer...")
-  fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-  vim.cmd "packadd packer.nvim"
-  require "plugins"
-  vim.cmd "PackerSync"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
--- -- load plugins
-require("plugins")
+require "core.options"
+require "core.autocmds"
+require "core.keymaps"
+require "plugins"
