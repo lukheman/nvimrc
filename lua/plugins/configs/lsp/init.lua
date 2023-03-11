@@ -78,17 +78,17 @@ lspconfig.cssls.setup {
     filetypes = { "html", "css" }
 }
 
-lspconfig.emmet_ls.setup = {
-  filetypes = { "html", "css" },
-  settings = {
-    root_dir = "~",
-  },
-}
+-- lspconfig.emmet_ls.setup {
+--   filetypes = { "html", "css" },
+--   settings = {
+--     root_dir = "~",
+--   },
+-- }
 
-lspconfig.tsserver.setup = {
+lspconfig.tsserver.setup {
   root_dir = function(fname)
     return vim.loop.cwd()
   end,
-},
+}
 
 require("plugins.configs.lsp.diagnostic")
