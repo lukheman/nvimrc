@@ -36,8 +36,8 @@ opt.swapfile = false
 -- Indenting
 opt.expandtab = true
 opt.shiftwidth = 2
-opt.tabstop = 4
-opt.softtabstop = 4
+opt.tabstop = 2
+opt.softtabstop = 2
 opt.smartindent = true
 
 -- interval for writing swap file to disk, also used by gitsigns
