@@ -2,10 +2,6 @@
 
 local M = {}
 
-M.impatient = function()
-	require("impatient")
-end
-
 M.vim_translator = function()
 	vim.g.translator_target_lang = "id"
 	vim.g.translator_source_lang = "auto"
@@ -28,14 +24,6 @@ M.neogit = function()
 			hunk = { "", "" },
 		},
 	})
-end
-
-M.symbolsoutline = function()
-	local ok, symbolsoutline = pcall(require, "symbols-outline")
-	if not ok then
-		return
-	end
-	symbolsoutline.setup()
 end
 
 return M
