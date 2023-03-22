@@ -184,18 +184,6 @@ active_left({
 -- Right section --
 -------------------
 
--- Snippet indicator
-local luasnip = require('luasnip')
-active_right({
-  provider = ' ',
-  -- hl = { fg = colors.gray },
-  enabled = luasnip.in_snippet,
-  icon = {
-    str ='',
-    hl = { fg = colors.fg }
-  },
-})
-
 -- Filetype
 active_right({
 	provider = function()
