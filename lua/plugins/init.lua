@@ -59,7 +59,7 @@ require("lazy").setup({
   -- finder file
   {
     "nvim-telescope/telescope.nvim",
-    keys = "<c-f>",
+    keys = { "<c-f>", "<c-p>" },
     config = function()
       require "plugins.configs.telescope"
     end
