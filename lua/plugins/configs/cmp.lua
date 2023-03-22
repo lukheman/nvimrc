@@ -75,8 +75,8 @@ cmp.setup({
       border = border "CmpBorder",
       scrollbar = false
     },
-    documentation = cmp.config.window.bordered(),
-		-- documentation = cmp.config.disable,
+    -- documentation = cmp.config.window.bordered(),
+		documentation = cmp.config.disable,
 	},
 	mapping = {
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -110,7 +110,7 @@ cmp.setup({
 	sources = {
 		{ name = "nvim_lua" },
 		{ name = "path" },
-		{ name = "luasnip" },
+		{ name = "luasnip", max_item_count = 8 },
 		{
 			name = "buffer",
 			keyword_length = 2,
@@ -121,7 +121,7 @@ cmp.setup({
 				end,
 			},
 		},
-		{ name = "nvim_lsp" },
+		{ name = "nvim_lsp", max_item_count = 5},
 	},
 })
 
