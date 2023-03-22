@@ -3,18 +3,6 @@ local keymap = vim.api.nvim_set_keymap
 
 local M = {}
 
-M.filetypes = function(filetype, opts)
-	local cmd = { "autocmd FileType " .. filetype .. " setlocal" }
-	for opt, value in pairs(opts) do
-		if value == true then
-			table.insert(cmd, opt)
-		else
-			table.insert(cmd, opt .. "=" .. value)
-		end
-	end
-	command(table.concat(cmd, " "))
-end
-
 M.highlight = function(group, opts)
 	if type(opts) == "table" then
 		local cmd = { group }
