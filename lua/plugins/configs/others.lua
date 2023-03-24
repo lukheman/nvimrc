@@ -26,4 +26,18 @@ M.neogit = function()
 	})
 end
 
+M.ccc = function()
+  local ok, ccc = pcall(require, "ccc")
+  if not ok then return end
+
+  ccc.setup {
+    highlighter = {
+      auto_enable = true,
+    },
+    win_opts = {
+      border = "single"
+    }
+  }
+end
+
 return M
