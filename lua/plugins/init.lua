@@ -79,6 +79,14 @@ require("lazy").setup({
     end 
 	},
 
+  -- Color Picker
+  {
+    "uga-rosa/ccc.nvim",
+    event = "BufRead",
+    config = function()
+    end
+  },
+
 
   -- EDITOR --
 	-- translator
