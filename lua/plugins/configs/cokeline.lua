@@ -38,12 +38,17 @@ cokeline.setup({
 				return buffer.devicon.color
 			end,
 		},
+    {
+      text = function(buffer)
+        return buffer.unique_prefix
+      end,
+    },
 		{
 			text = function(buffer)
 				return buffer.filename .. " "
 			end,
 			style = function(buffer)
-				return buffer.is_focused and "bold" or nil
+				return buffer.is_focused and "italic" or nil
 			end,
 		},
 		{
