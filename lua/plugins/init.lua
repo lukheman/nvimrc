@@ -193,7 +193,7 @@ require("lazy").setup({
   -- magit for neovim
   {
     "TimUntersberger/neogit",
-    cmd = { "Neo", "Neogit" },
+    cmd = { "Neogit" },
     config = function()
       require "plugins.configs.others".neogit()
     end
