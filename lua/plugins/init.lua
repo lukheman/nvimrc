@@ -25,7 +25,7 @@ require("lazy").setup({
 
   -- bufferline
   {
-    "noib3/nvim-cokeline",
+    "willothy/nvim-cokeline",
     event = "BufRead",
 		config = function()
       require "plugins.configs.cokeline"
