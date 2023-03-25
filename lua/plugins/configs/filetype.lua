@@ -7,7 +7,9 @@ end
 filetype.setup {
   overrides = {
     extensions = {
-      ejs = "html"
+      ejs = "html",
+      sql = "sql",
+      sh = "sh"
     }
   }
 }
