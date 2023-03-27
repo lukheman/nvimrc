@@ -14,12 +14,11 @@ require("lazy").setup({
   },
 
   -- statusline
-	{
-    "feline-nvim/feline.nvim",
-    -- dependencies = "L3MON4D3/LuaSnip",
-    event = "VimEnter",
-		config = function()
-      require "plugins.configs.feline.tilt"
+  {
+    "rebelot/heirline.nvim",
+    event = "UiEnter",
+    config = function()
+      require "plugins.configs.heirline"
     end
   },
 
