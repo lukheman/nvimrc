@@ -109,7 +109,7 @@ local FileType = {
 		end
     return vim.bo.filetype .. " "
   end,
-  hl = { fg = "blue", bold = true },
+  hl = { fg = "fg", bold = true },
 }
 
 local FileModifer = {
