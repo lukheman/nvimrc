@@ -83,6 +83,7 @@ require("lazy").setup({
     "uga-rosa/ccc.nvim",
     event = "BufRead",
     config = function()
+      require "plugins.configs.others".ccc()
     end
   },
 
