@@ -209,7 +209,7 @@ require("lazy").setup({
   -- git integration
 	{
 		"lewis6991/gitsigns.nvim",
-    cmd = "Gitsigns",
+    -- cmd = "Gitsigns",
 		config = function()
       require "plugins.configs.gitsigns"
     end
