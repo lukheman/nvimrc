@@ -262,6 +262,7 @@ local plugins = {
 					hunk = { "", "" },
 				},
 			})
+			vim.keymap.set("n", "<leader>gn", "<cmd>Neogit<cr>")
 		end,
 	},
 
