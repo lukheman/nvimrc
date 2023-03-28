@@ -1,8 +1,4 @@
-local ok, onedark = pcall(require, "onedark")
-
-if not ok then
-	return
-end
+local onedark = require("onedark")
 
 onedark.setup({
 	-- Main options --
