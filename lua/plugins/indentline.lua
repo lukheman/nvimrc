@@ -5,7 +5,7 @@ vim.cmd("highlight IndentBlanklineContextChar guifg=#848b98 gui=nocombine")
 indent_blankline.setup({
 	show_end_of_line = false,
 	space_char_blankline = " ",
-  show_first_indent_level = false,
+	show_first_indent_level = false,
 	show_current_context = true,
 	show_current_context_start = true,
 	char = "│", -- │▏
@@ -33,8 +33,8 @@ indent_blankline.setup({
 		"lspsagafinder",
 		"Trouble",
 		"alpha",
-    "Outline",
-    "mason"
+		"Outline",
+		"mason",
 	},
 	buftype_exclude = { "terminal", "man", "trouble" },
 })
