@@ -1,8 +1,4 @@
-local ok, telescope = pcall(require, "telescope")
-
-if not ok then
-	return
-end
+local telescope = require("telescope")
 
 telescope.setup({
 	defaults = {
@@ -35,7 +31,6 @@ telescope.setup({
 		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
 		winblend = 0,
 		border = true,
-    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "┘" },
 		borderchars = {
 			prompt = { "─", "│", "─", "│", "╭", "╮", "┤", "├" },
 			results = { " ", "│", "─", "│", "│", "│", "╯", "╰" },
@@ -52,11 +47,6 @@ telescope.setup({
 	},
 })
 
--- mappings
-local map = require("utils").map
-
-map("n", "<c-f>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
-map("n", "<c-p>", "<cmd>lua require('telescope.builtin').buffers()<cr>")
-map("n", "<c-g>", "<cmd>lua require('telescope.builtin').git_branches()<cr>")
--- map("n", "<c-h>", "<cmd>Telescope command_history<cr>")
--- map("n", "<leader>c", "<cmd>Telescope commands<cr>")
+vim.keymap.set("n", "<c-f>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+vim.keymap.set("n", "<c-p>", "<cmd>lua require('telescope.builtin').buffers()<cr>")
+vim.keymap.set("n", "<c-g>", "<cmd>lua require('telescope.builtin').git_branches()<cr>")
