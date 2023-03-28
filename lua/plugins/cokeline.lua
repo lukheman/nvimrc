@@ -1,7 +1,6 @@
 local cokeline = require("cokeline")
 local get_hex = require("cokeline/utils").get_hex
 local colors = require("onedark.palette").darker
-local map = vim.keymap.set
 
 cokeline.setup({
 	default_hl = {
@@ -62,6 +61,6 @@ cokeline.setup({
 	},
 })
 
-map("n", "<leader>p", "<Plug>(cokeline-focus-prev)")
-map("n", "<leader>n", "<Plug>(cokeline-focus-next)")
-map("n", "<leader>q", "<cmd>bdelete<cr>")
+vim.keymap.set("n", "<leader>p", "<Plug>(cokeline-focus-prev)")
+vim.keymap.set("n", "<leader>n", "<Plug>(cokeline-focus-next)")
+vim.keymap.set("n", "<leader>q", "<cmd>bdelete<cr>")
