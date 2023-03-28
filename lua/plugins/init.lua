@@ -194,7 +194,10 @@ local plugins = {
 		"voldikss/vim-translator",
 		cmd = "Translate",
 		config = function()
-			require("plugins.others").vim_translator()
+			vim.g.translator_target_lang = "id"
+			vim.g.translator_source_lang = "auto"
+
+			vim.keymap.set("v", "<leader>tr", "<cmd>Translate<cr>", { desc = "Translate" })
 		end,
 	},
 
@@ -240,7 +243,15 @@ local plugins = {
 		"TimUntersberger/neogit",
 		cmd = { "Neogit" },
 		config = function()
-			require("plugins.others").neogit()
+			require("neogit").setup({
+				-- customize displayed signs
+				signs = {
+					-- { CLOSED, OPENED }
+					section = { "", "" },
+					item = { "", "" },
+					hunk = { "", "" },
+				},
+			})
 		end,
 	},
 
@@ -253,12 +264,12 @@ local plugins = {
 	},
 
 	{
-    "tpope/vim-fugitive",
-    config = function()
-      vim.keymap.set("n", "<leader>ga", "<cmd>G add %<cr>")
-      vim.keymap.set("n", "<leader>gc", "<cmd>G commit<cr>")
-    end
-  },
+		"tpope/vim-fugitive",
+		config = function()
+			vim.keymap.set("n", "<leader>ga", "<cmd>G add %<cr>")
+			vim.keymap.set("n", "<leader>gc", "<cmd>G commit<cr>")
+		end,
+	},
 
 	-- -- filetype
 	-- {
