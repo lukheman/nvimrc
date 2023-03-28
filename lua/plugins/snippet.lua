@@ -31,3 +31,5 @@ vim.api.nvim_set_keymap("s", "<C-j>", "v:lua.tab_complete()", { expr = true })
 
 
 luasnip.filetype_extend("html", { "html", "css", "ejs" })
+
+require("luasnip.loaders.from_vscode").lazy_load()
