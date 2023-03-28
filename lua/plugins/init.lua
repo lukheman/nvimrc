@@ -21,15 +21,14 @@ local plugins = {
 	{ "kyazdani42/nvim-web-devicons", lazy = true },
 	{ "tweekmonster/startuptime.vim", cmd = "StartupTime" },
 
-
-  -- LSP --
-  ---------
+	-- LSP --
+	---------
 	{
 		"neovim/nvim-lspconfig",
 		event = { "BufRead", "BufNewFile" },
 		config = function()
-      require("lsp.server")
-      require("lsp.diagnostic")
+			require("lsp.server")
+			require("lsp.diagnostic")
 		end,
 	},
 
