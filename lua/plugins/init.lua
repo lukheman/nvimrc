@@ -196,8 +196,6 @@ local plugins = {
 		config = function()
 			vim.g.translator_target_lang = "id"
 			vim.g.translator_source_lang = "auto"
-
-			vim.keymap.set("v", "<leader>tr", "<cmd>Translate<cr>", { desc = "Translate" })
 		end,
 	},
 
