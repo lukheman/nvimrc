@@ -6,7 +6,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- save changes
-map("n", "ss", "<cmd>w!<cr>")
+map("n", "<C-w>", "<cmd>w!<cr>")
 
 -- exit
-map("n", "q", "<cmd>qa<cr>")
+map("n", "Q", "<cmd>qa<cr>")
