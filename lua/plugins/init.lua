@@ -179,7 +179,14 @@ local plugins = {
 		"uga-rosa/ccc.nvim",
 		event = "BufRead",
 		config = function()
-			require("plugins.others").ccc()
+			require("ccc").setup({
+				highlighter = {
+					auto_enable = true,
+				},
+				win_opts = {
+					border = "single",
+				},
+			})
 		end,
 	},
 
