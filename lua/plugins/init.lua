@@ -98,7 +98,6 @@ local plugins = {
 		end,
 	},
 
-
 	-- User Interface --
 	--------------------
 
