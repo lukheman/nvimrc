@@ -1,4 +1,5 @@
 local ok, nulls = pcall(require, "null-ls")
+local map = vim.keymap.set
 
 if not ok then
 	return
@@ -14,10 +15,8 @@ nulls.setup({
 	},
 })
 
-local function format()
-	vim.lsp.buf.format({ async = true })
-end
 
--- keymap
-vim.keymap.set("n", "<leader>f", format, { desc = "LSP: Formats the current buffer" })
-vim.keymap.set("v", "<leader>f", vim.lsp.buf.format, { desc = "LSP: Formats a given range" })
+map("n", "<leader>f", function()
+	vim.lsp.buf.format({ async = true })
+end, { desc = "LSP Format" })
+map("x", "<leader>f", vim.lsp.buf.format, { desc = "LSP Range Format" })
