@@ -68,11 +68,11 @@ cmp.setup({
 	},
 	window = {
 		completion = {
-			border = border('CmpItemAbbrMatch'),
+			border = border("CmpItemAbbrMatch"),
 			scrollbar = false,
 		},
 		documentation = {
-			border = border('CmpItemAbbrMatch'),
+			border = border("CmpItemAbbrMatch"),
 			scrollbar = false,
 		},
 	},
@@ -130,7 +130,7 @@ cmp.setup.cmdline(":", {
 	},
 })
 
-cmp.setup.cmdline("/", {
+cmp.setup.cmdline({ "/", "?" }, {
 	sources = {
 		{ name = "buffer" },
 	},

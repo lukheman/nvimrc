@@ -85,7 +85,7 @@ local plugins = {
 	----------------
 	{
 		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
+		event = { "InsertEnter", "CmdLineEnter" },
 		dependencies = {
 			{ "hrsh7th/cmp-nvim-lsp", lazy = true },
 			{ "hrsh7th/cmp-buffer", lazy = true },
