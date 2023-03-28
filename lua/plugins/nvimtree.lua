@@ -80,6 +80,5 @@ nvimtree.setup {
   },
 }
 
-local map = require("utils").map
-map("n", "<C-n>", "<cmd>NvimTreeToggle<cr>")
-map("n", "<leader>r", "<cmd>NvimTreeRefresh<cr>")
+vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<cr>")
+vim.keymap.set("n", "<leader>r", "<cmd>NvimTreeRefresh<cr>")
