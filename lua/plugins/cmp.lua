@@ -107,9 +107,9 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "nvim_lsp_signature_help" },
-		{ name = "nvim_lua" },
-		{ name = "path" },
+		{ name = "nvim_lsp", max_item_count = 5 },
 		{ name = "luasnip", max_item_count = 8 },
+		{ name = "path" },
 		{
 			name = "buffer",
 			keyword_length = 2,
@@ -120,7 +120,6 @@ cmp.setup({
 				end,
 			},
 		},
-		{ name = "nvim_lsp", max_item_count = 5 },
 	},
 })
 
