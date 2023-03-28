@@ -65,5 +65,3 @@ cokeline.setup({
 map("n", "<leader>p", "<Plug>(cokeline-focus-prev)")
 map("n", "<leader>n", "<Plug>(cokeline-focus-next)")
 map("n", "<leader>q", "<cmd>bdelete<cr>")
--- map('n', '<Leader>p', '<Plug>(cokeline-switch-prev)')
--- map('n', '<Leader>n', '<Plug>(cokeline-switch-next)')
