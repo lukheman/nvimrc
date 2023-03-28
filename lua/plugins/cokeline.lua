@@ -1,11 +1,7 @@
-local ok, cokeline = pcall(require, "cokeline")
-if not ok then
-	return
-end
-
+local cokeline = require("cokeline")
 local get_hex = require("cokeline/utils").get_hex
-local map = require("utils").map
 local colors = require("onedark.palette").darker
+local map = vim.keymap.set
 
 cokeline.setup({
 	default_hl = {
