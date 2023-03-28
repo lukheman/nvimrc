@@ -46,8 +46,8 @@ local plugins = {
 		cmd = { "AerialToggle", "AerialInfo" },
 		keys = "<leader>at",
 		config = function()
-      require "plugins.aerial"
-    end
+			require("plugins.aerial")
+		end,
 	},
 
 	-- {
