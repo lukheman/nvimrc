@@ -28,13 +28,13 @@ local plugins = {
 		"neovim/nvim-lspconfig",
 		event = { "BufRead", "BufNewFile" },
 		config = function()
-			require("plugins.lsp")
+      require("lsp.server")
+      require("lsp.diagnostic")
 		end,
 	},
 
 	{
 		"jose-elias-alvarez/null-ls.nvim",
-		-- keys = {"<leader>f", mode = { "n", "v" }},
 		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("plugins.null-ls")
