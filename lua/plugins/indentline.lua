@@ -1,7 +1,4 @@
-local present, indent_blankline = pcall(require, "indent_blankline")
-if not present then
-	return
-end
+local indent_blankline = require("indent-blankline")
 
 vim.cmd("highlight IndentBlanklineContextChar guifg=#848b98 gui=nocombine")
 
