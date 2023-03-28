@@ -1,9 +1,4 @@
-local present1, autopairs = pcall(require, "nvim-autopairs")
-local present2, cmp = pcall(require, "cmp")
-
-if not (present1 and present2) then
-	return
-end
+local autopairs = require("nvim-autopairs")
 
 autopairs.setup({
 	pairs_map = {
@@ -35,7 +30,3 @@ autopairs.setup({
 		highlight_grey = "Comment",
 	},
 })
-
--- insert `(` after select function or method item
-local cmp_autopairs = require "nvim-autopairs.completion.cmp"
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
