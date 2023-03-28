@@ -1,5 +1,4 @@
 local nulls = require("null-ls")
-local map = vim.keymap.set
 
 nulls.setup({
 	sources = {
@@ -11,7 +10,7 @@ nulls.setup({
 	},
 })
 
-map("n", "<leader>f", function()
+vim.keymap.set("n", "<leader>f", function()
 	vim.lsp.buf.format({ async = true })
 end, { desc = "LSP Format" })
-map("x", "<leader>f", vim.lsp.buf.format, { desc = "LSP Range Format" })
+vim.keymap.set("x", "<leader>f", vim.lsp.buf.format, { desc = "LSP Range Format" })
