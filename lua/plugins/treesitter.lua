@@ -1,8 +1,4 @@
-local present, treesitter = pcall(require, "nvim-treesitter.configs")
-
-if not present then
-	return
-end
+local treesitter = require("nvim-treesitter.configs")
 
 treesitter.setup({
 	autotag = {
@@ -11,11 +7,11 @@ treesitter.setup({
 	ensure_installed = {
 		"lua",
 		"python",
-    "javascript"
+		"javascript",
 	},
 	highlight = {
 		enable = true,
 		use_languagetree = true,
-    additional_vim_regex_highlighting = true
+		additional_vim_regex_highlighting = true,
 	},
 })
