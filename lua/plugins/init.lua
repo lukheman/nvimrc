@@ -252,7 +252,13 @@ local plugins = {
 		end,
 	},
 
-	{ "tpope/vim-fugitive", cmd = "G" },
+	{
+    "tpope/vim-fugitive",
+    config = function()
+      vim.keymap.set("n", "<leader>ga", "<cmd>G add %<cr>")
+      vim.keymap.set("n", "<leader>gc", "<cmd>G commit<cr>")
+    end
+  },
 
 	-- -- filetype
 	-- {
