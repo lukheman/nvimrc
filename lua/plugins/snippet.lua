@@ -1,5 +1,5 @@
-local present1, luasnip = pcall(require, "luasnip")
-local present2, cmp = pcall(require, "cmp")
+local luasnip = require("luasnip")
+local cmp = require("cmp")
 
 
 local t = function(str)
