@@ -149,6 +149,8 @@ local plugins = {
 
 	{
 		"rebelot/terminal.nvim",
+		cmd = { "TermOpen", "TermToggle", "TermRun" },
+		event = "TermOpen",
 		config = function()
 			require("terminal").setup()
 		end,
