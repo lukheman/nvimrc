@@ -10,15 +10,15 @@ cokeline.setup({
 		end,
 		bg = "NONE",
 	},
-  sidebar = {
-    filetype = "NvimTree",
-    components = {
-      {
-        text = "  File Manager",
-        style = "bold",
-      },
-    }
-  },
+	sidebar = {
+		filetype = "NvimTree",
+		components = {
+			{
+				text = "  File Manager",
+				style = "bold",
+			},
+		},
+	},
 	components = {
 		{
 			text = function(buffer)
@@ -34,11 +34,11 @@ cokeline.setup({
 				return buffer.devicon.color
 			end,
 		},
-    {
-      text = function(buffer)
-        return buffer.unique_prefix
-      end,
-    },
+		{
+			text = function(buffer)
+				return buffer.unique_prefix
+			end,
+		},
 		{
 			text = function(buffer)
 				return buffer.filename .. " "
@@ -51,9 +51,9 @@ cokeline.setup({
 			text = function(buffer)
 				return buffer.is_modified and "" or " "
 			end,
-      fg = function(buffer)
-        return buffer.is_modified and colors.green or nil
-      end,
+			fg = function(buffer)
+				return buffer.is_modified and colors.green or nil
+			end,
 			delete_buffer_on_left_click = false,
 		},
 		{
