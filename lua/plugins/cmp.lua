@@ -1,9 +1,5 @@
-local present1, cmp = pcall(require, "cmp")
-local present2, luasnip = pcall(require, "luasnip")
-
-if not (present1 and present2) then
-  return
-end
+local cmp = require("cmp")
+local luasnip = require("luasnip")
 
 local icons = {
 	Text = "",
@@ -42,41 +38,43 @@ local icons = {
 -- end
 
 local function border(hl_name)
-  return {
-    { "╭", hl_name },
-    { "─", hl_name },
-    { "╮", hl_name },
-    { "│", hl_name },
-    { "╯", hl_name },
-    { "─", hl_name },
-    { "╰", hl_name },
-    { "│", hl_name },
-  }
+	return {
+		{ "╭", hl_name },
+		{ "─", hl_name },
+		{ "╮", hl_name },
+		{ "│", hl_name },
+		{ "╯", hl_name },
+		{ "─", hl_name },
+		{ "╰", hl_name },
+		{ "│", hl_name },
+	}
 end
 
 cmp.setup({
-	completion = { completeopt = "menu,menuone,noinsert" },
+	completion = { completeopt = "menu,menuone,noselect" },
 	snippet = {
 		expand = function(args)
-      luasnip.lsp_expand(args.body)
+			luasnip.lsp_expand(args.body)
 		end,
 	},
 	formatting = {
 		format = function(entry, vim_item)
 			vim_item.kind = string.format("%s", icons[vim_item.kind])
 
-      vim_item.abbr = string.sub(vim_item.abbr, 1, 20)
+			vim_item.abbr = string.sub(vim_item.abbr, 1, 20)
 			return vim_item
 		end,
 		fields = { "kind", "abbr" },
 	},
 	window = {
 		completion = {
-      border = border "CmpBorder",
-      scrollbar = false
-    },
-    -- documentation = cmp.config.window.bordered(),
-		documentation = cmp.config.disable,
+			border = border('CmpItemAbbrMatch'),
+			scrollbar = false,
+		},
+		documentation = {
+			border = border('CmpItemAbbrMatch'),
+			scrollbar = false,
+		},
 	},
 	mapping = {
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -108,21 +106,21 @@ cmp.setup({
 		end, { "i", "s" }),
 	},
 	sources = {
-    { name = "nvim_lsp_signature_help" },
+		{ name = "nvim_lsp_signature_help" },
 		{ name = "nvim_lua" },
 		{ name = "path" },
 		{ name = "luasnip", max_item_count = 8 },
 		{
 			name = "buffer",
 			keyword_length = 2,
-      max_item_count = 5,
+			max_item_count = 5,
 			option = {
 				get_bufnrs = function()
 					return vim.api.nvim_list_bufs()
 				end,
 			},
 		},
-		{ name = "nvim_lsp", max_item_count = 5},
+		{ name = "nvim_lsp", max_item_count = 5 },
 	},
 })
 
