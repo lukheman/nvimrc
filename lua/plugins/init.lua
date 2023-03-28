@@ -204,7 +204,9 @@ local plugins = {
 	{
 		"numToStr/Comment.nvim",
 		event = "BufRead",
-		config = require("plugins.comment"),
+		config = function()
+			require("plugins.comment")
+		end,
 	},
 
 	{
