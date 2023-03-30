@@ -1,4 +1,5 @@
 local telescope = require("telescope")
+local builtin = require("telescope.builtin")
 
 telescope.setup({
 	defaults = {
@@ -47,6 +48,5 @@ telescope.setup({
 	},
 })
 
-vim.keymap.set("n", "<c-f>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
-vim.keymap.set("n", "<c-p>", "<cmd>lua require('telescope.builtin').buffers()<cr>")
-vim.keymap.set("n", "<c-g>", "<cmd>lua require('telescope.builtin').git_branches()<cr>")
+vim.keymap.set("n", "<c-f>", builtin.find_files)
+vim.keymap.set("n", "<c-p>", builtin.buffers)
