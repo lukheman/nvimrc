@@ -78,7 +78,7 @@ local plugins = {
 		end,
 	},
 
-	{ "mattn/emmet-vim", ft = "html" },
+	{ "mattn/emmet-vim", ft = { "html", "ejs" } },
 
 	-- Completion --
 	----------------
