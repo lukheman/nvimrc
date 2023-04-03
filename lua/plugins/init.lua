@@ -251,8 +251,8 @@ local plugins = {
 
 	{
 		"TimUntersberger/neogit",
-    cmd = "Neogit",
-    keys = "<leader>gn",
+		cmd = "Neogit",
+		keys = "<leader>gn",
 		config = function()
 			require("neogit").setup({
 				-- customize displayed signs
