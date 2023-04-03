@@ -226,19 +226,14 @@ local plugins = {
 		config = true,
 	},
 
-	{ "windwp/nvim-ts-autotag", ft = { "html", "ejs" } },
-
-	-- {
-	-- 	"pocco81/auto-save.nvim",
-	-- 	event = "InsertLeave",
-	-- 	config = function()
-	-- 		require("plugins.autosave")
-	-- 	end,
-	-- },
+	{
+		"windwp/nvim-ts-autotag",
+		ft = { "html", "ejs" },
+	},
 
 	{
 		"https://git.sr.ht/~nedia/auto-save.nvim",
-		event = "InsertLeave",
+		event = "BufRead",
 		config = function()
 			require("auto-save").setup({
 				events = { "InsertLeave" },
