@@ -50,14 +50,6 @@ local plugins = {
 		end,
 	},
 
-	-- {
-	-- 	"simrat39/symbols-outline.nvim",
-	-- 	cmd = "SymbolsOutline",
-	-- 	config = function()
-	-- 		require("symbols-outline").setup()
-	-- 	end,
-	-- },
-
 	{
 		"nvim-treesitter/nvim-treesitter",
 		event = "BufReadPre",
