@@ -8,7 +8,7 @@ onedark.setup({
 	ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
 	cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 	-- toggle theme style ---
-	toggle_style_key = "<leader>ts", -- Default keybinding to toggle
+	toggle_style_key = nil, -- Default keybinding to toggle
 	toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" }, -- List of styles to toggle between
 
 	-- Change code style ---
@@ -25,7 +25,10 @@ onedark.setup({
 	-- Custom Highlights --
 	colors = {}, -- Override default colors
 	highlights = {
-		TabLineFill = { fg = "$grey", bg = "$bg0" },
+		TabLine = { fg = "$fg", bg = "$bg0" },
+
+		-- telescope.nvim
+		TelescopeSelection = { bg = "$bg0" },
 	}, -- Override highlight groups
 
 	-- Plugins Config --
