@@ -145,15 +145,6 @@ local plugins = {
 	-- 	end,
 	-- },
 
-	{
-		"rebelot/terminal.nvim",
-		cmd = { "TermOpen", "TermToggle", "TermRun" },
-		event = "TermOpen",
-		config = function()
-			require("terminal").setup()
-		end,
-	},
-
 	-- Editor Tools --
 	-------------------
 
@@ -280,13 +271,9 @@ local plugins = {
 		end,
 	},
 
-	-- -- filetype
-	-- {
-	-- 	"nathom/filetype.nvim",
-	-- 	config = function()
-	-- 		require("plugins.filetype")
-	-- 	end,
-	-- },
+  -- Wakatime
+  { "wakatime/vim-wakatime" }
+
 }
 
 require("lazy").setup(plugins)
