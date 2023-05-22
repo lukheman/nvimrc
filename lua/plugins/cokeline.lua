@@ -42,9 +42,9 @@ cokeline.setup({
 			text = function(buffer)
 				return buffer.filename .. " "
 			end,
-			style = function(buffer)
-				return buffer.is_focused and "italic" or nil
-			end,
+			-- style = function(buffer)
+			-- 	return buffer.is_focused and "italic" or nil
+			-- end,
 		},
 		{
 			text = function(buffer)
