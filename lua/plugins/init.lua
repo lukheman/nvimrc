@@ -263,9 +263,6 @@ local plugins = {
 		end,
 	},
 
-  -- Wakatime
-  { "wakatime/vim-wakatime" }
-
 }
 
 require("lazy").setup(plugins)
