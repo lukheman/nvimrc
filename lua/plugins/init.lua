@@ -40,15 +40,15 @@ local plugins = {
 		end,
 	},
 
-	{
-		"stevearc/aerial.nvim",
-		event = "BufReadPost",
-		cmd = { "AerialToggle", "AerialInfo" },
-		keys = "<leader>at",
-		config = function()
-			require("plugins.aerial")
-		end,
-	},
+	-- {
+	-- 	"stevearc/aerial.nvim",
+	-- 	event = "BufReadPost",
+	-- 	cmd = { "AerialToggle", "AerialInfo" },
+	-- 	keys = "<leader>at",
+	-- 	config = function()
+	-- 		require("plugins.aerial")
+	-- 	end,
+	-- },
 
 	{
 		"nvim-treesitter/nvim-treesitter",
