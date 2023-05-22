@@ -12,11 +12,14 @@ local servers = {
 			},
 		},
 	},
-	html = {},
+	html = {
+		filetypes = { "html", "ejs" },
+	},
 	cssls = {
 		filetypes = { "html", "css" },
 	},
-  tsserver = {}
+  jsonls = {},
+	tsserver = {},
 }
 
 for name, config in pairs(servers) do
