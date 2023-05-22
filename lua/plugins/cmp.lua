@@ -68,11 +68,12 @@ cmp.setup({
 	},
 	window = {
 		completion = {
-			border = border("CmpItemAbbrMatch"),
+			-- border = border("CmpItemAbbrMatch"),
 			scrollbar = false,
 		},
 		documentation = {
-			border = border("CmpItemAbbrMatch"),
+			-- border = border("CmpItemAbbrMatch"),
+      winhighlight = "Normal:Pmenu,CursorLine:CmpCompletionSel,Search:None",
 			scrollbar = false,
 		},
 	},
