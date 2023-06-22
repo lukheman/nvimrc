@@ -19,7 +19,7 @@ local servers = {
 		filetypes = { "html", "css" },
 	},
   jsonls = {},
-	tsserver = {},
+	-- tsserver = {},
 }
 
 for name, config in pairs(servers) do
