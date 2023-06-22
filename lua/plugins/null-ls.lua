@@ -1,12 +1,17 @@
 local nulls = require("null-ls")
 
+local eslint_bin = "node_modules/.bin"
 nulls.setup({
 	sources = {
-		-- formatting
 		-- lua
 		nulls.builtins.formatting.stylua,
-		-- js, html, css, vue and others
-		nulls.builtins.formatting.prettier,
+		-- js
+    nulls.builtins.diagnostics.eslint.with({
+      prefer_local = eslint_bin
+    }),
+    nulls.builtins.formatting.eslint.with({
+      prefer_local = eslint_bin
+    })
 	},
 })
 
