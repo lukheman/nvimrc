@@ -262,7 +262,6 @@ local plugins = {
 			vim.keymap.set("n", "<leader>gc", "<cmd>G commit<cr>")
 		end,
 	},
-
 }
 
 require("lazy").setup(plugins)
