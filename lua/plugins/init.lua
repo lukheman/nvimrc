@@ -141,13 +141,22 @@ local plugins = {
 	-------------------
 
 	-- File Eexplorer
-	{
-		"kyazdani42/nvim-tree.lua",
-		keys = "<c-n>",
-		config = function()
-			require("plugins.nvimtree")
-		end,
-	},
+	-- {
+	-- 	"kyazdani42/nvim-tree.lua",
+	-- 	keys = "<c-n>",
+	-- 	config = function()
+	-- 		require("plugins.nvimtree")
+	-- 	end,
+	-- },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    keys = "<c-n>",
+    dependencies = "MunifTanjim/nui.nvim",
+    config = function()
+      require("plugins.neo-tree")
+    end
+  },
 
 	-- Finder File
 	{
@@ -175,7 +184,7 @@ local plugins = {
 
 	{
 		"voldikss/vim-translator",
-		cmd = "Translate",
+		cmd = {"Translate", "TranslateR"},
 		config = function()
 			vim.g.translator_target_lang = "id"
 			vim.g.translator_source_lang = "auto"
