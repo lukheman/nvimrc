@@ -1,9 +1,4 @@
-local ok, toggleterm = pcall(require, "toggleterm")
-local map = require("utils").map
-
-if not ok then
-	return
-end
+local toggleterm = require("toggleterm")
 
 toggleterm.setup({
 	size = function(term)
@@ -36,5 +31,3 @@ toggleterm.setup({
 		},
 	},
 })
-
-vim.cmd([[ autocmd FileType python map <buffer> rr <cmd>TermExec cmd="python %"<cr> ]])
