@@ -48,7 +48,7 @@ cokeline.setup({
 		},
 		{
 			text = function(buffer)
-				return buffer.is_modified and "" or " "
+				return buffer.is_modified and "" or " "
 			end,
 			fg = function(buffer)
 				return buffer.is_modified and colors.green or nil
@@ -61,6 +61,6 @@ cokeline.setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>p", "<Plug>(cokeline-focus-prev)")
-vim.keymap.set("n", "<leader>n", "<Plug>(cokeline-focus-next)")
-vim.keymap.set("n", "<leader>q", "<cmd>bdelete<cr>")
+-- vim.keymap.set("n", "<leader>p", "<Plug>(cokeline-focus-prev)")
+-- vim.keymap.set("n", "<leader>n", "<Plug>(cokeline-focus-next)")
+-- vim.keymap.set("n", "<leader>q", "<cmd>bd<cr>")
