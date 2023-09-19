@@ -156,14 +156,14 @@ local plugins = {
 		end,
 	},
 
-	-- -- terminal
-	-- {
-	-- 	"akinsho/toggleterm.nvim",
-	-- 	keys = "<c-t>",
-	-- 	config = function()
-	-- 		require("plugins.toggleterm")
-	-- 	end,
-	-- },
+	-- terminal
+	{
+		"akinsho/toggleterm.nvim",
+		keys = "<c-t>",
+		config = function()
+			require("plugins.toggleterm")
+		end,
+	},
 
 	-- Editor Tools --
 	-------------------
