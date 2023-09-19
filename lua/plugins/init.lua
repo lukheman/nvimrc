@@ -263,23 +263,9 @@ local plugins = {
 
 	-- GIT --
 	---------
-
 	{
-		"TimUntersberger/neogit",
-		cmd = "Neogit",
-		keys = "<leader>gn",
-		config = function()
-			require("neogit").setup({
-				-- customize displayed signs
-				signs = {
-					-- { CLOSED, OPENED }
-					section = { "", "" },
-					item = { "", "" },
-					hunk = { "", "" },
-				},
-			})
-			vim.keymap.set("n", "<leader>gn", "<cmd>Neogit<cr>")
-		end,
+		"NeogitOrg/neogit",
+		config = true,
 	},
 
 	{
