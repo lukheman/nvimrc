@@ -13,15 +13,17 @@ neotree.setup({
 				vim.api.nvim_exec("Neotree focus git_status left", true)
 			end,
 		},
+		position = "bottom",
 	},
 	popup_border_style = "rounded",
 	filesystem = {
 		filtered_items = {
 			hide_by_name = {
 				"node_modules",
+				"__pycache__",
 			},
 		},
 	},
 })
 
-vim.keymap.set("n", "<C-n>", "<cmd>Neotree toggle<cr>")
+vim.keymap.set("n", "<C-n>", "<cmd>Neotree toggle reveal<cr>")
