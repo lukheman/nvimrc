@@ -60,7 +60,3 @@ cokeline.setup({
 		},
 	},
 })
-
--- vim.keymap.set("n", "<leader>p", "<Plug>(cokeline-focus-prev)")
--- vim.keymap.set("n", "<leader>n", "<Plug>(cokeline-focus-next)")
--- vim.keymap.set("n", "<leader>q", "<cmd>bd<cr>")
