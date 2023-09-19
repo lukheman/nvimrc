@@ -91,9 +91,8 @@ cmp.setup({
 		["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), { "i" }),
 	},
 	sources = {
-		{ name = "nvim_lsp_signature_help" },
-		{ name = "luasnip", max_item_count = 8 },
 		{ name = "nvim_lsp", max_item_count = 8 },
+		{ name = "luasnip", max_item_count = 8 },
 		{ name = "path" },
 		{
 			name = "buffer",
@@ -108,12 +107,12 @@ cmp.setup({
 	},
 })
 
-cmp.setup.cmdline(":", {
-	sources = {
-		{ name = "path" },
-		{ name = "cmdline", max_item_count = 10 },
-	},
-})
+-- cmp.setup.cmdline(":", {
+-- 	sources = {
+-- 		{ name = "path" },
+-- 		{ name = "cmdline", max_item_count = 10 },
+-- 	},
+-- })
 
 cmp.setup.cmdline({ "/", "?" }, {
 	sources = {
