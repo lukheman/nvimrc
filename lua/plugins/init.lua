@@ -253,7 +253,7 @@ local plugins = {
 
 	{
 		"https://git.sr.ht/~nedia/auto-save.nvim",
-		event = "BufRead",
+		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("auto-save").setup({
 				events = { "InsertLeave" },
