@@ -2,7 +2,7 @@ local onedark = require("onedark")
 
 onedark.setup({
 	-- Main options --
-	style = "darker", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+	style = "light", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
 	transparent = false, -- Show/hide background
 	term_colors = true, -- Change terminal color as per the selected theme style
 	ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -29,6 +29,9 @@ onedark.setup({
 
 		-- telescope.nvim
 		TelescopeSelection = { bg = "$bg0" },
+
+		SagaNormal = { bg = "$bg0" },
+		SagaBorder = { bg = "$bg0", fg = "$cyan" },
 	}, -- Override highlight groups
 
 	-- Plugins Config --
