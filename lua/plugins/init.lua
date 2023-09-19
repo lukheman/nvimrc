@@ -177,14 +177,14 @@ local plugins = {
 	-- 	end,
 	-- },
 
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    keys = "<c-n>",
-    dependencies = "MunifTanjim/nui.nvim",
-    config = function()
-      require("plugins.neo-tree")
-    end
-  },
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		keys = "<c-n>",
+		dependencies = "MunifTanjim/nui.nvim",
+		config = function()
+			require("plugins.neo-tree")
+		end,
+	},
 
 	-- Finder File
 	{
