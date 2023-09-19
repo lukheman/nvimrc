@@ -301,4 +301,10 @@ local plugins = {
 	},
 }
 
-require("lazy").setup(plugins)
+opts = {
+	ui = {
+    size = { width = 1.0, height = 1.0 },
+	},
+}
+
+require("lazy").setup(plugins, opts)
