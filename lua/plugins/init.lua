@@ -30,6 +30,13 @@ local plugins = {
 			require("lsp.server")
 			require("lsp.diagnostic")
 		end,
+		dependencies = {
+			"nvimdev/lspsaga.nvim",
+			event = "LspAttach",
+			config = function()
+				require("lsp.saga")
+			end,
+		},
 	},
 
 	{
