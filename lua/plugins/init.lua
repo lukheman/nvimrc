@@ -141,7 +141,7 @@ local plugins = {
 	-- Bufferline
 	{
 		"willothy/nvim-cokeline",
-		event = "BufRead",
+		event = { "BufRead", "InsertEnter" },
 		config = function()
 			require("plugins.cokeline")
 		end,
