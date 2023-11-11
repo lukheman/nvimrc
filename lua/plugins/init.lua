@@ -169,15 +169,6 @@ local plugins = {
 	-- Editor Tools --
 	-------------------
 
-	-- File Eexplorer
-	-- {
-	-- 	"kyazdani42/nvim-tree.lua",
-	-- 	keys = "<c-n>",
-	-- 	config = function()
-	-- 		require("plugins.nvimtree")
-	-- 	end,
-	-- },
-
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		keys = "<c-n>",
