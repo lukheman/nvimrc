@@ -1,5 +1,6 @@
 local cokeline = require("cokeline")
-local get_hex = require("cokeline/utils").get_hex
+local get_hex = require('cokeline.hlgroups').get_hl_attr
+
 local colors = require("onedark.palette").darker
 
 cokeline.setup({
