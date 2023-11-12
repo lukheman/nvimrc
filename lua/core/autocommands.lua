@@ -1,13 +1,13 @@
 local autocmd = vim.api.nvim_create_autocmd
 local map = vim.keymap.set
 
--- Remove whitespace on save
+-- remove whitespace on save
 autocmd("BufWritePre", {
 	pattern = "",
 	command = ":%s/\\s\\+$//e",
 })
 
--- Don't auto commenting new line
+-- don't auto commenting new line
 autocmd("BufEnter", {
 	pattern = "",
 	command = "set fo-=c fo-=r fo-=o",
