@@ -14,15 +14,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	-- Dependencies --
-	------------------
+	-- dependencies
 	{ "nvim-lua/plenary.nvim", lazy = true },
 	{ "nvim-lua/popup.nvim", lazy = true },
 	{ "kyazdani42/nvim-web-devicons", lazy = true },
 	{ "tweekmonster/startuptime.vim", cmd = "StartupTime" },
 
-	-- LSP --
-	---------
+	-- lsp server
 	{
 		"neovim/nvim-lspconfig",
 		event = { "BufRead", "BufNewFile" },
@@ -39,6 +37,7 @@ local plugins = {
 		},
 	},
 
+  -- formating
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		event = { "BufRead", "BufNewFile" },
@@ -47,29 +46,23 @@ local plugins = {
 		end,
 	},
 
-	-- {
-	-- 	"stevearc/aerial.nvim",
-	-- 	event = "BufReadPost",
-	-- 	cmd = { "AerialToggle", "AerialInfo" },
-	-- 	keys = "<leader>at",
-	-- 	config = function()
-	-- 		require("plugins.aerial")
-	-- 	end,
-	-- },
-
+  -- highlighting
 	{
 		"nvim-treesitter/nvim-treesitter",
 		event = "BufReadPre",
 		cmd = { "TSInstall", "TSUpdate" },
+		dependencies = {
+			"windwp/nvim-ts-autotag",
+			ft = { "html", "ejs" },
+		},
 		config = function()
 			require("plugins.treesitter")
 		end,
 	},
 
-	-- Snippets --
-	--------------
+	-- snippets
 	{
-		"L3MON4D3/LuaSnip", -- snippet engine
+		"L3MON4D3/LuaSnip", -- engine
 		event = "InsertEnter",
 		dependencies = "rafamadriz/friendly-snippets", -- snippet collection
 		config = function()
@@ -77,10 +70,10 @@ local plugins = {
 		end,
 	},
 
+  -- emmet
 	{ "mattn/emmet-vim", ft = { "html", "ejs" } },
 
-	-- Completion --
-	----------------
+	-- completion --
 	{
 		"hrsh7th/nvim-cmp",
 		event = { "InsertEnter", "CmdLineEnter" },
@@ -97,6 +90,7 @@ local plugins = {
 		end,
 	},
 
+  -- folding
 	{
 		"kevinhwang91/nvim-ufo",
 		dependencies = "kevinhwang91/promise-async",
@@ -118,10 +112,7 @@ local plugins = {
 		end,
 	},
 
-	-- User Interface --
-	--------------------
-
-	-- Colorschema
+	-- colorschema
 	{
 		"navarasu/onedark.nvim",
 		config = function()
@@ -129,7 +120,7 @@ local plugins = {
 		end,
 	},
 
-	-- Statusline
+	-- statusline
 	{
 		"rebelot/heirline.nvim",
 		event = "UiEnter",
@@ -138,24 +129,24 @@ local plugins = {
 		end,
 	},
 
-	-- Bufferline
+	-- bufferline
 	{
 		"willothy/nvim-cokeline",
 		event = { "BufRead", "InsertEnter" },
-    dependencies = "stevearc/resession.nvim",
+		dependencies = "stevearc/resession.nvim",
 		config = function()
 			require("plugins.cokeline")
 		end,
 	},
 
-	-- Indentline
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		cmd = "IndentBlanklineEnable",
-		config = function()
-			require("plugins.indentline")
-		end,
-	},
+	-- indentline
+	-- {
+	-- 	"lukas-reineke/indent-blankline.nvim",
+	-- 	cmd = "IndentBlanklineEnable",
+	-- 	config = function()
+	-- 		require("plugins.indentline")
+	-- 	end,
+	-- },
 
 	-- terminal
 	{
@@ -166,19 +157,24 @@ local plugins = {
 		end,
 	},
 
-	-- Editor Tools --
-	-------------------
+	-- {
+	-- 	"nvim-neo-tree/neo-tree.nvim",
+	-- 	keys = "<c-n>",
+	-- 	dependencies = "MunifTanjim/nui.nvim",
+	-- 	config = function()
+	-- 		require("plugins.neo-tree")
+	-- 	end,
+	-- },
 
+  -- file explorer
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		keys = "<c-n>",
-		dependencies = "MunifTanjim/nui.nvim",
+		"dinhhuy258/sfm.nvim",
 		config = function()
-			require("plugins.neo-tree")
+			require("plugins.sfm")
 		end,
 	},
 
-	-- Finder File
+	-- finder file
 	{
 		"nvim-telescope/telescope.nvim",
 		keys = { "<c-f>", "<c-p>" },
@@ -187,6 +183,7 @@ local plugins = {
 		end,
 	},
 
+  -- color picker
 	{
 		"uga-rosa/ccc.nvim",
 		event = "BufRead",
@@ -202,6 +199,7 @@ local plugins = {
 		end,
 	},
 
+  -- translator
 	{
 		"voldikss/vim-translator",
 		cmd = { "Translate", "TranslateR" },
@@ -211,6 +209,7 @@ local plugins = {
 		end,
 	},
 
+	-- comment
 	{
 		"numToStr/Comment.nvim",
 		event = "BufRead",
@@ -219,6 +218,7 @@ local plugins = {
 		end,
 	},
 
+	-- autopairs
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
@@ -227,6 +227,7 @@ local plugins = {
 		end,
 	},
 
+	-- surround
 	{
 		"kylechui/nvim-surround",
 		keys = {
@@ -238,11 +239,7 @@ local plugins = {
 		config = true,
 	},
 
-	{
-		"windwp/nvim-ts-autotag",
-		ft = { "html", "ejs" },
-	},
-
+  -- autosave
 	{
 		"https://git.sr.ht/~nedia/auto-save.nvim",
 		event = { "BufRead", "BufNewFile" },
@@ -253,13 +250,13 @@ local plugins = {
 		end,
 	},
 
-	-- GIT --
-	---------
+	-- git --
 	{
 		"NeogitOrg/neogit",
 		config = true,
 	},
 
+  -- show git diff
 	{
 		"lewis6991/gitsigns.nvim",
 		event = "BufReadPost",
@@ -268,6 +265,7 @@ local plugins = {
 		end,
 	},
 
+  -- git from neovim
 	{
 		"tpope/vim-fugitive",
 		cmd = "G",
@@ -281,7 +279,7 @@ local plugins = {
 
 opts = {
 	ui = {
-    size = { width = 1.0, height = 1.0 },
+		size = { width = 1.0, height = 1.0 },
 	},
 }
 
