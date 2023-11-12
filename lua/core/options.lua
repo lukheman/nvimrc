@@ -1,7 +1,7 @@
 local opt = vim.opt
 local g = vim.g
 
-opt.laststatus = 3
+opt.laststatus = 2
 opt.showcmd = false
 opt.showmode = false
 
@@ -24,6 +24,8 @@ opt.splitright = true
 opt.termguicolors = true
 opt.timeoutlen = 400
 
+opt.scrolloff = 3
+
 opt.lazyredraw = true
 
 -- opt.fillchars = "vert:┃"
@@ -41,7 +43,7 @@ opt.softtabstop = 2
 opt.smartindent = true
 
 -- interval for writing swap file to disk, also used by gitsigns
-opt.updatetime = 250
+opt.updatetime = 300
 
 -- disable some builtin vim plugins
 local default_plugins = {
