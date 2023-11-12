@@ -1,5 +1,5 @@
 local cokeline = require("cokeline")
-local get_hex = require('cokeline.hlgroups').get_hl_attr
+local get_hex = require("cokeline.hlgroups").get_hl_attr
 
 local colors = require("onedark.palette").darker
 
@@ -49,7 +49,7 @@ cokeline.setup({
 		},
 		{
 			text = function(buffer)
-				return buffer.is_modified and "" or " "
+				return buffer.is_modified and " " or ""
 			end,
 			fg = function(buffer)
 				return buffer.is_modified and colors.green or nil
