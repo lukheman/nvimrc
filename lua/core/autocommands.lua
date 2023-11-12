@@ -15,7 +15,6 @@ autocmd("BufEnter", {
 
 -- last cursor location
 autocmd("BufReadPost", {
-
 	command = [[if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif]],
 })
 
