@@ -55,11 +55,12 @@ local ViMode = {
 		},
 	},
 	provider = function(self)
-		return "  "
+		local mode = self.mode:sub(1, 1) -- get only the first mode character
+		return " " .. self.mode_names[mode] .. " " -- "  "
 	end,
 	hl = function(self)
 		local mode = self.mode:sub(1, 1) -- get only the first mode character
-		return { fg = "bg1", bg = self.mode_colors[mode] }
+		return { fg = "bg1", bg = self.mode_colors[mode], bold = true }
 	end,
 	update = {
 		"ModeChanged",
@@ -79,7 +80,7 @@ local Git = {
 			return "  " .. self.status_dict.head
 		end,
 	},
-  Align,
+	Align,
 	{
 		provider = function(self)
 			local count = self.status_dict.added or 0
@@ -147,10 +148,15 @@ local Ruler = {
 	-- %L = number of lines in the buffer
 	-- %c = column number
 	-- %P = percentage through file of displayed window
-	provider = "  %l:%c ",
-	hl = { fg = "bg1", bg = "green" },
+	{
+		provider = separators.rounded_left,
+		hl = { fg = "green" },
+	},
+	{
+		provider = "  %l ",
+		hl = { fg = "bg1", bg = "green" },
+	},
 }
-
 
 local Statusline = {
 	hl = { bg = "bg2" },
