@@ -73,7 +73,7 @@ cmp.setup({
 		},
 		documentation = {
 			-- border = border("CmpItemAbbrMatch"),
-      winhighlight = "Normal:Pmenu,CursorLine:CmpCompletionSel,Search:None",
+      -- winhighlight = "Normal:Pmenu,CursorLine:CmpCompletionSel,Search:None",
 			scrollbar = false,
 		},
 	},
@@ -87,8 +87,8 @@ cmp.setup({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
 		}),
-		["<Down>"] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), { "i" }),
-		["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), { "i" }),
+		["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), { "i" }),
+		-- ["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), { "i" }),
 	},
 	sources = {
 		{ name = "nvim_lsp", max_item_count = 8 },
@@ -119,7 +119,3 @@ cmp.setup.cmdline({ "/", "?" }, {
 		{ name = "buffer" },
 	},
 })
-
--- insert `(` after select function or method item
-local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
