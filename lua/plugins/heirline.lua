@@ -8,19 +8,41 @@ local colors = require("onedark.palette").darker
 local Align = { provider = "%=" }
 local Separator = { provider = " " }
 
+local separators = {
+	rounded_left = "",
+	rounded_right = "",
+	rounded_left_hollow = "",
+	rounded_right_hollow = "",
+	powerline_left = "",
+	powerline_right = "",
+	powerline_right_hollow = "",
+	powerline_left_hollow = "",
+	slant_left = "",
+	slant_right = "",
+	inverted_slant_left = "",
+	inverted_slant_right = "",
+	slant_ur = "",
+	slant_br = "",
+	vert = "│",
+	vert_thick = "┃",
+	block = "█",
+	double_vert = "║",
+	dotted_vert = "┊",
+}
+
 local ViMode = {
 	init = function(self)
 		self.mode = vim.fn.mode(1)
 	end,
 	static = {
 		mode_names = {
-			n = "Normal",
-			i = "Insert",
-			v = "Visual",
-			V = "Visual L",
-			R = "Replace",
-			c = "Command",
-			t = "Term",
+			n = "NORMAL",
+			i = "INSERT",
+			v = "VISUAL",
+			V = "VISUAL-L",
+			R = "REPLC",
+			c = "CMD",
+			t = "TERM",
 		},
 		mode_colors = {
 			n = "green",
