@@ -1,7 +1,7 @@
 local opt = vim.opt
 local g = vim.g
 
-opt.laststatus = 2
+opt.laststatus = 3
 opt.showcmd = false
 opt.showmode = false
 
