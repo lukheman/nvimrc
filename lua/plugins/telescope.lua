@@ -11,7 +11,7 @@ telescope.setup({
 		path_display = { "smart" },
 		scroll_strategy = "limit",
 		selection_strategy = "reset",
-		sorting_strategy = "ascending",
+		sorting_strategy = "descending",
 		layout_strategy = "vertical",
 		layout_config = {
       width = 0.9,
