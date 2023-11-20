@@ -43,6 +43,8 @@ local ViMode = {
 			R = "REPLC",
 			c = "CMD",
 			t = "TERM",
+      s = "SELECT",
+      S = "SELECT-L"
 		},
 		mode_colors = {
 			n = "green",
@@ -52,6 +54,8 @@ local ViMode = {
 			c = "orange",
 			R = "orange",
 			t = "red",
+      s = "cyan",
+      S = "cyan"
 		},
 	},
 	provider = function(self)
