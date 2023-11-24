@@ -35,16 +35,27 @@ local ViMode = {
 		self.mode = vim.fn.mode(1)
 	end,
 	static = {
+		-- mode_names = {
+		-- 	n = "NORMAL",
+		-- 	i = "INSERT",
+		-- 	v = "VISUAL",
+		-- 	V = "VISUAL-L",
+		-- 	R = "REPLC",
+		-- 	c = "CMD",
+		-- 	t = "TERM",
+  --     s = "SELECT",
+  --     S = "SELECT-L"
+		-- },
 		mode_names = {
-			n = "NORMAL",
-			i = "INSERT",
-			v = "VISUAL",
-			V = "VISUAL-L",
-			R = "REPLC",
-			c = "CMD",
-			t = "TERM",
-      s = "SELECT",
-      S = "SELECT-L"
+			n = " N ",
+			i = " I ",
+			v = " V ",
+			V = " VL",
+			R = " R ",
+			c = " C ",
+			t = " T ",
+      s = " S ",
+      S = " SL"
 		},
 		mode_colors = {
 			n = "green",
