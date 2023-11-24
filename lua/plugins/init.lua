@@ -277,6 +277,11 @@ local plugins = {
 			vim.keymap.set("n", "<leader>gc", "<cmd>G commit<cr>")
 		end,
 	},
+
+	{
+		"dhruvasagar/vim-table-mode",
+		ft = { "markdown " },
+	},
 }
 
 opts = {
