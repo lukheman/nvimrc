@@ -37,16 +37,16 @@ local plugins = {
 		},
 	},
 
-  -- formating
+	-- formating
 	{
-    "nvimtools/none-ls.nvim",
+		"nvimtools/none-ls.nvim",
 		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("plugins.null-ls")
 		end,
 	},
 
-  -- highlighting
+	-- highlighting
 	{
 		"nvim-treesitter/nvim-treesitter",
 		event = "BufReadPre",
@@ -70,7 +70,7 @@ local plugins = {
 		end,
 	},
 
-  -- emmet
+	-- emmet
 	{ "mattn/emmet-vim", ft = { "html", "ejs" } },
 
 	-- completion --
@@ -90,7 +90,7 @@ local plugins = {
 		end,
 	},
 
- --  -- folding
+	--  -- folding
 	-- {
 	-- 	"kevinhwang91/nvim-ufo",
 	-- 	dependencies = "kevinhwang91/promise-async",
@@ -167,7 +167,7 @@ local plugins = {
 	-- 	end,
 	-- },
 
-  -- file explorer
+	-- file explorer
 	{
 		"dinhhuy258/sfm.nvim",
 		config = function()
@@ -184,7 +184,7 @@ local plugins = {
 		end,
 	},
 
-  -- color picker
+	-- color picker
 	{
 		"uga-rosa/ccc.nvim",
 		event = "BufRead",
@@ -200,7 +200,7 @@ local plugins = {
 		end,
 	},
 
-  -- translator
+	-- translator
 	{
 		"voldikss/vim-translator",
 		cmd = { "Translate", "TranslateR" },
@@ -240,7 +240,7 @@ local plugins = {
 		config = true,
 	},
 
-  -- autosave
+	-- autosave
 	{
 		"https://git.sr.ht/~nedia/auto-save.nvim",
 		event = { "BufRead", "BufNewFile" },
@@ -251,14 +251,14 @@ local plugins = {
 		end,
 	},
 
-	-- git --
+	-- git
 	{
 		"NeogitOrg/neogit",
-    cmd = "Neogit",
+		cmd = "Neogit",
 		config = true,
 	},
 
-  -- show git diff
+	-- show git diff
 	{
 		"lewis6991/gitsigns.nvim",
 		event = "BufReadPost",
@@ -267,7 +267,7 @@ local plugins = {
 		end,
 	},
 
-  -- git from neovim
+	-- git from neovim
 	{
 		"tpope/vim-fugitive",
 		cmd = "G",
