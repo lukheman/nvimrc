@@ -4,6 +4,7 @@ local builtin = require("telescope.builtin")
 
 telescope.setup({
 	defaults = {
+		file_ignore_patterns = { "^node_modules/" },
 		entry_prefix = "  ",
 		initial_mode = "insert",
 		prompt_prefix = " ",
@@ -14,7 +15,7 @@ telescope.setup({
 		sorting_strategy = "descending",
 		layout_strategy = "vertical",
 		layout_config = {
-      width = 0.9,
+			width = 0.9,
 			preview_cutoff = 0,
 			vertical = {
 				prompt_position = "bottom",
