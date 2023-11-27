@@ -83,7 +83,6 @@ local plugins = {
 			{ "hrsh7th/cmp-path", lazy = true },
 			{ "hrsh7th/cmp-cmdline", lazy = true },
 			{ "saadparwaiz1/cmp_luasnip", lazy = true },
-			-- { "hrsh7th/cmp-nvim-lsp-signature-help", lazy = true },
 		},
 		config = function()
 			require("plugins.cmp")
