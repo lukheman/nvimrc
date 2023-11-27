@@ -124,6 +124,9 @@ cmp.setup({
 			},
 		},
 	},
+  experimental = {
+    ghost_text = true
+  }
 })
 
 -- cmp.setup.cmdline(":", {
