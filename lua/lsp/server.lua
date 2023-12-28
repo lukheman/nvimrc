@@ -18,7 +18,8 @@ local servers = {
 	-- 	filetypes = { "html", "ejs" },
 	-- },
 	cssls = {
-		filetypes = { "html", "css" },
+		filetypes = { "css" },
+    capabilities = capabilities
 	},
 	jsonls = {},
 	-- tsserver = {},
