@@ -81,6 +81,23 @@ local plugins = {
 			{ "hrsh7th/cmp-buffer", lazy = true },
 			{ "hrsh7th/cmp-path", lazy = true },
 			{ "hrsh7th/cmp-cmdline", lazy = true },
+			-- { "saadparwaiz1/cmp_luasnip", lazy = true },
+			{
+				"hrsh7th/cmp-vsnip",
+				dependencies = {
+					"hrsh7th/vim-vsnip",
+					"rafamadriz/friendly-snippets",
+				},
+				init = function()
+					vim.g.vsnip_snippet_dir = vim.fn.stdpath("config") .. "/snippets"
+					vim.g.vsnip_filetypes = {
+						handlebars = {
+							"html",
+						},
+					}
+					-- let g:vsnip_filetypes.javascriptreact = ['javascript']
+				end,
+			},
 		},
 		config = function()
 			require("plugins.cmp")
