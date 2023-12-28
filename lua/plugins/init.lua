@@ -236,24 +236,13 @@ local plugins = {
 		config = true,
 	},
 
-	-- -- autosave
-	-- {
-	-- 	"https://git.sr.ht/~nedia/auto-save.nvim",
-	-- 	event = { "BufRead", "BufNewFile" },
-	-- 	config = function()
-	-- 		require("auto-save").setup({
-	-- 			events = { "InsertLeave" },
-	-- 		})
-	-- 	end,
-	-- },
 
 	{
-		"https://git.sr.ht/~nedia/auto-save.nvim",
-		event = { "BufRead", "BufNewFile" },
+		"okuuva/auto-save.nvim",
+		cmd = "ASToggle", -- optional for lazy loading on command
+		event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
 		config = function()
-			require("auto-save").setup({
-				events = { "InsertLeave" },
-			})
+      require("plugins.autosave")
 		end,
 	},
 
