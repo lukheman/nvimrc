@@ -14,9 +14,9 @@ local servers = {
 			},
 		},
 	},
-	html = {
-		filetypes = { "html", "ejs" },
-	},
+	-- html = {
+	-- 	filetypes = { "html", "ejs" },
+	-- },
 	cssls = {
 		filetypes = { "html", "css" },
 	},
