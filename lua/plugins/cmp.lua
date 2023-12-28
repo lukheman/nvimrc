@@ -1,5 +1,5 @@
 local cmp = require("cmp")
-local luasnip = require("luasnip")
+-- local luasnip = require("luasnip")
 
 local icons = {
 	Text = "",
@@ -60,7 +60,8 @@ cmp.setup({
 	completion = { completeopt = "menu,menuone,noselect" },
 	snippet = {
 		expand = function(args)
-			luasnip.lsp_expand(args.body)
+			-- luasnip.lsp_expand(args.body)
+      vim.fn["vsnip#anonymous"](args.body)
 		end,
 	},
 	formatting = {
@@ -98,8 +99,8 @@ cmp.setup({
 				cmp.select_next_item()
 			-- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
 			-- that way you will only jump inside the snippet region
-			elseif luasnip.expand_or_jumpable() then
-				luasnip.expand_or_jump()
+			-- elseif luasnip.expand_or_jumpable() then
+				-- luasnip.expand_or_jump()
 			elseif has_words_before() then
 				cmp.complete()
 			else
@@ -111,7 +112,8 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "nvim_lsp", max_item_count = 8 },
-		{ name = "luasnip", max_item_count = 8 },
+		-- { name = "luasnip", max_item_count = 8 },
+		{ name = "vsnip" },
 		{ name = "path" },
 		{
 			name = "buffer",
