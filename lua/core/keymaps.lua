@@ -9,7 +9,7 @@ map("n", "<leader>w", "<cmd>w!<cr>")
 map("n", "<leader>wq", "<cmd>wq<cr>")
 
 -- quit
-map("n", "<C-q>", "<cmd>wq!<cr>")
+-- map("n", "<C-q>", "<cmd>q!<cr>")
 
 -- buffer
 map("n", "<leader>p", "<cmd>bp<cr>")
