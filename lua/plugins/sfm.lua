@@ -34,9 +34,9 @@ require("sfm").setup({
 				symlink_open = "",
 			},
 			indicator = {
-				folder_closed = "",
-				folder_open = "",
-				file = " ",
+				folder_closed = "", -- 
+				folder_open = "", -- 
+				file = "",
 			},
 			selection = "",
 		},
