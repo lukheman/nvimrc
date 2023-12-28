@@ -60,14 +60,14 @@ local plugins = {
 	},
 
 	-- snippets
-	{
-		"L3MON4D3/LuaSnip", -- engine
-		event = "InsertEnter",
-		dependencies = "rafamadriz/friendly-snippets", -- snippet collection
-		config = function()
-			require("plugins.snippet")
-		end,
-	},
+	-- {
+	-- 	"L3MON4D3/LuaSnip", -- engine
+	-- 	event = "InsertEnter",
+	-- 	dependencies = "rafamadriz/friendly-snippets", -- snippet collection
+	-- 	config = function()
+	-- 		require("plugins.snippet")
+	-- 	end,
+	-- },
 
 	-- emmet
 	{ "mattn/emmet-vim", ft = { "html", "ejs" } },
