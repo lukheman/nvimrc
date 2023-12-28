@@ -24,8 +24,8 @@ require("sfm").setup({
 	renderer = {
 		icons = {
 			file = {
-				default = "",
-				symlink = "",
+				default = "",
+				symlink = "",
 			},
 			folder = {
 				default = "",

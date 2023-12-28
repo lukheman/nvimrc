@@ -82,7 +82,6 @@ local plugins = {
 			{ "hrsh7th/cmp-buffer", lazy = true },
 			{ "hrsh7th/cmp-path", lazy = true },
 			{ "hrsh7th/cmp-cmdline", lazy = true },
-			{ "saadparwaiz1/cmp_luasnip", lazy = true },
 		},
 		config = function()
 			require("plugins.cmp")
