@@ -1,18 +1,15 @@
-vim.wo.foldcolumn = "0"
-vim.wo.foldlevel = 10 -- Using ufo provider need a large value, feel free to decrease the value
-vim.wo.foldenable = true
--- vim.wo.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+vim.o.foldcolumn = "0" -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+vim.wo.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
-local ok, ufo = pcall(require, "ufo")
+-- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+vim.keymap.set("n", "zr", require("ufo").openAllFolds)
+vim.keymap.set("n", "zm", require("ufo").closeAllFolds)
 
-if not ok then
-	return
-end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.foldingRange = {
-	dynamicRegistration = false,
-	lineFoldingOnly = true,
-}
-
-ufo.setup()
+require("ufo").setup({
+	provider_selector = function(bufnr, filetype, buftype)
+		return { "treesitter", "indent" }
+	end,
+})
