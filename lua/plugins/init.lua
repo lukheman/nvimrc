@@ -51,10 +51,9 @@ local plugins = {
 		"nvim-treesitter/nvim-treesitter",
 		event = "BufReadPre",
 		cmd = { "TSInstall", "TSUpdate" },
-		dependencies = {
-			"windwp/nvim-ts-autotag",
-			ft = { "html", "ejs" },
-		},
+		-- dependencies = {
+		-- 	"windwp/nvim-ts-autotag",
+		-- },
 		config = function()
 			require("plugins.treesitter")
 		end,
