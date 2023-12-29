@@ -28,13 +28,13 @@ local plugins = {
 			require("lsp.server")
 			require("lsp.diagnostic")
 		end,
-		dependencies = {
-			"nvimdev/lspsaga.nvim",
-			event = "LspAttach",
-			config = function()
-				require("lsp.saga")
-			end,
-		},
+		-- dependencies = {
+		-- 	"nvimdev/lspsaga.nvim",
+		-- 	event = "LspAttach",
+		-- 	config = function()
+		-- 		require("lsp.saga")
+		-- 	end,
+		-- },
 	},
 
 	-- formating
@@ -260,13 +260,12 @@ local plugins = {
 		config = true,
 	},
 
-
 	{
 		"okuuva/auto-save.nvim",
 		cmd = "ASToggle", -- optional for lazy loading on command
 		event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
 		config = function()
-      require("plugins.autosave")
+			require("plugins.autosave")
 		end,
 	},
 
@@ -321,6 +320,14 @@ local plugins = {
 			require("plugins.obsidian")
 		end,
 	},
+
+	-- {
+	-- 	"phaazon/hop.nvim",
+	-- 	config = function()
+	-- 		require("hop").setup()
+	-- 	end,
+	-- },
+
 }
 
 opts = {

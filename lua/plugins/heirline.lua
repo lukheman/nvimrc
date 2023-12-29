@@ -71,7 +71,8 @@ local ViMode = {
 	},
 	provider = function(self)
 		local mode = self.mode:sub(1, 1) -- get only the first mode character
-		return " " .. self.mode_names[mode] .. " " -- "  "
+		return "  " -- "  "
+		-- return " " .. self.mode_names[mode] .. " " -- "  "
 	end,
 	hl = function(self)
 		local mode = self.mode:sub(1, 1) -- get only the first mode character
@@ -168,7 +169,7 @@ local Ruler = {
 		hl = { fg = "green" },
 	},
 	{
-		provider = "  %l ",
+		provider = "  %c ",
 		hl = { fg = "bg1", bg = "green" },
 	},
 }
