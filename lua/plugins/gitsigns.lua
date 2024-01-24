@@ -9,5 +9,5 @@ gitsigns.setup({
 		changedelete = { hl = "GitSignsChange", text = "│" },
 		untracked = { hl = "GitSignsUntracked", text = "│" },
 	},
-	signcolumn = false,
+	signcolumn = true,
 })
