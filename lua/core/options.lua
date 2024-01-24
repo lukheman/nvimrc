@@ -32,7 +32,7 @@ opt.lazyredraw = true
 opt.fillchars = { eob = " " }
 opt.ignorecase = true
 opt.smartcase = false
-opt.mouse = "a"
+opt.mouse = "nv"
 opt.swapfile = false
 
 -- Indenting
