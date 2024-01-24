@@ -4,7 +4,7 @@ local builtin = require("telescope.builtin")
 
 telescope.setup({
 	defaults = {
-		file_ignore_patterns = { "^node_modules/" },
+		file_ignore_patterns = { "^node_modules/", "^env/", "__pycache__" },
 		entry_prefix = "  ",
 		initial_mode = "insert",
 		prompt_prefix = " ",
