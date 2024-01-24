@@ -240,7 +240,7 @@ local plugins = {
 	-- comment
 	{
 		"numToStr/Comment.nvim",
-		event = "BufReadPre",
+		event = { "BufReadPre", "BufRead", "BufNewFile" },
 		config = function()
 			require("plugins.comment")
 		end,
