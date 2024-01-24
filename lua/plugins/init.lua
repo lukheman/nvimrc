@@ -28,21 +28,41 @@ local plugins = {
 			require("lsp.server")
 			require("lsp.diagnostic")
 		end,
-		-- dependencies = {
-		-- 	"nvimdev/lspsaga.nvim",
-		-- 	event = "LspAttach",
-		-- 	config = function()
-		-- 		require("lsp.saga")
-		-- 	end,
-		-- },
+		dependencies = {
+			"nvimdev/lspsaga.nvim",
+			event = "LspAttach",
+			config = function()
+				require("lsp.saga")
+			end,
+		},
 	},
 
 	-- formating
+	-- {
+	-- 	"nvimtools/none-ls.nvim",
+	-- 	event = { "BufRead", "BufNewFile" },
+	-- 	config = function()
+	-- 		require("plugins.null-ls")
+	-- 	end,
+	-- },
+
 	{
-		"nvimtools/none-ls.nvim",
-		event = { "BufRead", "BufNewFile" },
+		"stevearc/conform.nvim",
 		config = function()
-			require("plugins.null-ls")
+			require("conform").setup({
+				formatters_by_ft = {
+					lua = { "stylua" },
+					-- Conform will run multiple formatters sequentially
+					-- python = { "isort", "black" },
+					-- Use a sub-list to run only the first available formatter
+					javascript = { { "prettierd", "prettier" } },
+				},
+				format_on_save = {
+					-- These options will be passed to conform.format()
+					timeout_ms = 500,
+					lsp_fallback = true,
+				},
+			})
 		end,
 	},
 
