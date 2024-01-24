@@ -29,3 +29,10 @@ autocmd({ "BufRead" }, {
 		map("", "<C-c>", [[<cmd>TermExec cmd="javac % -d bin && cd bin && java com.tutorial.Main"<cr>]])
 	end,
 })
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
+})
