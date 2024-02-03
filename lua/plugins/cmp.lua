@@ -56,23 +56,30 @@ local function border(hl_name)
 	}
 end
 
+local function feedkeys(key, mode)
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+end
+
 cmp.setup({
-	completion = { completeopt = "menu,menuone,noselect" },
+	completion = {
+		completeopt = "menu,menuone,noselect",
+		autocomplete = { cmp.TriggerEvent.TextChanged },
+	},
 	snippet = {
 		expand = function(args)
 			-- luasnip.lsp_expand(args.body)
 			vim.fn["vsnip#anonymous"](args.body)
 		end,
 	},
-	formatting = {
-		format = function(entry, vim_item)
-			vim_item.kind = string.format("%s", icons[vim_item.kind])
-
-			vim_item.abbr = string.sub(vim_item.abbr, 1, 20)
-			return vim_item
-		end,
-		fields = { "kind", "abbr" },
-	},
+	-- formatting = {
+	-- 	format = function(entry, vim_item)
+	-- 		vim_item.kind = string.format("%s", icons[vim_item.kind])
+	--
+	-- 		vim_item.abbr = string.sub(vim_item.abbr, 1, 20)
+	-- 		return vim_item
+	-- 	end,
+	-- 	fields = { "kind", "abbr" },
+	-- },
 	window = {
 		completion = {
 			-- border = border("CmpItemAbbrMatch"),
@@ -97,28 +104,31 @@ cmp.setup({
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
-				-- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-				-- that way you will only jump inside the snippet region
-				-- elseif luasnip.expand_or_jumpable() then
-				-- luasnip.expand_or_jump()
+			elseif vim.fn["vsnip#available"](1) == 1 then
+				feedkeys("<Plug>(vsnip-expand-or-jump)", "")
 			elseif has_words_before() then
 				cmp.complete()
 			else
 				fallback()
 			end
 		end, { "i", "s" }),
-
-		-- ["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), { "i" }),
+		["<S-Tab>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+			elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+				feedkeys("<Plug>(vsnip-jump-prev)", "")
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
 	},
 	sources = {
-		{ name = "nvim_lsp", max_item_count = 8 },
-		-- { name = "luasnip", max_item_count = 8 },
+		{ name = "nvim_lsp" },
 		{ name = "vsnip" },
 		{ name = "path" },
 		{
 			name = "buffer",
 			keyword_length = 2,
-			max_item_count = 5,
 			option = {
 				get_bufnrs = function()
 					return vim.api.nvim_list_bufs()
@@ -127,7 +137,7 @@ cmp.setup({
 		},
 	},
 	experimental = {
-		-- ghost_text = true
+		-- ghost_text = true,
 	},
 })
 
