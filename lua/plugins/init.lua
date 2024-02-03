@@ -142,11 +142,19 @@ local plugins = {
 	},
 
 	-- statusline
+
+	-- {
+	-- 	"rebelot/heirline.nvim",
+	-- 	event = "UiEnter",
+	-- 	config = function()
+	-- 		require("plugins.heirline")
+	-- 	end,
+	-- },
+
 	{
-		"rebelot/heirline.nvim",
-		event = "UiEnter",
+		"nvim-lualine/lualine.nvim",
 		config = function()
-			require("plugins.heirline")
+			require("plugins.lualine")
 		end,
 	},
 
@@ -205,7 +213,7 @@ local plugins = {
 	-- finder file
 	{
 		"nvim-telescope/telescope.nvim",
-		keys = { "<c-f>", "<c-p>" },
+		keys = { "<leader>f", "<c-p>" },
 		config = function()
 			require("plugins.telescope")
 		end,
@@ -321,29 +329,31 @@ local plugins = {
 		ft = { "markdown " },
 	},
 
-	{
-		"epwalsh/obsidian.nvim",
-		lazy = true,
-		ft = "markdown",
-		-- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-		-- event = {
-		--   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-		--   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-		--   "BufReadPre path/to/my-vault/**.md",
-		--   "BufNewFile path/to/my-vault/**.md",
-		-- },
-		dependencies = {
-			-- see below for full list of optional dependencies 👇
-		},
-		config = function()
-			require("plugins.obsidian")
-		end,
-	},
+	-- {
+	-- 	"epwalsh/obsidian.nvim",
+	-- 	lazy = true,
+	-- 	ft = "markdown",
+	-- 	-- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+	-- 	-- event = {
+	-- 	--   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+	-- 	--   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+	-- 	--   "BufReadPre path/to/my-vault/**.md",
+	-- 	--   "BufNewFile path/to/my-vault/**.md",
+	-- 	-- },
+	-- 	dependencies = {
+	-- 		-- see below for full list of optional dependencies 👇
+	-- 	},
+	-- 	config = function()
+	-- 		require("plugins.obsidian")
+	-- 	end,
+	-- },
+
+	-- { "RRethy/vim-illuminate" },
 }
 
 opts = {
 	ui = {
-		size = { width = 1.0, height = 1.0 },
+		-- size = { width = 1.0, height = 1.0 },
 	},
 }
 
