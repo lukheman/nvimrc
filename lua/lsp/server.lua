@@ -14,9 +14,10 @@ local servers = {
 			},
 		},
 	},
-	-- html = {
-	-- 	filetypes = { "html", "ejs" },
-	-- },
+	html = {
+		filetypes = { "html", "ejs", "handlebars" },
+    capabilities = capabilities
+	},
 	cssls = {
 		filetypes = { "css" },
     capabilities = capabilities
