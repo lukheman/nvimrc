@@ -35,28 +35,30 @@ local ViMode = {
 		self.mode = vim.fn.mode(1)
 	end,
 	static = {
-		-- mode_names = {
-		-- 	n = "NORMAL",
-		-- 	i = "INSERT",
-		-- 	v = "VISUAL",
-		-- 	V = "VISUAL-L",
-		-- 	R = "REPLC",
-		-- 	c = "CMD",
-		-- 	t = "TERM",
-  --     s = "SELECT",
-  --     S = "SELECT-L"
-		-- },
+
 		mode_names = {
-			n = " N ",
-			i = " I ",
-			v = " V ",
-			V = " VL",
-			R = " R ",
-			c = " C ",
-			t = " T ",
-      s = " S ",
-      S = " SL"
+			n = "NORMAL",
+			i = "INSERT",
+			v = "VISUAL",
+			V = "VISUAL-L",
+			R = "REPLC",
+			c = "CMD",
+			t = "TERM",
+      s = "SELECT",
+      S = "SELECT-L"
 		},
+
+		-- mode_names = {
+		-- 	n = " N ",
+		-- 	i = " I ",
+		-- 	v = " V ",
+		-- 	V = " VL",
+		-- 	R = " R ",
+		-- 	c = " C ",
+		-- 	t = " T ",
+  --     s = " S ",
+  --     S = " SL"
+		-- },
 		mode_colors = {
 			n = "green",
 			i = "blue",
@@ -71,7 +73,7 @@ local ViMode = {
 	},
 	provider = function(self)
 		local mode = self.mode:sub(1, 1) -- get only the first mode character
-		return "  " -- "  "
+		return "  " .. self.mode_names[mode] .. " "-- "  "
 		-- return " " .. self.mode_names[mode] .. " " -- "  "
 	end,
 	hl = function(self)
