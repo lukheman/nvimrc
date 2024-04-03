@@ -349,6 +349,7 @@ local plugins = {
 	-- },
 
 	-- { "RRethy/vim-illuminate" },
+  { 'wakatime/vim-wakatime', lazy = false },
 }
 
 opts = {
