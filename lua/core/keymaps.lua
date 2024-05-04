@@ -24,4 +24,4 @@ map("n", "<leader>n", "<cmd>bn<cr>")
 map("n", "<leader>q", "<cmd>bdelete<cr>")
 
 map("i", "jj", "<esc>")
-map("n", ":Q", "<cmd>q!<cr>")
+map("n", "Q", "<cmd>q!<cr>")
