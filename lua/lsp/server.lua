@@ -16,14 +16,24 @@ local servers = {
 	},
 	html = {
 		filetypes = { "html", "ejs", "handlebars" },
-    capabilities = capabilities
+		capabilities = capabilities,
 	},
 	cssls = {
 		filetypes = { "css" },
-    capabilities = capabilities
+		capabilities = capabilities,
 	},
 	jsonls = {},
 	-- tsserver = {},
+	rust_analyzer = {
+		settings = {
+			["rust-analyzer"] = {
+				diagnostics = {
+					enable = true,
+				},
+			},
+		},
+		-- single_file_support = false,
+	},
 }
 
 for name, config in pairs(servers) do
