@@ -19,7 +19,7 @@ map("n", "<leader>wq", "<cmd>wq<cr>")
 -- map("n", "<C-q>", "<cmd>q!<cr>")
 
 -- buffer
-map("n", "<leader>p", "<cmd>bp<cr>")
+map("n", "<leader>b", "<cmd>bp<cr>")
 map("n", "<leader>n", "<cmd>bn<cr>")
 map("n", "<leader>q", "<cmd>bdelete<cr>")
 
