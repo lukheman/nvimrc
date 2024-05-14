@@ -203,13 +203,6 @@ local plugins = {
 		end,
 	},
 
-	-- {
-	-- 	"theblob42/drex.nvim",
-	--    config = function()
-	--      require("plugins.drex")
-	--    end
-	-- },
-
 	-- finder file
 	{
 		"nvim-telescope/telescope.nvim",
@@ -313,16 +306,16 @@ local plugins = {
 		end,
 	},
 
-	-- git from neovim
-	{
-		"tpope/vim-fugitive",
-		cmd = "G",
-		keys = { "<leader>ga", "<leader>gc" },
-		config = function()
-			vim.keymap.set("n", "<leader>ga", "<cmd>G add %<cr>")
-			vim.keymap.set("n", "<leader>gc", "<cmd>G commit<cr>")
-		end,
-	},
+	-- -- git from neovim
+	-- {
+	-- 	"tpope/vim-fugitive",
+	-- 	cmd = "G",
+	-- 	keys = { "<leader>ga", "<leader>gc" },
+	-- 	config = function()
+	-- 		vim.keymap.set("n", "<leader>ga", "<cmd>G add %<cr>")
+	-- 		vim.keymap.set("n", "<leader>gc", "<cmd>G commit<cr>")
+	-- 	end,
+	-- },
 
 	{
 		"dhruvasagar/vim-table-mode",
