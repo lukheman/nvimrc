@@ -1,29 +1,31 @@
 require("lspsaga").setup({
 	ui = {
-		border = "rounded",
-		title = false,
-		kind = { "Class" },
+		border = "single",
+		title = true,
+		-- kind = { "Class" },
 	},
 	finder = {
-		layout = "float",
+		layout = "normal",
 		keys = {
 			quit = "<ESC>",
 			toggle_or_open = { "o", "<cr>" },
 		},
 	},
 	outline = {
-		layout = "float",
-		left_width = 0.4,
+		layout = "normal",
+		close_after_jump = true,
 		keys = {
 			quit = "<ESC>",
+			jump = "<RETURN>",
 		},
 	},
 	symbol_in_winbar = {
-    enable = false,
+		enable = false,
 		hide_keyword = true,
 		show_file = false,
 		folder_level = 0,
 	},
+	lightbulb = { enable = false },
 })
 
 vim.keymap.set("n", "gr", "<cmd>Lspsaga finder<cr>")
