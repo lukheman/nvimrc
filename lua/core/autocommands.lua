@@ -30,9 +30,9 @@ autocmd({ "BufRead" }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd("InsertLeave", {
-  pattern = "*",
-  callback = function(args)
-    require("conform").format({ bufnr = args.buf })
-  end,
+autocmd("InsertLeave", {
+	pattern = "*",
+	callback = function(args)
+		require("conform").format({ bufnr = args.buf })
+	end,
 })
