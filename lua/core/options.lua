@@ -24,7 +24,7 @@ opt.splitright = true
 opt.termguicolors = true
 opt.timeoutlen = 400
 
-opt.scrolloff = 3
+opt.scrolloff = 5
 
 opt.lazyredraw = true
 
