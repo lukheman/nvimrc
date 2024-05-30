@@ -5,24 +5,35 @@ local builtin = require("telescope.builtin")
 telescope.setup({
 	defaults = {
 		file_ignore_patterns = { "^node_modules/", "^env/", "__pycache__", "env", "node_modules" },
-		entry_prefix = "  ",
+		entry_prefix = " ",
 		initial_mode = "insert",
-		prompt_prefix = " ",
-		selection_caret = " ",
+		prompt_prefix = " ", -- 
+		selection_caret = " ", -- 
 		path_display = { "absolute" },
 		scroll_strategy = "limit",
 		selection_strategy = "reset",
 		sorting_strategy = "descending",
-		layout_strategy = "vertical",
+		layout_strategy = "horizontal",
 		layout_config = {
-			width = 0.9,
-			preview_cutoff = 0,
-			vertical = {
-				prompt_position = "bottom",
-				mirror = false,
-			},
+			-- width = 0.9,
+			-- preview_cutoff = 0,
+			-- vertical = {
+			-- 	prompt_position = "bottom",
+			-- 	mirror = false,
+			-- },
 		},
-		preview = false,
+		preview = {
+			title = false,
+		},
+		borderchars = {
+			prompt = { "─", " ", "─", "│", "│", " ", "─", "└" },
+			results = { "─", " ", " ", "│", "┌", "─", " ", "│" },
+			preview = { "─", "│", "─", "│", "┬", "┐", "┘", "┴" },
+		},
+		-- dynamic_preview_title = true,
+		preview_title = false,
+		results_title = false,
+		prompt_title = false,
 	},
 	pickers = {
 		live_grep = {
@@ -48,4 +59,6 @@ telescope.setup({
 })
 
 vim.keymap.set("n", "<leader>f", builtin.find_files)
-vim.keymap.set("n", "<c-p>", builtin.buffers)
+vim.keymap.set("n", "<leader>b", builtin.buffers)
+vim.keymap.set("n", "<leader>d", builtin.diagnostics)
+vim.keymap.set("n", "<leader>s", builtin.lsp_document_symbols)
