@@ -15,7 +15,7 @@ onedark.setup({
 	-- Options are italic, bold, underline, none
 	-- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
 	code_style = {
-		comments = "bold",
+		comments = "bold,italic",
 		keywords = "none",
 		functions = "none",
 		strings = "none",
@@ -28,10 +28,14 @@ onedark.setup({
 		TabLine = { fg = "$fg", bg = "$bg0" },
 
 		-- telescope.nvim
-		TelescopeSelection = { bg = "$bg0" },
+		TelescopeSelection = { bg = "$bg1" },
+		TelescopeBorder = { fg = "$orange" },
+		TelescopeResultsBorder = { fg = "$grey" },
+		TelescopePreviewBorder = { fg = "$grey" },
+		TelescopePromptBorder = { fg = "$grey" },
 
 		SagaNormal = { bg = "$bg0" },
-		SagaBorder = { bg = "$bg0", fg = "$cyan" },
+		SagaBorder = { fg = "$grey" },
 	}, -- Override highlight groups
 
 	-- Plugins Config --
