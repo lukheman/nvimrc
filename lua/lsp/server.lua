@@ -28,7 +28,7 @@ local servers = {
 		settings = {
 			["rust-analyzer"] = {
 				diagnostics = {
-					enable = true,
+					enable = false,
 				},
 			},
 		},
