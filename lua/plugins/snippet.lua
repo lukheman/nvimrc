@@ -1,7 +1,6 @@
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 
-
 local t = function(str)
 	return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
@@ -28,7 +27,6 @@ end
 
 vim.api.nvim_set_keymap("i", "<C-j>", "v:lua.tab_complete()", { expr = true })
 vim.api.nvim_set_keymap("s", "<C-j>", "v:lua.tab_complete()", { expr = true })
-
 
 luasnip.filetype_extend("html", { "html", "css", "ejs" })
 
