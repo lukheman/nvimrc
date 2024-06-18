@@ -1,9 +1,9 @@
 local opt = vim.opt
 local g = vim.g
 
-opt.laststatus = 3
-opt.showcmd = false
-opt.showmode = false
+-- opt.laststatus = 3
+opt.showcmd = true
+opt.showmode = true
 
 opt.title = true
 opt.clipboard = "unnamedplus"
