@@ -93,80 +93,76 @@ local plugins = {
 	{ "mattn/emmet-vim", ft = { "html", "ejs", "markdown" } },
 
 	-- completion --
+	-- {
+	-- 	"hrsh7th/nvim-cmp",
+	-- 	event = { "InsertEnter", "CmdLineEnter" },
+	-- 	dependencies = {
+	-- 		{ "hrsh7th/cmp-nvim-lsp", lazy = true },
+	-- 		{ "hrsh7th/cmp-buffer", lazy = true },
+	-- 		{ "hrsh7th/cmp-path", lazy = true },
+	-- 		{ "hrsh7th/cmp-cmdline", lazy = true },
+	-- 		-- { "saadparwaiz1/cmp_luasnip", lazy = true },
+	-- 		{
+	-- 			"hrsh7th/cmp-vsnip",
+	-- 			dependencies = {
+	-- 				"hrsh7th/vim-vsnip",
+	-- 				"rafamadriz/friendly-snippets",
+	-- 			},
+	-- 			init = function()
+	-- 				vim.g.vsnip_snippet_dir = vim.fn.stdpath("config") .. "/snippets"
+	-- 				vim.g.vsnip_filetypes = {
+	-- 					handlebars = {
+	-- 						"html",
+	-- 					},
+	-- 				}
+	-- 				-- let g:vsnip_filetypes.javascriptreact = ['javascript']
+	-- 			end,
+	-- 		},
+	-- 	},
+	-- 	config = function()
+	-- 		require("plugins.cmp")
+	-- 	end,
+	-- },
+
 	{
-		"hrsh7th/nvim-cmp",
-		event = { "InsertEnter", "CmdLineEnter" },
-		dependencies = {
-			{ "hrsh7th/cmp-nvim-lsp", lazy = true },
-			{ "hrsh7th/cmp-buffer", lazy = true },
-			{ "hrsh7th/cmp-path", lazy = true },
-			{ "hrsh7th/cmp-cmdline", lazy = true },
-			-- { "saadparwaiz1/cmp_luasnip", lazy = true },
-			{
-				"hrsh7th/cmp-vsnip",
-				dependencies = {
-					"hrsh7th/vim-vsnip",
-					"rafamadriz/friendly-snippets",
-				},
-				init = function()
-					vim.g.vsnip_snippet_dir = vim.fn.stdpath("config") .. "/snippets"
-					vim.g.vsnip_filetypes = {
-						handlebars = {
-							"html",
-						},
-					}
-					-- let g:vsnip_filetypes.javascriptreact = ['javascript']
-				end,
-			},
-		},
+		"nvimdev/epo.nvim",
+		event = "LspAttach",
 		config = function()
-			require("plugins.cmp")
+			require("plugins.epo")
 		end,
 	},
 
-	-- folding
+	-- -- colorschema
 	-- {
-	-- 	"kevinhwang91/nvim-ufo",
-	-- 	dependencies = "kevinhwang91/promise-async",
+	-- 	"navarasu/onedark.nvim",
 	-- 	config = function()
-	-- 		require("plugins.nvim-ufo")
+	-- 		require("plugins.onedark")
 	-- 	end,
 	-- },
 
 	-- colorschema
 	{
-		"navarasu/onedark.nvim",
+		"nvimdev/nightsky.vim",
 		config = function()
-			require("plugins.onedark")
+			vim.cmd.colorscheme("nightsky")
 		end,
 	},
-
-	-- statusline
-
 	-- {
-	-- 	"rebelot/heirline.nvim",
-	-- 	event = "UiEnter",
+	-- 	"nvim-lualine/lualine.nvim",
 	-- 	config = function()
-	-- 		require("plugins.heirline")
+	-- 		require("plugins.lualine")
 	-- 	end,
 	-- },
 
-	{
-		"nvim-lualine/lualine.nvim",
-		config = function()
-			require("plugins.lualine")
-		end,
-	},
-
-	-- bufferline
-	{
-		"willothy/nvim-cokeline",
-		event = { "BufRead", "InsertEnter" },
-		dependencies = "stevearc/resession.nvim",
-		config = function()
-			require("plugins.cokeline")
-		end,
-	},
+	-- -- bufferline
+	-- {
+	-- 	"willothy/nvim-cokeline",
+	-- 	event = { "BufRead", "InsertEnter" },
+	-- 	dependencies = "stevearc/resession.nvim",
+	-- 	config = function()
+	-- 		require("plugins.cokeline")
+	-- 	end,
+	-- },
 
 	-- indentline
 	-- {
@@ -322,27 +318,31 @@ local plugins = {
 		ft = { "markdown " },
 	},
 
-	-- {
-	-- 	"epwalsh/obsidian.nvim",
-	-- 	lazy = true,
-	-- 	ft = "markdown",
-	-- 	-- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-	-- 	-- event = {
-	-- 	--   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-	-- 	--   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-	-- 	--   "BufReadPre path/to/my-vault/**.md",
-	-- 	--   "BufNewFile path/to/my-vault/**.md",
-	-- 	-- },
-	-- 	dependencies = {
-	-- 		-- see below for full list of optional dependencies 👇
-	-- 	},
-	-- 	config = function()
-	-- 		require("plugins.obsidian")
-	-- 	end,
-	-- },
-
+	-- Neovim plugin for automatically highlighting other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching.
 	-- { "RRethy/vim-illuminate" },
-  { 'wakatime/vim-wakatime', lazy = false },
+
+	{ "wakatime/vim-wakatime", lazy = false },
+
+	{
+		"MarcHamamji/runner.nvim",
+		config = function()
+			require("plugins.runner")
+		end,
+	},
+
+	{
+		"Fymyte/rasi.vim",
+		ft = "rasi",
+	},
+
+	{
+		"Vonr/align.nvim",
+		branch = "v2",
+		lazy = true,
+		init = function()
+			require("plugins.align")
+		end,
+	},
 }
 
 opts = {
