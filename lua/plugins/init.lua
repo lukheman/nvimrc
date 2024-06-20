@@ -49,20 +49,7 @@ local plugins = {
 	{
 		"stevearc/conform.nvim",
 		config = function()
-			require("conform").setup({
-				formatters_by_ft = {
-					lua = { "stylua" },
-					-- Conform will run multiple formatters sequentially
-					-- python = { "isort", "black" },
-					-- Use a sub-list to run only the first available formatter
-					javascript = { { "prettierd", "prettier" } },
-				},
-				format_on_save = {
-					-- These options will be passed to conform.format()
-					timeout_ms = 500,
-					lsp_fallback = true,
-				},
-			})
+			require("plugins.conform")
 		end,
 	},
 
@@ -92,45 +79,45 @@ local plugins = {
 	-- emmet
 	{ "mattn/emmet-vim", ft = { "html", "ejs", "markdown" } },
 
-	-- completion --
-	-- {
-	-- 	"hrsh7th/nvim-cmp",
-	-- 	event = { "InsertEnter", "CmdLineEnter" },
-	-- 	dependencies = {
-	-- 		{ "hrsh7th/cmp-nvim-lsp", lazy = true },
-	-- 		{ "hrsh7th/cmp-buffer", lazy = true },
-	-- 		{ "hrsh7th/cmp-path", lazy = true },
-	-- 		{ "hrsh7th/cmp-cmdline", lazy = true },
-	-- 		-- { "saadparwaiz1/cmp_luasnip", lazy = true },
-	-- 		{
-	-- 			"hrsh7th/cmp-vsnip",
-	-- 			dependencies = {
-	-- 				"hrsh7th/vim-vsnip",
-	-- 				"rafamadriz/friendly-snippets",
-	-- 			},
-	-- 			init = function()
-	-- 				vim.g.vsnip_snippet_dir = vim.fn.stdpath("config") .. "/snippets"
-	-- 				vim.g.vsnip_filetypes = {
-	-- 					handlebars = {
-	-- 						"html",
-	-- 					},
-	-- 				}
-	-- 				-- let g:vsnip_filetypes.javascriptreact = ['javascript']
-	-- 			end,
-	-- 		},
-	-- 	},
-	-- 	config = function()
-	-- 		require("plugins.cmp")
-	-- 	end,
-	-- },
-
+	-- completion
 	{
-		"nvimdev/epo.nvim",
-		event = "LspAttach",
+		"hrsh7th/nvim-cmp",
+		event = { "InsertEnter", "CmdLineEnter" },
+		dependencies = {
+			{ "hrsh7th/cmp-nvim-lsp", lazy = true },
+			{ "hrsh7th/cmp-buffer", lazy = true },
+			{ "hrsh7th/cmp-path", lazy = true },
+			{ "hrsh7th/cmp-cmdline", lazy = true },
+			-- { "saadparwaiz1/cmp_luasnip", lazy = true },
+			{
+				"hrsh7th/cmp-vsnip",
+				dependencies = {
+					"hrsh7th/vim-vsnip",
+					"rafamadriz/friendly-snippets",
+				},
+				init = function()
+					vim.g.vsnip_snippet_dir = vim.fn.stdpath("config") .. "/snippets"
+					vim.g.vsnip_filetypes = {
+						handlebars = {
+							"html",
+						},
+					}
+					-- let g:vsnip_filetypes.javascriptreact = ['javascript']
+				end,
+			},
+		},
 		config = function()
-			require("plugins.epo")
+			require("plugins.cmp")
 		end,
 	},
+
+	-- {
+	-- 	"nvimdev/epo.nvim",
+	-- 	event = "LspAttach",
+	-- 	config = function()
+	-- 		require("plugins.epo")
+	-- 	end,
+	-- },
 
 	-- -- colorschema
 	-- {
@@ -147,10 +134,19 @@ local plugins = {
 			vim.cmd.colorscheme("nightsky")
 		end,
 	},
+
 	-- {
 	-- 	"nvim-lualine/lualine.nvim",
 	-- 	config = function()
 	-- 		require("plugins.lualine")
+	-- 	end,
+	-- },
+
+	-- {
+	-- 	"nvimdev/modeline.nvim",
+	-- 	event = "BufEnter",
+	-- 	config = function()
+	-- 		require("modeline").setup()
 	-- 	end,
 	-- },
 
@@ -171,7 +167,25 @@ local plugins = {
 	-- 	config = function()
 	-- 		require("plugins.indentline")
 	-- 	end,
-	-- },
+	-- },require('lazy').setup({
+	{
+		"glepnir/flybuf.nvim",
+		command = "<leader>b",
+		config = function()
+			require("flybuf").setup({
+				quit = "<esc>",
+			})
+			vim.keymap.set("n", "<leader>b", "<cmd>FlyBuf<cr>")
+		end,
+	},
+
+	{
+		"nvimdev/indentmini.nvim",
+		event = "BufEnter */*",
+		config = function()
+			require("indentmini").setup()
+		end,
+	},
 
 	-- terminal
 	{
