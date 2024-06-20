@@ -92,45 +92,45 @@ local plugins = {
 	-- emmet
 	{ "mattn/emmet-vim", ft = { "html", "ejs", "markdown" } },
 
-	-- completion --
-	-- {
-	-- 	"hrsh7th/nvim-cmp",
-	-- 	event = { "InsertEnter", "CmdLineEnter" },
-	-- 	dependencies = {
-	-- 		{ "hrsh7th/cmp-nvim-lsp", lazy = true },
-	-- 		{ "hrsh7th/cmp-buffer", lazy = true },
-	-- 		{ "hrsh7th/cmp-path", lazy = true },
-	-- 		{ "hrsh7th/cmp-cmdline", lazy = true },
-	-- 		-- { "saadparwaiz1/cmp_luasnip", lazy = true },
-	-- 		{
-	-- 			"hrsh7th/cmp-vsnip",
-	-- 			dependencies = {
-	-- 				"hrsh7th/vim-vsnip",
-	-- 				"rafamadriz/friendly-snippets",
-	-- 			},
-	-- 			init = function()
-	-- 				vim.g.vsnip_snippet_dir = vim.fn.stdpath("config") .. "/snippets"
-	-- 				vim.g.vsnip_filetypes = {
-	-- 					handlebars = {
-	-- 						"html",
-	-- 					},
-	-- 				}
-	-- 				-- let g:vsnip_filetypes.javascriptreact = ['javascript']
-	-- 			end,
-	-- 		},
-	-- 	},
-	-- 	config = function()
-	-- 		require("plugins.cmp")
-	-- 	end,
-	-- },
-
+	-- completion
 	{
-		"nvimdev/epo.nvim",
-		event = "LspAttach",
+		"hrsh7th/nvim-cmp",
+		event = { "InsertEnter", "CmdLineEnter" },
+		dependencies = {
+			{ "hrsh7th/cmp-nvim-lsp", lazy = true },
+			{ "hrsh7th/cmp-buffer", lazy = true },
+			{ "hrsh7th/cmp-path", lazy = true },
+			{ "hrsh7th/cmp-cmdline", lazy = true },
+			-- { "saadparwaiz1/cmp_luasnip", lazy = true },
+			{
+				"hrsh7th/cmp-vsnip",
+				dependencies = {
+					"hrsh7th/vim-vsnip",
+					"rafamadriz/friendly-snippets",
+				},
+				init = function()
+					vim.g.vsnip_snippet_dir = vim.fn.stdpath("config") .. "/snippets"
+					vim.g.vsnip_filetypes = {
+						handlebars = {
+							"html",
+						},
+					}
+					-- let g:vsnip_filetypes.javascriptreact = ['javascript']
+				end,
+			},
+		},
 		config = function()
-			require("plugins.epo")
+			require("plugins.cmp")
 		end,
 	},
+
+	-- {
+	-- 	"nvimdev/epo.nvim",
+	-- 	event = "LspAttach",
+	-- 	config = function()
+	-- 		require("plugins.epo")
+	-- 	end,
+	-- },
 
 	-- -- colorschema
 	-- {
