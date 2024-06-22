@@ -38,3 +38,12 @@ indent_blankline.setup({
 	},
 	buftype_exclude = { "terminal", "man", "trouble" },
 })
+
+-- indentline
+-- {
+-- 	"lukas-reineke/indent-blankline.nvim",
+-- 	cmd = "IndentBlanklineEnable",
+-- 	config = function()
+-- 		require("plugins.indentline")
+-- 	end,
+-- }

@@ -29,3 +29,10 @@ require("lualine").setup({
 
 	-- extensions = { "trouble", "man", "fugitive" },
 })
+
+-- {
+-- 	"nvim-lualine/lualine.nvim",
+-- 	config = function()
+-- 		require("plugins.lualine")
+-- 	end,
+-- },

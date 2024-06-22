@@ -61,3 +61,12 @@ cokeline.setup({
 		},
 	},
 })
+
+-- {
+-- 	"willothy/nvim-cokeline",
+-- 	event = { "BufRead", "InsertEnter" },
+-- 	dependencies = "stevearc/resession.nvim",
+-- 	config = function()
+-- 		require("plugins.cokeline")
+-- 	end,
+-- },
