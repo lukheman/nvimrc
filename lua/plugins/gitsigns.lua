@@ -1,13 +1,12 @@
 local gitsigns = require("gitsigns")
 
--- gitsigns.setup({
--- 	signs = {
--- 		add = { hl = "GitSignsAdd", text = "│" },
--- 		change = { hl = "GitSignsChange", text = "│" },
--- 		delete = { hl = "GitSignsDelete", text = "│" },
--- 		topdelete = { hl = "GitSignsDelete", text = "│" },
--- 		changedelete = { hl = "GitSignsChange", text = "│" },
--- 		untracked = { hl = "GitSignsUntracked", text = "│" },
--- 	},
--- 	signcolumn = true,
--- })
+gitsigns.setup({
+	signs = {
+		add = { text = "│" },
+		change = { text = "│" },
+		delete = { text = "│" },
+		topdelete = { text = "│" },
+		changedelete = { text = "│" },
+		untracked = { text = "│" },
+	},
+})
