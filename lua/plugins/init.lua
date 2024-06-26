@@ -39,7 +39,8 @@ local plugins = {
 	---
 	-- require("plugins.colorscheme.onedark"),
 
-	require("plugins.colorscheme.nightsky"),
+	-- require("plugins.colorscheme.nightsky"),
+	require("plugins.colorscheme.solarized-osaka"),
 
 	require("plugins.lsp"),
 
@@ -66,6 +67,8 @@ local plugins = {
 	require("plugins.ui.sentiment"),
 
 	require("plugins.ui.gitsigns"),
+
+	require("plugins.ui.cokeline"),
 
 	require("plugins.tools.toggleterm"),
 
