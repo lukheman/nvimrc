@@ -22,5 +22,8 @@ map("n", "<leader>q", "<cmd>bdelete<cr>")
 -- map("i", "jj", "<esc>")
 map("n", "Q", "<cmd>q!<cr>")
 
+-- window
+map("n", "<leader>w", "<c-w>")
+
 map("n", "<", "<<")
 map("n", ">", ">>")
