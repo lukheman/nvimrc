@@ -36,6 +36,20 @@ function options:config()
 			preview_title = false,
 			results_title = false,
 			prompt_title = false,
+			mappings = {
+				i = {
+					["<tab>"] = {
+						actions.move_selection_previous,
+						type = "action",
+						opts = { nowait = true, silent = true },
+					},
+					["<c-tab>"] = {
+						actions.move_selection_next,
+						type = "action",
+						opts = { nowait = true, silent = true },
+					},
+				},
+			},
 		},
 		pickers = {
 			live_grep = {
