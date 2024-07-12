@@ -20,8 +20,6 @@ local plugins = {
 	{ "kyazdani42/nvim-web-devicons", lazy = true },
 	{ "tweekmonster/startuptime.vim", cmd = "StartupTime" },
 
-	---
-
 	{
 		"dhruvasagar/vim-table-mode",
 		ft = { "markdown " },
@@ -36,7 +34,6 @@ local plugins = {
 
 	{ "mattn/emmet-vim", ft = { "html", "ejs", "markdown" } },
 
-	---
 	-- require("plugins.colorscheme.onedark"),
 
 	-- require("plugins.colorscheme.nightsky"),
@@ -77,6 +74,10 @@ local plugins = {
 	-- require("plugins.tools.neogit"),
 
 	require("plugins.tools.runner"),
+
+	-- require("plugins.tools.dadbod"),
+
+	require("plugins.tools.dbee"),
 
 	require("plugins.navigation.flybuf"),
 
