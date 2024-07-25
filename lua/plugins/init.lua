@@ -20,19 +20,12 @@ local plugins = {
 	{ "kyazdani42/nvim-web-devicons", lazy = true },
 	{ "tweekmonster/startuptime.vim", cmd = "StartupTime" },
 
-	{
-		"dhruvasagar/vim-table-mode",
-		ft = { "markdown " },
-	},
-
 	{ "wakatime/vim-wakatime", lazy = false },
 
 	{
 		"Fymyte/rasi.vim",
 		ft = "rasi",
 	},
-
-	{ "mattn/emmet-vim", ft = { "html", "ejs", "markdown" } },
 
 	-- require("plugins.colorscheme.onedark"),
 
@@ -67,7 +60,7 @@ local plugins = {
 
 	require("plugins.ui.cokeline"),
 
-	require("plugins.tools.toggleterm"),
+	-- require("plugins.tools.toggleterm"),
 
 	require("plugins.tools.translator"),
 
@@ -75,15 +68,17 @@ local plugins = {
 
 	require("plugins.tools.runner"),
 
-	-- require("plugins.tools.dadbod"),
+	require("plugins.tools.dadbod"),
 
-	require("plugins.tools.dbee"),
+	-- require("plugins.tools.dbee"),
 
 	require("plugins.navigation.flybuf"),
 
 	require("plugins.navigation.sfm"),
 
 	require("plugins.navigation.telescope"),
+
+	require("plugins.navigation.flash"),
 }
 
 require("lazy").setup(plugins)
