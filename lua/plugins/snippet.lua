@@ -28,6 +28,6 @@ end
 vim.api.nvim_set_keymap("i", "<C-j>", "v:lua.tab_complete()", { expr = true })
 vim.api.nvim_set_keymap("s", "<C-j>", "v:lua.tab_complete()", { expr = true })
 
-luasnip.filetype_extend("html", { "html", "css", "ejs" })
+luasnip.filetype_extend("html", { "html", "css", "ejs", "htmldjango" })
 
 require("luasnip.loaders.from_vscode").lazy_load()
