@@ -4,9 +4,9 @@ options.config = function()
 	local treesitter = require("nvim-treesitter.configs")
 
 	treesitter.setup({
-		-- autotag = {
-		-- 	enable = true,
-		-- },
+		autotag = {
+			enable = true,
+		},
 		ensure_installed = {
 			"lua",
 			"python",
