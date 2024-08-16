@@ -27,10 +27,10 @@ local plugins = {
 		ft = "rasi",
 	},
 
-	-- require("plugins.colorscheme.onedark"),
+	require("plugins.colorscheme.onedark"),
 
 	-- require("plugins.colorscheme.nightsky"),
-	require("plugins.colorscheme.solarized-osaka"),
+	-- require("plugins.colorscheme.solarized-osaka"),
 
 	require("plugins.lsp"),
 
@@ -58,7 +58,11 @@ local plugins = {
 
 	require("plugins.ui.gitsigns"),
 
+	require("plugins.ui.lualine"),
+
 	require("plugins.ui.cokeline"),
+
+	require("plugins.ui.colorizer"),
 
 	-- require("plugins.tools.toggleterm"),
 
