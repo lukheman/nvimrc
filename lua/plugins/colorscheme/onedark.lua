@@ -16,7 +16,7 @@ function config()
 		-- Options are italic, bold, underline, none
 		-- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
 		code_style = {
-			comments = "bold,italic",
+			comments = "italic",
 			keywords = "none",
 			functions = "none",
 			strings = "none",
