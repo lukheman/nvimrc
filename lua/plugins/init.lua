@@ -46,11 +46,13 @@ local plugins = {
 
 	require("plugins.editor.surround"),
 
-	require("plugins.editor.autosave"),
+	-- require("plugins.editor.autosave"),
 
 	require("plugins.editor.align"),
 
-	require("plugins.ui.indentmini"),
+	-- require("plugins.ui.indentmini"),
+
+	require("plugins.ui.indent-blankline"),
 
 	require("plugins.ui.ccc"),
 
@@ -71,6 +73,8 @@ local plugins = {
 	-- require("plugins.tools.neogit"),
 
 	require("plugins.tools.runner"),
+
+	-- require("plugins.tools.overseer"),
 
 	require("plugins.tools.dadbod"),
 
