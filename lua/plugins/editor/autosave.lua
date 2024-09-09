@@ -6,7 +6,7 @@ function config()
 			cancel_defered_save = { "InsertEnter", "ModeChanged" }, -- vim events that cancel a pending deferred save
 		},
 		noautocmd = true,
-		debounce_delay = 500,
+		debounce_delay = 100,
 	})
 end
 
