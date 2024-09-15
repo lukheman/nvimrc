@@ -3,7 +3,7 @@ local g = vim.g
 
 -- opt.laststatus = 3
 opt.showcmd = true
-opt.showmode = true
+opt.showmode = false
 
 opt.title = true
 opt.clipboard = "unnamedplus"
