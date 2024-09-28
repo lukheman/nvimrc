@@ -46,7 +46,7 @@ local plugins = {
 
 	require("plugins.editor.surround"),
 
-	-- require("plugins.editor.autosave"),
+	require("plugins.editor.autosave"),
 
 	require("plugins.editor.align"),
 
@@ -62,9 +62,11 @@ local plugins = {
 
 	require("plugins.ui.lualine"),
 
-	require("plugins.ui.cokeline"),
+	-- require("plugins.ui.cokeline"),
 
 	require("plugins.ui.colorizer"),
+
+	require("plugins.ui.incline"),
 
 	-- require("plugins.tools.toggleterm"),
 
