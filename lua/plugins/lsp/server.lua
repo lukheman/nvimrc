@@ -43,6 +43,7 @@ local servers = {
 		},
 		-- single_file_support = false,
 	},
+	emmet_language_server = {},
 }
 
 for name, config in pairs(servers) do
