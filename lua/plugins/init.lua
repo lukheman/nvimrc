@@ -22,14 +22,8 @@ local plugins = {
 
 	{ "wakatime/vim-wakatime", lazy = false },
 
-	{
-		"Fymyte/rasi.vim",
-		ft = "rasi",
-	},
+	-- require("plugins.colorscheme.onedark"),
 
-	require("plugins.colorscheme.onedark"),
-
-	-- require("plugins.colorscheme.nightsky"),
 	-- require("plugins.colorscheme.solarized-osaka"),
 
 	require("plugins.lsp"),
@@ -38,7 +32,9 @@ local plugins = {
 
 	require("plugins.editor.treesitter"),
 
-	require("plugins.editor.cmp"),
+	-- require("plugins.editor.cmp"),
+
+	require("plugins.editor.blink-cmp"),
 
 	require("plugins.editor.comment"),
 
@@ -48,11 +44,13 @@ local plugins = {
 
 	require("plugins.editor.autosave"),
 
-	require("plugins.editor.align"),
+	-- require("plugins.editor.align"),
 
 	-- require("plugins.ui.indentmini"),
 
-	require("plugins.ui.indent-blankline"),
+	-- require("plugins.ui.indent-blankline"),
+
+	require("plugins.ui.hlchunk"),
 
 	require("plugins.ui.ccc"),
 
@@ -62,13 +60,13 @@ local plugins = {
 
 	require("plugins.ui.lualine"),
 
-	-- require("plugins.ui.cokeline"),
+	require("plugins.ui.cokeline"),
 
 	require("plugins.ui.colorizer"),
 
 	require("plugins.ui.incline"),
 
-	-- require("plugins.tools.toggleterm"),
+	require("plugins.tools.toggleterm"),
 
 	require("plugins.tools.translator"),
 
@@ -76,19 +74,29 @@ local plugins = {
 
 	require("plugins.tools.runner"),
 
+	require("plugins.tools.code_runner"),
+
 	-- require("plugins.tools.overseer"),
 
 	require("plugins.tools.dadbod"),
 
+	require("plugins.tools.oil"),
+
 	-- require("plugins.tools.dbee"),
 
-	require("plugins.navigation.flybuf"),
+	-- require("plugins.navigation.flybuf"),
 
 	require("plugins.navigation.sfm"),
+
+	require("plugins.navigation.neovim-project"),
 
 	require("plugins.navigation.telescope"),
 
 	require("plugins.navigation.flash"),
+
+	require("plugins.navigation.harpoon"),
+
+	-- { "bfredl/nvim-ipy" },
 }
 
 require("lazy").setup(plugins)
