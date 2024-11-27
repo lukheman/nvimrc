@@ -43,7 +43,10 @@ local servers = {
 		},
 		-- single_file_support = false,
 	},
-	emmet_language_server = {},
+	emmet_language_server = {
+		filetypes = { "html", "php" },
+	},
+	phpactor = {},
 }
 
 for name, config in pairs(servers) do
