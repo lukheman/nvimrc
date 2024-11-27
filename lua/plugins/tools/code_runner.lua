@@ -13,9 +13,10 @@ return {
 				python = "python3",
 				rust = "cargo run",
 				cpp = {
-					"g++ % -o script.out",
-					"&& ./script.out",
+					"cd $dir &&",
+					"g++ -o script $fileName && ./script",
 				},
+				c = "gcc -o script $fileName && ./script",
 			},
 		})
 		vim.keymap.set("n", "rn", ":RunCode<CR>", { noremap = true, silent = false })
