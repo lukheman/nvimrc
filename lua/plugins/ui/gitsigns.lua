@@ -13,6 +13,8 @@ return {
 				changedelete = { text = "│" },
 				untracked = { text = "│" },
 			},
+			signcolumn = false,
+			numhl = true,
 		})
 	end,
 }
