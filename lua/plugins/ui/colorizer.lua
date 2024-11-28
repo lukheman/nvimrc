@@ -1,5 +1,6 @@
 return {
 	"NvChad/nvim-colorizer.lua",
+	event = { "BufReadPre", "InsertEnter" },
 	config = function()
 		require("colorizer").setup({
 			filetypes = { "*" },

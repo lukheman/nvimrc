@@ -1,8 +1,8 @@
 return {
 	"willothy/nvim-cokeline",
 	lazy = true,
-	event = { "BufReadPre", "InsertEnter" },
-	-- dependencies = "stevearc/resession.nvim",
+	event = { "InsertEnter", "ColorScheme" },
+	dependencies = "stevearc/resession.nvim",
 	config = function()
 		local get_hex = require("cokeline.hlgroups").get_hl_attr
 
