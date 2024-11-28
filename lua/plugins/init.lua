@@ -18,13 +18,15 @@ local plugins = {
 	{ "nvim-lua/plenary.nvim", lazy = true },
 	{ "nvim-lua/popup.nvim", lazy = true },
 	{ "kyazdani42/nvim-web-devicons", lazy = true },
-	{ "tweekmonster/startuptime.vim", cmd = "StartupTime" },
+	-- { "tweekmonster/startuptime.vim", cmd = "StartupTime" },
 
 	{ "wakatime/vim-wakatime", lazy = false },
 
 	-- require("plugins.colorscheme.onedark"),
 
 	-- require("plugins.colorscheme.solarized-osaka"),
+
+	require("plugins.colorscheme.everblush"),
 
 	require("plugins.lsp"),
 
