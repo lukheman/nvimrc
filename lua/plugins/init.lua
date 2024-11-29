@@ -86,6 +86,8 @@ local plugins = {
 
 	-- require("plugins.tools.dbee"),
 
+	require("plugins.tools.nvim-ufo"),
+
 	-- require("plugins.navigation.flybuf"),
 
 	require("plugins.navigation.sfm"),
