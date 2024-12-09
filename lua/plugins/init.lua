@@ -88,7 +88,7 @@ local plugins = {
 
 	require("plugins.tools.nvim-ufo"),
 
-  require("plugins.tools.spectre")
+  require("plugins.tools.spectre"),
 
 	-- require("plugins.navigation.flybuf"),
 
