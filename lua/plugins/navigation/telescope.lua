@@ -1,13 +1,13 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	keys = { "<leader>f", "<c-p>" },
+	keys = { "<leader>f", "<c-p>", "<leader>s" },
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 
 		telescope.setup({
 			defaults = {
-				file_ignore_patterns = { "^node_modules/", "^env/", "__pycache__", "env", "node_modules" },
+				file_ignore_patterns = { "^node_modules/", "^env/", "__pycache__", "env", "node_modules", "session" },
 				entry_prefix = " ",
 				initial_mode = "insert",
 				prompt_prefix = " ", -- 
