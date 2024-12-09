@@ -88,6 +88,8 @@ local plugins = {
 
 	require("plugins.tools.nvim-ufo"),
 
+  require("plugins.tools.spectre")
+
 	-- require("plugins.navigation.flybuf"),
 
 	require("plugins.navigation.sfm"),
@@ -100,7 +102,6 @@ local plugins = {
 
 	require("plugins.navigation.harpoon"),
 
-	-- { "bfredl/nvim-ipy" },
 }
 
 require("lazy").setup(plugins)
