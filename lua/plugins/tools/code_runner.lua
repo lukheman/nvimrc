@@ -17,6 +17,11 @@ return {
 					"g++ -o script $fileName && ./script",
 				},
 				c = "gcc -o script $fileName && ./script",
+				asm = {
+					"nasm -f elf64 -o output.o $fileName &&",
+					"ld -o output output.o &&",
+					"./output",
+				},
 			},
 		})
 		vim.keymap.set("n", "rn", ":RunCode<CR>", { noremap = true, silent = false })
