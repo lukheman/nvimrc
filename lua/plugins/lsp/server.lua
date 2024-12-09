@@ -32,7 +32,7 @@ local servers = {
 		capabilities = capabilities,
 	},
 	jsonls = {},
-	-- tsserver = {},
+	ts_ls = {},
 	rust_analyzer = {
 		settings = {
 			["rust-analyzer"] = {
