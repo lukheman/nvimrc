@@ -1,6 +1,7 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	keys = { "<leader>f", "<c-p>", "<leader>s" },
+	keys = { "<leader>f", "<c-p>", "<leader>s", "<leader>b" },
+	cmd = { "Telescope" },
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
@@ -81,5 +82,6 @@ return {
 		vim.keymap.set("n", "<leader>b", builtin.buffers)
 		vim.keymap.set("n", "<leader>d", builtin.diagnostics)
 		vim.keymap.set("n", "<leader>s", builtin.lsp_document_symbols)
+		vim.keymap.set("n", "<leader>m", "<cmd>Telescope marks mark_type=local<cr>")
 	end,
 }
