@@ -1,13 +1,13 @@
 return {
 	"numToStr/Comment.nvim",
 	-- event = { "BufReadPre", "BufRead", "BufNewFile" },
-	keys = { "m", "gc" },
+	keys = { "gl", "gc" },
 	config = function()
 		local comment = require("Comment")
 
 		comment.setup({
 			toggler = {
-				line = "m",
+				line = "gl",
 				block = "gc",
 			},
 			mappings = {
