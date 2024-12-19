@@ -11,31 +11,31 @@ return {
 				file_ignore_patterns = { "^node_modules/", "^env/", "__pycache__", "env", "node_modules", "session" },
 				entry_prefix = " ",
 				initial_mode = "insert",
-				prompt_prefix = " ", -- 
+				prompt_prefix = " 󰍉 ", -- 
 				selection_caret = " ", -- 
-				path_display = { "absolute" },
+				path_display = { "filename_first" },
 				scroll_strategy = "limit",
 				selection_strategy = "reset",
 				sorting_strategy = "descending",
-				layout_strategy = "horizontal",
+				layout_strategy = "bottom_pane",
 				layout_config = {
-					-- width = 0.9,
-					-- preview_cutoff = 0,
-					-- vertical = {
-					-- 	prompt_position = "bottom",
-					-- 	mirror = false,
-					-- },
+					width = 0.8,
+					height = 15,
+					preview_cutoff = 200,
+					prompt_position = "bottom",
 				},
 				preview = {
-					title = false,
+					title = true,
 				},
-				borderchars = {
-					prompt = { "─", " ", "─", "│", "│", " ", "─", "└" },
-					results = { "─", " ", " ", "│", "┌", "─", " ", "│" },
-					preview = { "─", "│", "─", "│", "┬", "┐", "┘", "┴" },
-				},
+				-- borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+				borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+				-- borderchars = {
+				-- 	prompt = { "─", "│", "─", "│", "│", " ┐", "─", "└" },
+				-- 	results = { "─", "│", " ", "│", "┌", "─", " ", "│" },
+				-- 	preview = { "─", "│", "─", "│", "┬", "┐", "┘", "┴" },
+				-- },
 				-- dynamic_preview_title = true,
-				preview_title = false,
+				preview_title = true,
 				results_title = false,
 				prompt_title = false,
 				mappings = {
@@ -71,6 +71,7 @@ return {
 				find_files = {
 					hidden = false,
 					find_command = { "fd", "--type", "f", "--follow" },
+					prompt_title = false,
 				},
 			},
 			extensions = {},
