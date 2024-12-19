@@ -1,6 +1,7 @@
 return {
 	"willothy/nvim-cokeline",
 	lazy = true,
+	enabled = true,
 	event = { "InsertEnter", "ColorScheme" },
 	dependencies = "stevearc/resession.nvim",
 	config = function()
@@ -57,5 +58,7 @@ return {
 				},
 			},
 		})
+		vim.keymap.set("n", "<leader>p", "<Plug>(cokeline-focus-prev)", { silent = true })
+		vim.keymap.set("n", "<leader>n", "<Plug>(cokeline-focus-next)", { silent = true })
 	end,
 }
