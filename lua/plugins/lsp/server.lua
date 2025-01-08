@@ -1,14 +1,14 @@
 local lspconfig = require("lspconfig")
-local navic = require("nvim-navic")
+-- local navic = require("nvim-navic")
 
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local on_attach = function(client, bufnr)
-	if client.server_capabilities.documentSymbolProvider then
-		navic.attach(client, bufnr)
-	end
+	-- if client.server_capabilities.documentSymbolProvider then
+	-- 	-- navic.attach(client, bufnr)
+	-- end
 end
 
 local servers = {
