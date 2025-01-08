@@ -36,3 +36,23 @@ autocmd("InsertLeave", {
 		require("conform").format({ bufnr = args.buf })
 	end,
 })
+
+autocmd("VimEnter", {
+	callback = function()
+		-- Periksa apakah Neovim dibuka tanpa file
+		if vim.fn.argc() == 0 then
+			-- Atur buffer menjadi kosong dan set filetype ke 'intro'
+			vim.bo.filetype = "intro" -- Set filetype menjadi intro
+			return true
+		end
+	end,
+})
+
+autocmd("BufReadPost", {
+	callback = function()
+		if vim.bo.filetype ~= "intro" then
+			vim.opt.statusline = "%f %m %= %y Ln:%l Cl:%c "
+			return true
+		end
+	end,
+})
