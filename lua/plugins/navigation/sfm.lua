@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		{ "dinhhuy258/sfm-telescope.nvim" },
 	},
+	keys = "<C-n>",
 	config = function()
 		local sfm = require("sfm")
 			.setup({
@@ -20,7 +21,7 @@ return {
 							col = 1, -- int or function
 						},
 					},
-					selection_render_method = "icon", -- render method of selected entries, can be `icon`, `sign`, `highlight`.
+					selection_render_method = "highlight", -- render method of selected entries, can be `icon`, `sign`, `highlight`.
 				},
 				mappings = {
 					search = { "/" },
