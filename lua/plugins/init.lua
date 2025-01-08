@@ -17,16 +17,16 @@ local plugins = {
 	-- dependencies
 	{ "nvim-lua/plenary.nvim", lazy = true },
 	{ "nvim-lua/popup.nvim", lazy = true },
-	{ "kyazdani42/nvim-web-devicons", lazy = true },
+	-- { "kyazdani42/nvim-web-devicons", lazy = true },
 	-- { "tweekmonster/startuptime.vim", cmd = "StartupTime" },
 
 	{ "wakatime/vim-wakatime", lazy = false },
 
-	-- require("plugins.colorscheme.onedark"),
+	require("plugins.colorscheme.onedark"),
 
 	-- require("plugins.colorscheme.solarized-osaka"),
 
-	require("plugins.colorscheme.everblush"),
+	-- require("plugins.colorscheme.everblush"),
 
 	require("plugins.lsp"),
 
@@ -44,7 +44,7 @@ local plugins = {
 
 	require("plugins.editor.surround"),
 
-	require("plugins.editor.autosave"),
+	-- require("plugins.editor.autosave"),
 
 	-- require("plugins.editor.align"),
 
@@ -54,19 +54,19 @@ local plugins = {
 
 	require("plugins.ui.hlchunk"),
 
-	require("plugins.ui.ccc"),
+	-- require("plugins.ui.ccc"),
 
-	require("plugins.ui.sentiment"),
+	-- require("plugins.ui.sentiment"),
 
-	require("plugins.ui.gitsigns"),
+	-- require("plugins.ui.gitsigns"),
 
-	require("plugins.ui.lualine"),
+	-- require("plugins.ui.lualine"),
 
 	require("plugins.ui.cokeline"),
 
 	require("plugins.ui.colorizer"),
 
-	require("plugins.ui.incline"),
+	-- require("plugins.ui.incline"),
 
 	require("plugins.tools.toggleterm"),
 
@@ -74,34 +74,35 @@ local plugins = {
 
 	-- require("plugins.tools.neogit"),
 
-	require("plugins.tools.runner"),
+	-- require("plugins.tools.runner"),
 
 	require("plugins.tools.code_runner"),
 
 	-- require("plugins.tools.overseer"),
 
-	require("plugins.tools.dadbod"),
+	-- require("plugins.tools.dadbod"),
 
-	require("plugins.tools.oil"),
+	-- require("plugins.tools.oil"),
 
 	-- require("plugins.tools.dbee"),
 
 	require("plugins.tools.nvim-ufo"),
 
-  require("plugins.tools.spectre"),
+	-- require("plugins.tools.spectre"),
 
 	-- require("plugins.navigation.flybuf"),
 
 	require("plugins.navigation.sfm"),
 
-	require("plugins.navigation.neovim-project"),
+	-- require("plugins.navigation.neovim-project"),
 
 	require("plugins.navigation.telescope"),
 
 	require("plugins.navigation.flash"),
 
-	require("plugins.navigation.harpoon"),
+	-- require("plugins.navigation.harpoon"),
 
+	-- require("plugins.navigation.marks"),
 }
 
 require("lazy").setup(plugins)
