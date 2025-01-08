@@ -11,7 +11,7 @@ return {
 				file_ignore_patterns = { "^node_modules/", "^env/", "__pycache__", "env", "node_modules", "session" },
 				entry_prefix = " ",
 				initial_mode = "insert",
-				prompt_prefix = " 󰍉 ", -- 
+				prompt_prefix = " ",
 				selection_caret = " ", -- 
 				path_display = { "filename_first" },
 				scroll_strategy = "limit",
@@ -70,8 +70,12 @@ return {
 				},
 				find_files = {
 					hidden = false,
+					disable_devicons = true,
 					find_command = { "fd", "--type", "f", "--follow" },
 					prompt_title = false,
+				},
+				buffers = {
+					disable_devicons = true,
 				},
 			},
 			extensions = {},
