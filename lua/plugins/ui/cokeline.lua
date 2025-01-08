@@ -2,7 +2,7 @@ return {
 	"willothy/nvim-cokeline",
 	lazy = true,
 	enabled = true,
-	event = { "InsertEnter", "ColorScheme" },
+	event = { "InsertEnter" },
 	dependencies = "stevearc/resession.nvim",
 	config = function()
 		local get_hex = require("cokeline.hlgroups").get_hl_attr
