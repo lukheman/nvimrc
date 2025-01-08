@@ -1,5 +1,6 @@
 return {
 	"CRAG666/code_runner.nvim",
+	keys = "rn",
 	config = function()
 		require("code_runner").setup({
 			mode = "term",
@@ -22,6 +23,7 @@ return {
 					"ld -o output output.o &&",
 					"./output",
 				},
+				typescript = "npx tsc",
 			},
 		})
 		vim.keymap.set("n", "rn", ":RunCode<CR>", { noremap = true, silent = false })
