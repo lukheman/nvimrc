@@ -1,8 +1,8 @@
 local opt = vim.opt
 local g = vim.g
 
--- opt.laststatus = 3
-opt.showcmd = true
+opt.laststatus = 2
+opt.showcmd = false
 opt.showmode = false
 
 opt.title = true
@@ -23,6 +23,7 @@ opt.splitbelow = true
 opt.splitright = true
 opt.termguicolors = true
 opt.timeoutlen = 400
+opt.guicursor = "n-v-c-i:block"
 
 opt.scrolloff = 8
 
