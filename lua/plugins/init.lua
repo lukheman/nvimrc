@@ -46,7 +46,7 @@ local plugins = {
 
 	-- require("plugins.editor.autosave"),
 
-	-- require("plugins.editor.align"),
+	require("plugins.editor.align"),
 
 	-- require("plugins.ui.indentmini"),
 
@@ -82,7 +82,7 @@ local plugins = {
 
 	-- require("plugins.tools.dadbod"),
 
-	-- require("plugins.tools.oil"),
+	require("plugins.tools.oil"),
 
 	-- require("plugins.tools.dbee"),
 
@@ -103,6 +103,19 @@ local plugins = {
 	-- require("plugins.navigation.harpoon"),
 
 	-- require("plugins.navigation.marks"),
+
+	{
+		"rmagatti/auto-session",
+		lazy = false,
+
+		---enables autocomplete for opts
+		---@module "auto-session"
+		---@type AutoSession.Config
+		opts = {
+			suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+			-- log_level = 'debug',
+		},
+	},
 }
 
 require("lazy").setup(plugins)
