@@ -24,7 +24,7 @@ local servers = {
 		capabilities = capabilities,
 	},
 	html = {
-		filetypes = { "html", "ejs", "handlebars" },
+		filetypes = { "html", "ejs", "handlebars", "blade" },
 		capabilities = capabilities,
 	},
 	cssls = {
@@ -44,7 +44,7 @@ local servers = {
 		-- single_file_support = false,
 	},
 	emmet_language_server = {
-		filetypes = { "html", "php" },
+		filetypes = { "html", "php", "blade" },
 	},
 	phpactor = {},
 }
