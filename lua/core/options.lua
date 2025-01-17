@@ -2,12 +2,16 @@ local opt = vim.opt
 local g = vim.g
 
 opt.laststatus = 2
-opt.showcmd = false
-opt.showmode = false
+opt.showcmd = true
+opt.showmode = true
 
 opt.title = true
 opt.clipboard = "unnamedplus"
 opt.cul = true
+opt.cuc = false
+opt.colorcolumn = "80"
+opt.textwidth = 80
+opt.formatoptions = opt.formatoptions + "t"
 
 -- Text Formating
 opt.infercase = true
@@ -38,10 +42,11 @@ opt.swapfile = false
 
 -- Indenting
 opt.expandtab = true
-opt.shiftwidth = 2
-opt.tabstop = 2
-opt.softtabstop = 2
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
 opt.smartindent = true
+opt.autoindent = true
 
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 300
