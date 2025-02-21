@@ -1,5 +1,7 @@
 return {
 	"NeogitOrg/neogit",
-	cmd = "Neogit",
+	dependencies = {
+		"sindrets/diffview.nvim", -- optional - Diff integration
+	},
 	config = true,
 }

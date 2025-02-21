@@ -34,9 +34,9 @@ local plugins = {
 
 	require("plugins.editor.treesitter"),
 
-	-- require("plugins.editor.cmp"),
+	require("plugins.editor.cmp"),
 
-	require("plugins.editor.blink-cmp"),
+	-- require("plugins.editor.blink-cmp"),
 
 	require("plugins.editor.comment"),
 
@@ -44,7 +44,7 @@ local plugins = {
 
 	require("plugins.editor.surround"),
 
-	-- require("plugins.editor.autosave"),
+	require("plugins.editor.autosave"),
 
 	require("plugins.editor.align"),
 
@@ -58,7 +58,7 @@ local plugins = {
 
 	-- require("plugins.ui.sentiment"),
 
-	-- require("plugins.ui.gitsigns"),
+	require("plugins.ui.gitsigns"),
 
 	-- require("plugins.ui.lualine"),
 
@@ -66,13 +66,11 @@ local plugins = {
 
 	require("plugins.ui.colorizer"),
 
-	-- require("plugins.ui.incline"),
+	require("plugins.ui.incline"),
 
 	require("plugins.tools.toggleterm"),
 
 	require("plugins.tools.translator"),
-
-	-- require("plugins.tools.neogit"),
 
 	-- require("plugins.tools.runner"),
 
@@ -88,7 +86,15 @@ local plugins = {
 
 	require("plugins.tools.nvim-ufo"),
 
-	-- require("plugins.tools.spectre"),
+	require("plugins.tools.spectre"),
+
+	-- require("plugins.tools.neogit"),
+
+	require("plugins.tools.which-key"),
+
+	require("plugins.tools.auto-session"),
+
+	require("plugins.tools.todo-comments"),
 
 	-- require("plugins.navigation.flybuf"),
 
@@ -103,19 +109,6 @@ local plugins = {
 	-- require("plugins.navigation.harpoon"),
 
 	-- require("plugins.navigation.marks"),
-
-	{
-		"rmagatti/auto-session",
-		lazy = false,
-
-		---enables autocomplete for opts
-		---@module "auto-session"
-		---@type AutoSession.Config
-		opts = {
-			suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-			-- log_level = 'debug',
-		},
-	},
 }
 
 require("lazy").setup(plugins)
