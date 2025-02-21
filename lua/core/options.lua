@@ -9,8 +9,8 @@ opt.title = true
 opt.clipboard = "unnamedplus"
 opt.cul = true
 opt.cuc = false
-opt.colorcolumn = "80"
-opt.textwidth = 80
+opt.colorcolumn = "120"
+opt.textwidth = 120
 opt.formatoptions = opt.formatoptions + "t"
 
 -- Text Formating
@@ -27,7 +27,7 @@ opt.splitbelow = true
 opt.splitright = true
 opt.termguicolors = true
 opt.timeoutlen = 400
-opt.guicursor = "n-v-c-i:block"
+-- opt.guicursor = "n-v-c-i:block"
 
 opt.scrolloff = 8
 
