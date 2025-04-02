@@ -7,7 +7,7 @@ return {
 
 		onedark.setup({
 			-- Main options --
-			style = "dark", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+			style = "warmer", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
 			transparent = false, -- Show/hide background
 			term_colors = true, -- Change terminal color as per the selected theme style
 			ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -28,7 +28,9 @@ return {
 			},
 
 			-- Custom Highlights --
-			colors = {}, -- Override default colors
+			colors = {
+				bg0 = "#000000",
+			}, -- Override default colors
 			highlights = {
 				TabLine = { fg = "$fg", bg = "$bg0" },
 
