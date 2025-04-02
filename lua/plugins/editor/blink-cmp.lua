@@ -2,7 +2,8 @@ return {
 	"saghen/blink.cmp",
 	-- optional: provides snippets for the snippet source
 	dependencies = { "rafamadriz/friendly-snippets", lazy = true },
-	event = { "InsertEnter", "CmdLineEnter" },
+
+  event = {'InsertEnter'},
 
 	-- use a release tag to download pre-built binaries
 	version = "*",
@@ -21,15 +22,19 @@ return {
 		-- See the full "keymap" documentation for information on defining your own keymap.
 
 		keymap = {
+			preset = "none",
 			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
 			["<C-e>"] = { "hide", "fallback" },
-
 			["<CR>"] = { "accept", "fallback" },
 			["<Tab>"] = { "select_next", "fallback" },
 			["<S-Tab>"] = { "select_prev", "fallback" },
-
 			["<C-n>"] = { "scroll_documentation_down", "fallback" },
 			["<C-b>"] = { "scroll_documentation_up", "fallback" },
+		},
+
+		-- Disable cmdline
+		cmdline = {
+			enabled = false,
 		},
 
 		appearance = {
@@ -45,30 +50,42 @@ return {
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { "lsp", "buffer", "path", "snippets" },
-			cmdline = {},
-			-- cmdline = function()
-			-- 	local type = vim.fn.getcmdtype()
-			-- 	-- Search forward and backward
-			-- 	if type == "/" or type == "?" then
-			-- 		return { "buffer" }
-			-- 	end
-			-- 	-- Commands
-			-- 	if type == ":" or type == "@" then
-			-- 		return { "cmdline" }
-			-- 	end
-			-- 	return {}
-			-- end,
+			default = { "lsp", "path", "snippets", "buffer" },
 		},
-		completion = {
 
-			ghost_text = { enabled = false },
+		completion = {
+			accept = {
+				create_undo_point = false,
+				auto_brackets = {
+					enabled = false,
+				},
+			},
+
+			list = {
+				selection = { preselect = true, auto_insert = false },
+			},
+
 			menu = {
-				auto_show = true,
-				-- auto_show = function(ctx)
-				-- 	-- return ctx.mode ~= "cmdline" or not vim.tbl_contains({ "/", "?" }, vim.fn.getcmdtype())
-				-- 	return ctx.mode ~= "cmdline"
-				-- end,
+				draw = {
+					columns = {
+						{ "kind_icon", gap = 1 },
+						{ "label", "label_description", gap = 1 },
+						{ "source_name", gap = 1 },
+					},
+					components = {
+						source_name = {
+							highlight = "BlinkCmpKind",
+						},
+					},
+				},
+			},
+
+			documentation = {
+				auto_show = false,
+				auto_show_delay_ms = 300,
+				window = {
+					border = "single",
+				},
 			},
 		},
 	},
