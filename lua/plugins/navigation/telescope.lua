@@ -8,7 +8,15 @@ return {
 
 		telescope.setup({
 			defaults = {
-				file_ignore_patterns = { "^node_modules/", "^env/", "__pycache__", "env", "node_modules", "session" },
+				file_ignore_patterns = {
+					"^node_modules/",
+					"^env/",
+					"__pycache__",
+					"env",
+					"node_modules",
+					"session",
+					"vendor",
+				},
 				entry_prefix = " ",
 				initial_mode = "insert",
 				prompt_prefix = " ",
@@ -20,7 +28,7 @@ return {
 				layout_strategy = "bottom_pane",
 				layout_config = {
 					width = 0.8,
-					height = 15,
+					height = 20,
 					preview_cutoff = 200,
 					prompt_position = "bottom",
 				},
