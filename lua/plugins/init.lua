@@ -34,13 +34,17 @@ local plugins = {
 
 	require("plugins.editor.treesitter"),
 
-	require("plugins.editor.cmp"),
+	-- require("plugins.editor.cmp"),
 
-	-- require("plugins.editor.blink-cmp"),
+	require("plugins.editor.blink-cmp"),
 
 	require("plugins.editor.comment"),
 
-	require("plugins.editor.autopairs"),
+	require("plugins.editor.copilot"),
+
+	-- require("plugins.editor.autopairs"),
+
+  require('plugins.editor.mini-pairs'),
 
 	require("plugins.editor.surround"),
 
@@ -64,6 +68,8 @@ local plugins = {
 
 	require("plugins.ui.cokeline"),
 
+	-- require("plugins.ui.tabby"),
+
 	require("plugins.ui.colorizer"),
 
 	require("plugins.ui.incline"),
@@ -86,15 +92,19 @@ local plugins = {
 
 	require("plugins.tools.nvim-ufo"),
 
-	require("plugins.tools.spectre"),
+	-- require("plugins.tools.spectre"),
 
-	-- require("plugins.tools.neogit"),
+	require("plugins.tools.neogit"),
 
 	require("plugins.tools.which-key"),
 
 	require("plugins.tools.auto-session"),
 
 	require("plugins.tools.todo-comments"),
+
+	require("plugins.tools.codecompanion"),
+
+	require("plugins.tools.render-markdown"),
 
 	-- require("plugins.navigation.flybuf"),
 
@@ -109,6 +119,8 @@ local plugins = {
 	-- require("plugins.navigation.harpoon"),
 
 	-- require("plugins.navigation.marks"),
+
+  require('plugins.editor.markdown-table-mode')
 }
 
 require("lazy").setup(plugins)
