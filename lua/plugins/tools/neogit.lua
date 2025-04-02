@@ -1,7 +1,11 @@
 return {
 	"NeogitOrg/neogit",
 	dependencies = {
-		"sindrets/diffview.nvim", -- optional - Diff integration
+		-- "sindrets/diffview.nvim", -- optional - Diff integration
 	},
-	config = true,
+	config = function()
+		-- init.lua
+		local neogit = require("neogit")
+		neogit.setup({})
+	end,
 }
