@@ -20,7 +20,7 @@ vim.g.maplocalleader = " "
 map("n", "<leader>q", "<cmd>bdelete<cr>")
 
 -- map("i", "jj", "<esc>")
-map("n", "Q", "<cmd>q!<cr>")
+map("n", "Q", "<cmd>qa!<cr>")
 
 -- window
 map("n", "<leader>w", "<c-w>")
