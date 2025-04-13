@@ -7,7 +7,7 @@ return {
 
 			better_term = { -- Toggle mode replacement
 				clean = false, -- Clean terminal before launch
-				number = 10, -- Use nil for dynamic number and set init
+				number = nil, -- Use nil for dynamic number and set init
 				init = nil,
 			},
 			filetype = {
