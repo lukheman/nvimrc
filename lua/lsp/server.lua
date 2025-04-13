@@ -33,6 +33,17 @@ vim.lsp.config["cssls"] = {
 	filetypes = { "css" },
 }
 
+vim.lsp.config["tailwindcss"] = {
+	cmd = { "tailwindcss-language-server", "--stdio" },
+	filetypes = { "html", "css", "javascript", "typescript" },
+	root_markers = {
+		"tailwind.config.js",
+		"tailwind.config.ts",
+		"postcss.config.js",
+		"postcss.config.ts",
+	},
+}
+
 vim.lsp.enable({
 	"lua-language-server",
 	"phpactor",
