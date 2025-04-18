@@ -20,6 +20,10 @@ require("lazy").setup({
 
 	{ "nvim-tree/nvim-web-devicons", opts = {}, lazy = true },
 
+	{ "wakatime/vim-wakatime", lazy = false },
+
+	-- { "github/copilot.vim" },
+
 	require("plugins.onedark"),
 
 	require("plugins.telescope"),
