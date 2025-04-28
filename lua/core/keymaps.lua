@@ -15,9 +15,9 @@ vim.g.maplocalleader = " "
 -- map("n", "<leader>w", "<cmd>w!<cr>")
 
 -- buffer
--- map("n", "<leader>p", "<cmd>bp<cr>")
--- map("n", "<leader>n", "<cmd>bn<cr>")
 map("n", "<leader>q", "<cmd>bdelete<cr>")
+map("n", "<leader>n", "<cmd>bn<cr>")
+map("n", "<leader>p", "<cmd>bp<cr>")
 
 -- map("i", "jj", "<esc>")
 map("n", "Q", "<cmd>qa!<cr>")

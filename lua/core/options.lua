@@ -5,15 +5,17 @@ opt.laststatus = 3
 opt.showcmd = true
 opt.showmode = true
 opt.showtabline = 2
-opt.sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize"
+-- opt.sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize"
 
 opt.title = true
 opt.clipboard = "unnamedplus"
 opt.cul = true
 opt.cuc = false
-opt.colorcolumn = "120"
-opt.textwidth = 120
-opt.formatoptions = opt.formatoptions + "t"
+-- opt.colorcolumn = "120"
+-- opt.textwidth = 120
+-- Menambahkan opsi 't' ke formatoptions.
+-- Opsi 't' memungkinkan pemotongan otomatis baris teks saat melebihi panjang tertentu.
+-- opt.formatoptions = opt.formatoptions + "t"
 
 -- Text Formating
 opt.infercase = true
@@ -31,7 +33,7 @@ opt.termguicolors = true
 opt.timeoutlen = 400
 opt.guicursor = "n-v-c-i:block"
 
-opt.scrolloff = 8
+opt.scrolloff = 10
 
 opt.lazyredraw = true
 
@@ -53,36 +55,6 @@ opt.autoindent = true
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 300
 
--- disable some builtin vim plugins
-local default_plugins = {
-	"2html_plugin",
-	"getscript",
-	"getscriptPlugin",
-	"gzip",
-	"logipat",
-	-- "netrw",
-	-- "netrwPlugin",
-	-- "netrwSettings",
-	-- "netrwFileHandlers",
-	"matchit",
-	"tar",
-	"tarPlugin",
-	"rrhelper",
-	"spellfile_plugin",
-	"vimball",
-	"vimballPlugin",
-	"zip",
-	"zipPlugin",
-	"tutor",
-	"rplugin",
-	"syntax",
-	"synmenu",
-	"optwin",
-	"compiler",
-	"bugreport",
-	"ftplugin",
-}
-
-for _, plugin in pairs(default_plugins) do
-	g["loaded_" .. plugin] = 1
-end
+-- go to previous/next line with h,l,left arrow and right arrow
+-- when cursor reaches end/beginning of line
+opt.whichwrap:append("<>[]hl")

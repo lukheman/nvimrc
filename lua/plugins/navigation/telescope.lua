@@ -29,7 +29,7 @@ return {
 				layout_config = {
 					width = 0.8,
 					height = 20,
-					preview_cutoff = 200,
+					preview_cutoff = 300,
 					prompt_position = "bottom",
 				},
 				preview = {

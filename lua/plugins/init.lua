@@ -17,7 +17,7 @@ local plugins = {
 	-- dependencies
 	{ "nvim-lua/plenary.nvim", lazy = true },
 	{ "nvim-lua/popup.nvim", lazy = true },
-	-- { "kyazdani42/nvim-web-devicons", lazy = true },
+	{ "kyazdani42/nvim-web-devicons", lazy = true },
 	-- { "tweekmonster/startuptime.vim", cmd = "StartupTime" },
 
 	{ "wakatime/vim-wakatime", lazy = false },
@@ -38,13 +38,13 @@ local plugins = {
 
 	require("plugins.editor.blink-cmp"),
 
-	require("plugins.editor.comment"),
+	-- require("plugins.editor.comment"),
 
 	require("plugins.editor.copilot"),
 
 	-- require("plugins.editor.autopairs"),
 
-  require('plugins.editor.mini-pairs'),
+	require("plugins.editor.mini-pairs"),
 
 	require("plugins.editor.surround"),
 
@@ -66,7 +66,7 @@ local plugins = {
 
 	-- require("plugins.ui.lualine"),
 
-	require("plugins.ui.cokeline"),
+	-- require("plugins.ui.cokeline"),
 
 	-- require("plugins.ui.tabby"),
 
@@ -74,19 +74,41 @@ local plugins = {
 
 	require("plugins.ui.incline"),
 
-	require("plugins.tools.toggleterm"),
+	-- require("plugins.tools.toggleterm"),
 
-	require("plugins.tools.translator"),
+	-- require("plugins.tools.translator"),
 
 	-- require("plugins.tools.runner"),
 
 	require("plugins.tools.code_runner"),
 
 	-- require("plugins.tools.overseer"),
+	{
+		"echasnovski/mini.tabline",
+		version = "*",
+		event = "BufReadPost",
+		-- No need to copy this inside `setup()`. Will be used automatically.
+		opts = {
+			-- Whether to show file icons (requires 'mini.icons')
+			show_icons = true,
+
+			-- Function which formats the tab label
+			-- By default surrounds with space and possibly prepends with icon
+			format = nil,
+
+			-- Whether to set Vim's settings for tabline (make it always shown and
+			-- allow hidden buffers)
+			set_vim_settings = true,
+
+			-- Where to show tabpage section in case of multiple vim tabpages.
+			-- One of 'left', 'right', 'none'.
+			tabpage_section = "left",
+		},
+	},
 
 	-- require("plugins.tools.dadbod"),
 
-	require("plugins.tools.oil"),
+	-- require("plugins.tools.oil"),
 
 	-- require("plugins.tools.dbee"),
 
@@ -120,7 +142,7 @@ local plugins = {
 
 	-- require("plugins.navigation.marks"),
 
-  require('plugins.editor.markdown-table-mode')
+	require("plugins.editor.markdown-table-mode"),
 }
 
 require("lazy").setup(plugins)

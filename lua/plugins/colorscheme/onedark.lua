@@ -43,6 +43,10 @@ return {
 
 				SagaNormal = { bg = "$bg0" },
 				SagaBorder = { fg = "$grey" },
+
+				-- mini.tabline
+				MiniTablineCurrent = { fg = "$fg" },
+				MiniTablineHidden = { fg = "$grey" },
 			}, -- Override highlight groups
 
 			-- Plugins Config --
