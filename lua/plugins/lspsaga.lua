@@ -39,5 +39,6 @@ return {
 		vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<cr>")
 		vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<cr>")
 		vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<cr>")
+		vim.keymap.set("n", "<leader>a", "<cmd>Lspsaga code_action<cr>")
 	end,
 }

@@ -20,12 +20,12 @@ vim.lsp.config["pyright"] = {
 
 vim.lsp.config["emmet_language_server"] = {
 	cmd = { "emmet-language-server", "--stdio" },
-	filetypes = { "html", "php", "blade" },
+	filetypes = { "html", "php", "blade", "vue" },
 }
 
 vim.lsp.config["html"] = {
 	cmd = { "vscode-html-language-server", "--stdio" },
-	filetypes = { "html", "ejs", "blade" },
+	filetypes = { "html", "ejs", "blade", "vue" },
 }
 
 vim.lsp.config["cssls"] = {

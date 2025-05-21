@@ -8,7 +8,7 @@ o.showcmd = false
 
 o.clipboard = "unnamedplus"
 o.cursorline = true
-o.cursorlineopt = "number"
+-- o.cursorlineopt = "number"
 
 -- indentasi
 o.expandtab = true
@@ -41,6 +41,8 @@ o.updatetime = 250
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append("<>[]hl")
+
+-- opt.guicursor = "n-v-c-i:block"
 
 -- disable some default providers
 g.loaded_node_provider = 0

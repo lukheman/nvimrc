@@ -17,6 +17,11 @@ autocmd("BufReadPost", {
 	command = [[if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif]],
 })
 
+autocmd({ "BufNewFile", "BufRead" }, {
+	pattern = "*.ejs",
+	command = "set filetype=html",
+})
+
 -- custom statusline
 autocmd("BufReadPost", {
 	callback = function()

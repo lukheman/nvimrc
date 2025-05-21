@@ -52,5 +52,9 @@ return {
 				col = 1,
 			},
 		})
+
+		vim.keymap.set("n", "gs", "<cmd>Gitsigns stage_hunk<cr>", { noremap = true, silent = true })
+		vim.keymap.set("n", "gu", "<cmd>Gitsigns undo_stage_hunk<cr>", { noremap = true, silent = true })
+		vim.keymap.set("n", "gh", "<cmd>Gitsigns preview_hunk<cr>", { noremap = true, silent = true })
 	end,
 }

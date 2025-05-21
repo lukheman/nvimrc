@@ -29,7 +29,7 @@ return {
 
 			-- Custom Highlights --
 			colors = {
-				bg0 = "#000000",
+				-- bg0 = "#000000",
 			}, -- Override default colors
 			highlights = {
 				TabLine = { fg = "$fg", bg = "$bg0" },
@@ -49,9 +49,12 @@ return {
 				NormalFloat = { bg = "$bg0" },
 				Pmenu = { bg = "$bg0" },
 
-        -- which-key
-        WhichKeyBorder = { bg = '$bg0', fg = '$fg' }
+				-- which-key
+				WhichKeyBorder = { bg = "$bg0", fg = "$fg" },
 
+				-- mini.tabline
+				MiniTablineCurrent = { fg = "$fg" },
+				MiniTablineHidden = { fg = "$grey" },
 			}, -- Override highlight groups
 
 			-- Plugins Config --

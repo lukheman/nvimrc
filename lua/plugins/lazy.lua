@@ -18,13 +18,19 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
 
-	{ "nvim-tree/nvim-web-devicons", opts = {}, lazy = true },
+	{ "nvim-tree/nvim-web-devicons", lazy = true },
 
 	{ "wakatime/vim-wakatime", lazy = false },
 
+	{ "kevinhwang91/promise-async", lazy = false },
+
 	-- { "github/copilot.vim" },
 
-	require("plugins.onedark"),
+	-- require("plugins.onedark"),
+
+	require("plugins.spectre"),
+
+	require("plugins.everblush"),
 
 	require("plugins.telescope"),
 
@@ -48,7 +54,7 @@ require("lazy").setup({
 
 	require("plugins.lspsaga"),
 
-	require("plugins.mini-tabline"),
+	-- require("plugins.mini-tabline"),
 
 	require("plugins.codecompanion"),
 
@@ -61,4 +67,21 @@ require("lazy").setup({
 	require("plugins.auto-session"),
 
 	require("plugins.conform"),
+
+	require("plugins.screenkey"),
+
+	require("plugins.yazi"),
+
+	require("plugins.copilot"),
+
+	require("plugins.nvim-ufo"),
+
+	require("plugins.smear-cursor"),
+
+	require("plugins.flutter"),
+
+	require("plugins.laravel"),
+
+  require('plugins.hlchunk')
+
 })

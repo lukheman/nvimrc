@@ -24,6 +24,7 @@ return {
 					"./output",
 				},
 				typescript = "npx tsc",
+				php = "php $fileName",
 			},
 		})
 
