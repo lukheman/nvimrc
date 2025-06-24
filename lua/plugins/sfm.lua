@@ -6,7 +6,11 @@ return {
 		{ "dinhhuy258/sfm-telescope.nvim" },
 	},
 	config = function()
-		local sfm = require("sfm").setup()
+		local sfm = require("sfm").setup({
+			view = {
+				width = 40,
+			},
+		})
 
 		sfm:load_extension("sfm-telescope")
 

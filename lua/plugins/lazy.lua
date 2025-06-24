@@ -24,13 +24,17 @@ require("lazy").setup({
 
 	{ "kevinhwang91/promise-async", lazy = false },
 
+	{ "MunifTanjim/nui.nvim", lazy = false },
+
 	-- { "github/copilot.vim" },
 
 	-- require("plugins.onedark"),
 
+	require("plugins.kanagawa-paper"),
+
 	require("plugins.spectre"),
 
-	require("plugins.everblush"),
+	-- require("plugins.everblush"),
 
 	require("plugins.telescope"),
 
@@ -38,9 +42,18 @@ require("lazy").setup({
 
 	require("plugins.mini-pairs"),
 
-	-- require ('plugins.mini-comment'),
+	-- require("plugins.mini-comment"),
 
-	require("plugins.blink-cmp"),
+	{
+		"numToStr/Comment.nvim",
+		opts = {
+			-- add any options here
+		},
+	},
+
+	-- require("plugins.blink-cmp"),
+
+	require("plugins.cmp"),
 
 	require("plugins.autosave"),
 
@@ -64,7 +77,7 @@ require("lazy").setup({
 
 	require("plugins.nvim-surround"),
 
-	require("plugins.auto-session"),
+	-- require("plugins.auto-session"),
 
 	require("plugins.conform"),
 
@@ -82,6 +95,15 @@ require("lazy").setup({
 
 	require("plugins.laravel"),
 
-  require('plugins.hlchunk')
+	require("plugins.hlchunk"),
 
+	require("plugins.lualine"),
+
+	require("plugins.colorizer"),
+
+	-- {
+	-- 	"m4xshen/hardtime.nvim",
+	-- 	lazy = false,
+	-- 	opts = {},
+	-- },
 })

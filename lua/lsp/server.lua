@@ -5,7 +5,7 @@ vim.lsp.config["lua-language-server"] = {
 
 vim.lsp.config["phpactor"] = {
 	cmd = { "phpactor", "language-server" },
-	filetypes = { "php" },
+	filetypes = { "php", "blade" },
 
 	root_markers = {
 		"composer.json",
@@ -51,4 +51,5 @@ vim.lsp.enable({
 	"emmet_language_server",
 	"html",
 	"cssls",
+	"laravel-ls",
 })

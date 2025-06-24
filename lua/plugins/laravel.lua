@@ -3,6 +3,12 @@ return {
 	dependencies = {
 		"tpope/vim-dotenv",
 		"MunifTanjim/nui.nvim",
+		-- {
+		-- 	"ccaglak/larago.nvim",
+		-- 	init = function()
+		-- 		vim.keymap.set("n", "<leader>gg", "<cmd>GoBlade<cr>")
+		-- 	end,
+		-- },
 	},
 	cmd = { "Laravel" },
 	keys = {
