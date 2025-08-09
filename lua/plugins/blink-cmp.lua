@@ -1,18 +1,20 @@
 return {
 	"saghen/blink.cmp",
 	-- optional: provides snippets for the snippet source
+
 	dependencies = {
-		{
-			"rafamadriz/friendly-snippets",
-			-- follow latest release.
-			dependencies = {
-				"L3MON4D3/LuaSnip",
-				version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		"L3MON4D3/LuaSnip",
+		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+
+		dependencies = {
+			{
+				"rafamadriz/friendly-snippets",
+				-- follow latest release.
+				config = function()
+					require("luasnip.loaders.from_vscode").lazy_load()
+					require("luasnip").filetype_extend("html", { "python", "html" })
+				end,
 			},
-			config = function()
-				require("luasnip.loaders.from_vscode").lazy_load()
-				require("luasnip").filetype_extend("html", { "python", "html" })
-			end,
 		},
 	},
 
@@ -64,7 +66,7 @@ return {
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { "lsp", "buffer", "path", "snippets" },
+			default = { "lsp", "path", "snippets", "buffer" },
 		},
 
 		-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance

@@ -30,7 +30,7 @@ require("lazy").setup({
 
 	-- require("plugins.onedark"),
 
-	require("plugins.kanagawa-paper"),
+	-- require("plugins.kanagawa-paper"),
 
 	require("plugins.spectre"),
 
@@ -97,7 +97,7 @@ require("lazy").setup({
 
 	require("plugins.hlchunk"),
 
-	require("plugins.lualine"),
+	-- require("plugins.lualine"),
 
 	require("plugins.colorizer"),
 
