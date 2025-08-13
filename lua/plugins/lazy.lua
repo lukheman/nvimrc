@@ -26,9 +26,9 @@ require("lazy").setup({
 
 	{ "MunifTanjim/nui.nvim", lazy = false },
 
-	-- { "github/copilot.vim" },
+	{ "github/copilot.vim" },
 
-	-- require("plugins.onedark"),
+	require("plugins.onedark"),
 
 	-- require("plugins.kanagawa-paper"),
 
@@ -51,9 +51,9 @@ require("lazy").setup({
 		},
 	},
 
-	-- require("plugins.blink-cmp"),
+	require("plugins.blink-cmp"),
 
-	require("plugins.cmp"),
+	-- require("plugins.cmp"),
 
 	require("plugins.autosave"),
 
@@ -97,7 +97,7 @@ require("lazy").setup({
 
 	require("plugins.hlchunk"),
 
-	-- require("plugins.lualine"),
+	require("plugins.lualine"),
 
 	require("plugins.colorizer"),
 

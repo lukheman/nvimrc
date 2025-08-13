@@ -18,6 +18,8 @@ map("n", "<c-j>", "<c-w>j")
 map("n", "<c-k>", "<c-w>k")
 map("n", "<c-l>", "<c-w>l")
 
+map("n", "<leader>ac", "<cmd>!acommit<cr>")
+
 -- tab
 map("n", ">", ">>")
 map("n", "<", "<<")

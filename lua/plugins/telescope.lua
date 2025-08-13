@@ -21,6 +21,7 @@ return {
 					"node_modules",
 					"session",
 					"vendor",
+					"^public/",
 				},
 				entry_prefix = "   ",
 				initial_mode = "insert",
