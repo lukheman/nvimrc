@@ -51,7 +51,7 @@ return {
 							role = "user",
 							content = function()
 								return string.format(
-									[[You are an expert at following the Conventional Commit specification. Given the git diff listed below, please generate a commit message for me in bahasa indonesia:
+									[[Sbagai ahli dalam spesifikasi Conventional Commits, buatlah satu pesan commit dalam bahasa Indonesia berdasarkan git diff berikut. Pastikan hanya pesan commit yang diberikan, tanpa teks pembuka, penutup, atau penjelasan lainnya. Dan pastikan juga tidak ada karakter seperti backtick pada awal pesan commit yang dapat membuat pesan commit tidak rapih.
 
 
                    ```diff
