@@ -28,9 +28,9 @@ require("lazy").setup({
 
 	{ "github/copilot.vim" },
 
-	require("plugins.onedark"),
+	-- require("plugins.onedark"),
 
-	-- require("plugins.kanagawa-paper"),
+	require("plugins.kanagawa-paper"),
 
 	require("plugins.spectre"),
 
@@ -69,7 +69,7 @@ require("lazy").setup({
 
 	-- require("plugins.mini-tabline"),
 
-	require("plugins.codecompanion"),
+	-- require("plugins.codecompanion"),
 
 	require("plugins.neogit"),
 
@@ -89,7 +89,7 @@ require("lazy").setup({
 
 	require("plugins.nvim-ufo"),
 
-	require("plugins.smear-cursor"),
+	-- require("plugins.smear-cursor"),
 
 	require("plugins.flutter"),
 
@@ -97,9 +97,29 @@ require("lazy").setup({
 
 	require("plugins.hlchunk"),
 
-	require("plugins.lualine"),
+	-- require("plugins.lualine"),
 
 	require("plugins.colorizer"),
+
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
+
+	-- Lua
+	{
+		"folke/zen-mode.nvim",
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
 
 	-- {
 	-- 	"m4xshen/hardtime.nvim",

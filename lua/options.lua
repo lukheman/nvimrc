@@ -24,8 +24,8 @@ o.smartcase = true
 o.mouse = "n"
 
 -- number
-o.number = true
-o.relativenumber = true
+o.number = false
+o.relativenumber = false
 o.numberwidth = 2
 o.ruler = false
 o.scrolloff = 10
