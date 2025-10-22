@@ -25,6 +25,7 @@ return {
 				},
 				typescript = "npx tsc",
 				php = "php $fileName",
+				r = "Rscript $fileName",
 			},
 		})
 
