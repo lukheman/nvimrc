@@ -44,12 +44,12 @@ return {
 
 				layout_config = {
 					width = 0.8,
-					height = 0.4,
+					height = 0.7,
 					preview_cutoff = 300,
 					prompt_position = "bottom",
 				},
 				preview = {
-					title = true,
+					title = false,
 				},
 				borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
 				preview_title = true,
@@ -74,12 +74,12 @@ return {
 			pickers = {
 				find_files = {
 					hidden = false,
-					disable_devicons = true,
+					disable_devicons = false,
 					find_command = { "fd", "--type", "f", "--follow" },
 					prompt_title = false,
 				},
 				buffers = {
-					disable_devicons = true,
+					disable_devicons = false,
 				},
 			},
 		})

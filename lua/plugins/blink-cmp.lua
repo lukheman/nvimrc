@@ -1,15 +1,11 @@
 return {
 	"saghen/blink.cmp",
-	-- optional: provides snippets for the snippet source
-
 	dependencies = {
 		"L3MON4D3/LuaSnip",
-		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-
+		version = "v2.*",
 		dependencies = {
 			{
 				"rafamadriz/friendly-snippets",
-				-- follow latest release.
 				config = function()
 					require("luasnip.loaders.from_vscode").lazy_load()
 					require("luasnip").filetype_extend("html", { "python", "html" })
@@ -18,28 +14,11 @@ return {
 		},
 	},
 
-	-- use a release tag to download pre-built binaries
 	version = "1.*",
-	-- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
-	-- build = 'cargo build --release',
-	-- If you use nix, you can build from source using latest nightly rust with:
-	-- build = 'nix run .#build-plugin',
 
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
 	opts = {
-		-- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
-		-- 'super-tab' for mappings similar to vscode (tab to accept)
-		-- 'enter' for enter to accept
-		-- 'none' for no mappings
-		--
-		-- All presets have the following mappings:
-		-- C-space: Open menu or open docs if already open
-		-- C-n/C-p or Up/Down: Select next/previous item
-		-- C-e: Hide menu
-		-- C-k: Toggle signature help (if signature.enabled = true)
-		--
-		-- See :h blink-cmp-config-keymap for defining your own keymap
 		keymap = {
 			preset = "none",
 			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
@@ -52,29 +31,122 @@ return {
 		},
 
 		appearance = {
-			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-			-- Adjusts spacing to ensure icons are aligned
 			nerd_font_variant = "mono",
+			-- Custom kind icons for a cleaner look
+			kind_icons = {
+				Text = "󰉿",
+				Method = "󰊕",
+				Function = "󰊕",
+				Constructor = "",
+				Field = "󰜢",
+				Variable = "󰀫",
+				Class = "󰠱",
+				Interface = "",
+				Module = "",
+				Property = "󰜢",
+				Unit = "󰑭",
+				Value = "󰎠",
+				Enum = "",
+				Keyword = "󰌋",
+				Snippet = "",
+				Color = "󰏘",
+				File = "󰈙",
+				Reference = "󰈇",
+				Folder = "󰉋",
+				EnumMember = "",
+				Constant = "󰏿",
+				Struct = "󰙅",
+				Event = "",
+				Operator = "󰆕",
+				TypeParameter = "󰊄",
+			},
 		},
 
-		-- (Default) Only show the documentation popup when manually triggered
 		completion = {
-			documentation = { auto_show = true, window = { border = "single" } },
-			menu = { border = "single", scrollbar = false },
+			-- Show completion menu automatically
+			menu = {
+				border = "rounded",
+				scrollbar = true,
+				scrolloff = 2,
+				-- Styling for the menu
+				draw = {
+					columns = {
+						{ "kind_icon" },
+						{ "label", "label_description", gap = 1 },
+						{ "source_name" },
+					},
+					-- Add some padding and styling
+					treesitter = { "lsp" },
+				},
+				-- Position and sizing
+				max_height = 15,
+			},
+
+			-- Documentation popup styling
+			documentation = {
+				auto_show = true,
+				auto_show_delay_ms = 200,
+				window = {
+					border = "rounded",
+					max_width = 80,
+					max_height = 20,
+				},
+			},
+
+			-- Ghost text preview
+			ghost_text = {
+				enabled = true,
+			},
+
+			-- Accept behavior
+			accept = {
+				auto_brackets = {
+					enabled = true,
+				},
+			},
+
+			-- Highlight matched characters
+			list = {
+				selection = {
+					preselect = true,
+					auto_insert = false,
+				},
+			},
 		},
 
-		-- Default list of enabled providers defined so that you can extend it
-		-- elsewhere in your config, without redefining it, due to `opts_extend`
+		-- Signature help styling
+		signature = {
+			enabled = true,
+			window = {
+				border = "rounded",
+				max_height = 10,
+			},
+		},
+
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
+			-- Per source configuration
+			providers = {
+				lsp = {
+					name = "LSP",
+					fallbacks = { "buffer" },
+				},
+				path = {
+					name = "Path",
+				},
+				snippets = {
+					name = "Snip",
+				},
+				buffer = {
+					name = "Buf",
+					max_items = 5,
+				},
+			},
 		},
 
-		-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
-		-- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
-		-- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
-		--
-		-- See the fuzzy documentation for more information
-		fuzzy = { implementation = "prefer_rust_with_warning" },
+		fuzzy = {
+			implementation = "prefer_rust_with_warning",
+		},
 	},
 	opts_extend = { "sources.default" },
 }
