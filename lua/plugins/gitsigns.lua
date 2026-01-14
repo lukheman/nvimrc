@@ -53,8 +53,11 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "gs", "<cmd>Gitsigns stage_hunk<cr>", { noremap = true, silent = true })
-		vim.keymap.set("n", "gu", "<cmd>Gitsigns undo_stage_hunk<cr>", { noremap = true, silent = true })
-		vim.keymap.set("n", "gh", "<cmd>Gitsigns preview_hunk<cr>", { noremap = true, silent = true })
+		vim.keymap.set("n", "gs", "<cmd>Gitsigns stage_hunk<cr>", { noremap = true, silent = true, desc = "Stage hunk" })
+		vim.keymap.set("n", "gu", "<cmd>Gitsigns undo_stage_hunk<cr>", { noremap = true, silent = true, desc = "Undo stage hunk" })
+		vim.keymap.set("n", "gh", "<cmd>Gitsigns preview_hunk<cr>", { noremap = true, silent = true, desc = "Preview hunk" })
+		vim.keymap.set("n", "]h", "<cmd>Gitsigns next_hunk<cr>", { noremap = true, silent = true, desc = "Next hunk" })
+		vim.keymap.set("n", "[h", "<cmd>Gitsigns prev_hunk<cr>", { noremap = true, silent = true, desc = "Previous hunk" })
+		vim.keymap.set("n", "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", { noremap = true, silent = true, desc = "Toggle line blame" })
 	end,
 }

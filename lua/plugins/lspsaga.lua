@@ -32,13 +32,13 @@ return {
 			lightbulb = { enable = false },
 		})
 
-		vim.keymap.set("n", "gr", "<cmd>Lspsaga finder<cr>")
-		vim.keymap.set("n", "<leader>e", "<cmd>Lspsaga show_line_diagnostics<cr>")
-		vim.keymap.set("n", "<leader>d", "<cmd>Lspsaga show_buf_diagnostics<cr>")
-		vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<cr>")
-		vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<cr>")
-		vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<cr>")
-		vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<cr>")
-		vim.keymap.set("n", "<leader>a", "<cmd>Lspsaga code_action<cr>")
+		vim.keymap.set("n", "gr", "<cmd>Lspsaga finder<cr>", { desc = "LSP Finder" })
+		vim.keymap.set("n", "<leader>e", "<cmd>Lspsaga show_line_diagnostics<cr>", { desc = "Line diagnostics" })
+		vim.keymap.set("n", "<leader>D", "<cmd>Lspsaga show_buf_diagnostics<cr>", { desc = "Buffer diagnostics" })
+		vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<cr>", { desc = "Hover documentation" })
+		vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<cr>", { desc = "Rename symbol" })
+		vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<cr>", { desc = "Code outline" })
+		vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<cr>", { desc = "Go to definition" })
+		vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<cr>", { desc = "Code action" })
 	end,
 }

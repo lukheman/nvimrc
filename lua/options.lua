@@ -34,7 +34,8 @@ o.signcolumn = "yes"
 o.splitbelow = true
 o.splitright = true
 o.timeoutlen = 400
-o.undofile = false
+o.undofile = true
+o.undodir = vim.fn.stdpath("data") .. "/undo"
 
 o.updatetime = 250
 

@@ -89,7 +89,7 @@ require("lazy").setup({
 
 	require("plugins.nvim-ufo"),
 
-	require("plugins.smear-cursor"),
+	-- require("plugins.smear-cursor"),
 
 	require("plugins.flutter"),
 
@@ -114,6 +114,8 @@ require("lazy").setup({
 	require("plugins.render-markdown"),
 
 	require("plugins.dap"),
+
+	require("plugins.noice"),
 
 	{
 		"gisketch/triforce.nvim",

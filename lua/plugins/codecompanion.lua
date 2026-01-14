@@ -4,11 +4,12 @@ return {
 		require("codecompanion").setup({
 			adapters = {
 				gemini = function()
-					-- return require("codecompanion.adapters").extend("gemini", {
-					-- 	env = {
-					-- 		api_key = "AIzaSyAvetJ5eoxXSXL9OAHAj-9icjw5dxQ5l5E",
-					-- 	},
-					-- })
+					-- Use environment variable: GEMINI_API_KEY
+					return require("codecompanion.adapters").extend("gemini", {
+						env = {
+							api_key = "cmd:echo $GEMINI_API_KEY",
+						},
+					})
 				end,
 			},
 			display = {

@@ -51,5 +51,6 @@ vim.lsp.enable({
 	"emmet_language_server",
 	"html",
 	"cssls",
+	"tailwindcss",
 	"laravel-ls",
 })

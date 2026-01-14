@@ -2,10 +2,14 @@ return {
 	"nvim-telescope/telescope.nvim",
 	tag = "0.1.8",
 	cmd = { "Telescope" },
+	dependencies = { "nvim-lua/plenary.nvim" },
 	keys = {
-		"<leader>f",
-		"<leader>b",
-		"<leader>s",
+		{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+		{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find buffers" },
+		{ "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Find symbols" },
+		{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep" },
+		{ "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent files" },
+		{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help tags" },
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -83,11 +87,5 @@ return {
 				},
 			},
 		})
-
-		local builtin = require("telescope.builtin")
-
-		vim.keymap.set("n", "<leader>f", builtin.find_files)
-		vim.keymap.set("n", "<leader>b", builtin.buffers)
-		vim.keymap.set("n", "<leader>s", builtin.lsp_document_symbols)
 	end,
 }
